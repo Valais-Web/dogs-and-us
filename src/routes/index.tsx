@@ -1,24 +1,46 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, Baby, BookOpen, CheckCircle2, Dog, Heart, Home, ShieldCheck, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { LeadForm } from "@/components/lead-form";
+import hero from "@/assets/hero-dog-family.jpg";
+import silvia from "@/assets/silvia-placeholder.jpg";
+import prep from "@/assets/blog-preparacion.jpg";
+import convivencia from "@/assets/blog-convivencia.jpg";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+ head: () => ({ meta: [
+  { title: "Dogs & Us Training | Perros y bebés, juntos con seguridad" },
+  { name: "description", content: "Educación canina para preparar a tu perro ante la llegada del bebé y acompañar una convivencia familiar segura y respetuosa." },
+  { property: "og:title", content: "Dogs & Us Training | Perros y bebés" },
+  { property: "og:description", content: "Acompañamiento profesional para familias multiespecie, desde el embarazo hasta los primeros años." },
+  { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
+ ], links: [{ rel: "canonical", href: "/" }] }), component: HomePage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
-  return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
-  );
-}
+const journey = [
+ ["Embarazo", "Prepara espacios, rutinas y habilidades con tiempo.", Heart],
+ ["Recién nacido", "Acompaña las primeras presentaciones con calma.", Baby],
+ ["Bebé", "Gestiona el movimiento y la curiosidad con seguridad.", Sparkles],
+ ["Toddler", "Crea límites claros para una etapa muy activa.", ShieldCheck],
+ ["Niño · 4–5 años", "Cultiva respeto, lectura y vínculo compartido.", Home],
+] as const;
+const resources = ["Checklist de preparación", "Biblioteca de sonidos de bebé", "Reglas de seguridad niño–perro", "Alimentos tóxicos para el perro", "Guía toddlers y perros"];
+
+function Mark({children}:{children:React.ReactNode}) { return <span className="editorial-mark">{children}</span>; }
+function HomePage() { return <>
+ <section className="px-5 pb-20 pt-10 sm:pt-16"><div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.06fr_.94fr]">
+  <div className="animate-rise"><p className="mb-5 text-sm font-bold uppercase tracking-widest text-muted-foreground">Educación canina para familias multiespecie</p><h1 className="text-5xl leading-[.98] sm:text-7xl lg:text-8xl">Prepara a tu perro para la llegada de tu <Mark>bebé</Mark> con calma y seguridad</h1><p className="mt-7 max-w-xl text-lg leading-relaxed text-muted-foreground">Te acompaño desde el embarazo para construir una convivencia respetuosa, segura y llena de confianza para toda la familia.</p><Button asChild size="lg" className="mt-8"><Link to="/recursos">Encuentra tu punto de partida <ArrowRight /></Link></Button></div>
+  <div className="relative"><div className="absolute -bottom-5 -left-4 z-10 max-w-[230px] rounded-3xl bg-secondary p-5 font-display text-lg font-semibold shadow-soft sm:left-0">Más preparación. Más calma. Más bienestar.</div><img src={hero} width={1024} height={1280} alt="Mujer embarazada descansando junto a su perro en casa" className="aspect-[4/5] w-full rounded-[2.5rem] object-cover shadow-soft" /></div>
+ </div></section>
+ <section className="border-y border-border bg-card px-5 py-8"><div className="mx-auto max-w-7xl"><p className="text-center text-xs font-bold uppercase tracking-widest text-muted-foreground">Como me has visto en</p><div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">{[1,2,3,4].map(i=><div key={i} className="grid h-12 place-items-center rounded-xl border border-dashed border-border text-xs text-muted-foreground">LOGO / MEDIO</div>)}</div></div></section>
+ <section className="px-5 py-24"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">El recorrido</p><h2 className="mt-3 max-w-3xl text-4xl sm:text-6xl">Una guía para cada <Mark>etapa</Mark> de vuestra familia</h2><div className="mt-14 grid gap-8 md:grid-cols-5">{journey.map(([title,text,Icon],i)=><article key={title} className="relative border-t-2 border-primary pt-6 transition-transform duration-300 hover:-translate-y-1"><span className="absolute -top-4 left-0 grid size-8 place-items-center rounded-full bg-secondary text-sm font-bold">{i+1}</span><Icon className="mt-3 size-7"/><h3 className="mt-4 text-xl">{title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p></article>)}</div></div></section>
+ <section className="px-5 pb-24"><div className="mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] bg-accent p-8 sm:p-14 lg:grid-cols-[1.2fr_.8fr]"><div><p className="text-sm font-bold uppercase tracking-widest">Programa insignia</p><h2 className="mt-4 text-4xl sm:text-6xl">[NOMBRE DEL MÉTODO / PROGRAMA]</h2><p className="mt-6 max-w-2xl text-lg leading-relaxed">Un espacio todo-en-uno con el material que necesitas desde el embarazo hasta una convivencia segura cuando tu peque tiene 4–5 años.</p><Button asChild className="mt-8"><Link to="/programa">Ver el programa <ArrowRight /></Link></Button></div><div className="flex items-end"><div className="rounded-3xl bg-background/70 p-6"><CheckCircle2 className="size-9"/><p className="mt-4 font-display text-2xl">Acompañamiento claro, práctico y respetuoso.</p></div></div></div></section>
+ <section className="bg-primary px-5 py-24 text-primary-foreground"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-widest text-secondary">Otros servicios</p><h2 className="mt-3 text-4xl sm:text-6xl">Elige el apoyo que encaja <em>contigo</em></h2><div className="mt-12 grid gap-5 md:grid-cols-3">{[["Asesorías 1:1","Online en todo el mundo y presencial en [CIUDAD].",Dog,"/asesorias"],["Cursos y guías","Material práctico para avanzar a tu ritmo.",BookOpen,"/recursos"],["Lenguaje canino","Aprende a escuchar lo que tu perro comunica.",Heart,"/programa"]].map(([t,d,I,to])=>{const Icon=I as typeof Dog; return <article key={String(t)} className="rounded-3xl border border-primary-foreground/15 bg-primary-foreground/5 p-7 transition-all duration-300 hover:-translate-y-1 hover:bg-primary-foreground/10"><Icon className="size-8 text-secondary"/><h3 className="mt-10 text-3xl">{String(t)}</h3><p className="mt-3 text-primary-foreground/70">{String(d)}</p><Link to={to as "/asesorias"} className="mt-8 inline-flex items-center gap-2 font-semibold">Saber más <ArrowRight className="size-4"/></Link></article>})}</div></div></section>
+ <section className="px-5 py-24"><div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2"><img src={silvia} width={912} height={1104} loading="lazy" alt="Retrato de referencia de Silvia Gómez junto a un perro" className="aspect-[4/5] w-full rounded-[2.5rem] object-cover"/><div><p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Sobre mí</p><h2 className="mt-3 text-5xl sm:text-6xl">Hola, soy <Mark>Silvia</Mark>.</h2><p className="mt-6 text-lg leading-relaxed">Soy Silvia Gómez. Educadora canina profesional, psicóloga educativa y mamá de dos. Acompaño a familias multiespecie a que perro y bebé crezcan juntos con bienestar y seguridad.</p><div className="mt-7 flex flex-wrap gap-2">{["Educadora canina","Psicóloga educativa","Familias multiespecie","Mamá multiespecie"].map(x=><span key={x} className="rounded-full bg-secondary px-4 py-2 text-sm font-semibold">{x}</span>)}</div><Button asChild variant="outline" className="mt-8"><Link to="/sobre-mi">Conóceme mejor <ArrowRight /></Link></Button></div></div></section>
+ <section className="bg-cream-deep px-5 py-20"><div className="mx-auto grid max-w-7xl items-center gap-8 md:grid-cols-[auto_1fr]"><ShieldCheck className="size-16"/><div><h2 className="text-4xl">Un método con evidencia y <Mark>respeto</Mark></h2><p className="mt-4 max-w-3xl text-lg leading-relaxed text-muted-foreground">Trabajo desde el refuerzo positivo y el bienestar animal, observando las necesidades del perro y de cada persona de la familia para crear pautas sostenibles.</p></div></div></section>
+ <section className="px-5 py-24"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Recursos gratis</p><h2 className="mt-3 max-w-3xl text-4xl sm:text-6xl">Pequeños recursos para empezar <Mark>hoy</Mark></h2><div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{resources.map((r,i)=><article key={r} className={`rounded-3xl p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-lift ${i===1||i===4?'bg-accent':'bg-card'}`}><span className="text-sm font-bold">GUÍA 0{i+1}</span><h3 className="mt-8 text-2xl">{r}</h3><p className="mt-3 text-sm text-muted-foreground">Una herramienta práctica para cuidar la convivencia en casa.</p><div className="mt-7"><LeadForm source="recurso_inicio" resource={r}/></div></article>)}</div></div></section>
+ <section className="bg-card px-5 py-24"><div className="mx-auto max-w-7xl"><p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Historias de familias</p><h2 className="mt-3 text-4xl sm:text-6xl">Vuestras palabras</h2><div className="mt-12 flex snap-x gap-5 overflow-x-auto pb-5">{[1,2,3,4].map(i=><article key={i} className="min-w-[85%] snap-center rounded-3xl border border-dashed border-border p-8 sm:min-w-[45%] lg:min-w-[30%]"><p className="text-4xl text-secondary">“</p><p className="mt-4 text-muted-foreground">[ESPACIO PARA RESEÑA REAL]</p><p className="mt-10 font-semibold">[Cliente] · [Perro]</p></article>)}</div></div></section>
+ <section className="px-5 py-24"><div className="mx-auto max-w-7xl"><h2 className="text-center text-4xl sm:text-6xl">Cómo empezar</h2><div className="mt-12 grid gap-8 md:grid-cols-3">{[["01","Elige tu punto de partida"],["02","Sigue el material a tu ritmo"],["03","Construye una convivencia segura"]].map(([n,t])=><div className="text-center" key={n}><span className="mx-auto grid size-14 place-items-center rounded-full bg-secondary font-bold">{n}</span><h3 className="mt-5 text-2xl">{t}</h3></div>)}</div></div></section>
+ <section className="px-5 pb-24"><div className="mx-auto grid max-w-7xl gap-8 rounded-[2.5rem] bg-secondary p-8 sm:p-14 md:grid-cols-[1fr_1fr]"><div><p className="text-sm font-bold uppercase tracking-widest">Cartas para familias multiespecie</p><h2 className="mt-4 text-4xl sm:text-5xl">Una dosis de calma para tu bandeja de entrada.</h2></div><div className="self-end"><p className="mb-5">Consejos prácticos, reflexiones y recursos para acompañaros semana a semana.</p><LeadForm source="newsletter_inicio" compact /></div></div></section>
+ <section className="px-5 pb-24"><div className="mx-auto max-w-7xl"><div className="flex items-end justify-between"><div><p className="text-sm font-bold uppercase tracking-widest text-muted-foreground">Blog</p><h2 className="mt-3 text-4xl sm:text-6xl">Para leer con calma</h2></div><Button asChild variant="ghost"><Link to="/blog">Ver todo <ArrowRight /></Link></Button></div><div className="mt-10 grid gap-6 md:grid-cols-3">{[[prep,"Antes de que llegue el bebé","Cómo preparar nuevas rutinas con tu perro."],[convivencia,"Toddler y perro en casa","Claves para acompañar la curiosidad con seguridad."],[prep,"Aprender a leer a tu perro","Señales sutiles que ayudan a prevenir incomodidad."]].map(([img,t,d])=><article key={String(t)}><img src={String(img)} loading="lazy" width={1024} height={768} alt="Perro tranquilo en un hogar familiar" className="aspect-[4/3] w-full rounded-3xl object-cover"/><h3 className="mt-5 text-2xl">{String(t)}</h3><p className="mt-2 text-muted-foreground">{String(d)}</p></article>)}</div></div></section>
+ </>; }

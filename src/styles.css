@@ -149,8 +149,8 @@
 
   body {
     background-color: var(--color-background);
-    background-image: linear-gradient(color-mix(in oklab, var(--background) 82%, transparent), color-mix(in oklab, var(--background) 82%, transparent)), url("./assets/paper-texture.jpg");
-    background-size: auto, 620px 620px;
+    background-image: url("./assets/paper-texture.jpg");
+    background-size: 620px 620px;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     letter-spacing: 0;

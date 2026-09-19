@@ -9,7 +9,7 @@ export function LeadForm({ source, resource, compact = false }: { source: string
   if (state === "done") return <p className="flex items-center gap-2 font-semibold"><Check className="size-5" /> ¡Listo! Revisa tu correo.</p>;
   return <form onSubmit={submit} className={compact ? "flex flex-col gap-2 sm:flex-row" : "grid gap-2"}>
     <label className="sr-only" htmlFor={`email-${source}-${resource ?? "general"}`}>Tu correo electrónico</label>
-    <input id={`email-${source}-${resource ?? "general"}`} required type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="tu@email.com" className="h-12 min-w-0 flex-1 rounded-full border border-primary/20 bg-background px-5 text-foreground outline-none transition-shadow focus:ring-2 focus:ring-ring" />
+    <input id={`email-${source}-${resource ?? "general"}`} required type="email" value={email} onChange={e=>setEmail(e.target.value)} placeholder="tu@email.com" className="h-12 min-w-0 flex-1 rounded-md border border-primary/35 bg-background px-4 text-foreground outline-none transition-colors focus:border-primary focus:ring-2 focus:ring-ring" />
     <Button type="submit" disabled={state === "saving"} aria-label="Enviar correo">{state === "saving" ? "Enviando…" : compact ? <>Quiero recibirla <ArrowRight /></> : <>Descargar <ArrowRight /></>}</Button>
     {state === "error" && <p className="text-sm font-medium text-destructive">No se pudo guardar. Inténtalo de nuevo.</p>}
   </form>;

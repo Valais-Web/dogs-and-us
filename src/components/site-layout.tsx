@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X, Instagram, Youtube, ArrowUpRight } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
+import logoAsset from "@/assets/logo.png.asset.json";
 
 const nav = [
   ["Sobre mí", "/sobre-mi"], ["El Programa", "/programa"], ["Asesorías 1:1", "/asesorias"],
@@ -14,7 +15,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-primary/20 bg-background">
       <div className="mx-auto grid h-20 max-w-7xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 lg:flex lg:px-8">
         <Link to="/" className="flex min-w-0 items-center gap-3" aria-label="Dogs & Us Training, inicio">
-          <span className="grid size-10 shrink-0 -rotate-2 place-items-center rounded-md border border-primary bg-primary font-display text-lg font-semibold text-primary-foreground">D&U</span>
+          <img src={logoAsset.url} alt="Logo de Dogs & Us Training: carita de bebé y perro con un corazón" className="size-11 shrink-0" width={44} height={44} />
           <span className="min-w-0 font-display text-lg font-semibold leading-tight sm:text-xl">Dogs & Us <em className="font-medium">Training</em></span>
         </Link>
         <nav className="ml-auto hidden items-center gap-5 lg:flex" aria-label="Navegación principal">

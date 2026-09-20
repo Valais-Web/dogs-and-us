@@ -6,5 +6,5 @@
 - [x] Conectar recursos y newsletter a la base de datos.
 - [x] Añadir SEO, accesibilidad y animaciones sutiles.
 - [x] Verificar la experiencia en móvil y escritorio.
-- [ ] Aplicar la dirección editorial de cuaderno de campo a toda la portada.
-- [ ] Revisar cada sección rediseñada en móvil y escritorio.
+- [x] Aplicar la dirección editorial de cuaderno de campo a toda la portada.
+- [x] Revisar cada sección rediseñada en móvil y escritorio.

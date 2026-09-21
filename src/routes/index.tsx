@@ -9,13 +9,6 @@ import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
-import reviewOne from "@/assets/resena-9-52-21_p-m-.png.asset.json";
-import reviewTwo from "@/assets/resena-9-52-26_p-m-.png.asset.json";
-import reviewThree from "@/assets/resena-9-52-31_p-m-.png.asset.json";
-import reviewFour from "@/assets/resena-9-52-37_p-m-.png.asset.json";
-import reviewFive from "@/assets/resena-9-52-41_p-m-.png.asset.json";
-import reviewSix from "@/assets/resena-9-52-45_p-m-.png.asset.json";
-import reviewSeven from "@/assets/resena-9-52-51_p-m-.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -53,13 +46,13 @@ function CourseCard({ src, title, text, label, to }: { src: string; title: strin
 }
 
 const testimonials = [
-  { src: reviewOne.url, alt: "Reseña de Daniela Calderón" },
-  { src: reviewTwo.url, alt: "Reseña de Luisier Michel" },
-  { src: reviewThree.url, alt: "Reseña de Daniela G." },
-  { src: reviewFour.url, alt: "Reseña de Yes Cruz" },
-  { src: reviewFive.url, alt: "Reseña de Jorge Campos" },
-  { src: reviewSix.url, alt: "Reseña de Rocío Zárate" },
-  { src: reviewSeven.url, alt: "Reseña de Marión Tejada" },
+  { name: "Daniela Calderón", dog: "Shimmi y Yuki", text: "Amamos a Silvia. Siempre tiene una escucha activa hacia lo que está pasando con nuestros peludos. Toda gestión de comportamiento parte del respeto y el entendimiento. ¡Súper recomendada!" },
+  { name: "Luisier Michel", dog: "Jack", text: "¡Muy, muy bueno! Una auténtica masterclass que me permitió entender muchas cosas sobre mi perro. Silvia es una persona encantadora y competente." },
+  { name: "Daniela G.", dog: "Cleo", text: "Súper profesional y, lo mejor, súper empática. Hasta ahora, la única que ha logrado ayudarme a largo plazo con mi Cleo. ¡Gracias!" },
+  { name: "Yes Cruz", dog: "Cobain", text: "Dogs & Us Training ha sido la mejor elección para tratar la ansiedad por separación de Cobain. Silvia se toma el tiempo de explicar, dar alternativas y conseguir que el curso online sea claro. Hemos visto muchos avances positivos y una mejor comunicación entre nosotras." },
+  { name: "Jorge Campos", dog: "Kobu", text: "Silvia es una persona increíble, apasionada y preparada. Pone todo su empeño en sus proyectos y sus programas me han ayudado mucho." },
+  { name: "Rocío Zárate", dog: "", text: "Sus consejos nos han servido para entender y corregir el comportamiento de nuestra perrita. Ahora, con la llegada del bebé, seguiremos poniendo en práctica lo aprendido con Silvia." },
+  { name: "Marión Tejada", dog: "", text: "El curso para preparar la llegada del bebé hizo la transición mucho más suave con nuestro perrito. Un mes después del parto, está tranquilo con el bebé y su llanto. Las clases son fáciles de seguir y todo está muy bien explicado. Lo recomiendo 100 %." },
 ];
 
 const bannerWords = [
@@ -178,7 +171,13 @@ function HomePage() {
 
     <section className="testimonials-home" id="testimonios">
       <header><h2>Ellos ya confiaron en Dogs and Us</h2></header>
-      <div className="testimonial-window"><div className="testimonial-rail">{[...testimonials, ...testimonials].map((item, i) => <figure className="testimonial" key={`${item.alt}-${i}`}><img src={item.src} alt={item.alt} loading="lazy" /></figure>)}</div></div>
+      <div className="testimonials-grid">{testimonials.map((item) => <article className="testimonial-card tilt-card" key={item.name}>
+        <div className="tilt-card-face">
+          <span className="testimonial-quote" aria-hidden="true">“</span>
+          <blockquote>{item.text}</blockquote>
+          <footer><span className="testimonial-mark" aria-hidden="true" /> <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
+        </div>
+      </article>)}</div>
     </section>
 
     <div className="newsletter-wave" aria-hidden="true">

@@ -1,57 +1,140 @@
+import { useEffect, useState, type ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Baby, BookOpen, CheckCircle2, Dog, Heart, Home, ShieldCheck, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import { LeadForm } from "@/components/lead-form";
-import hero from "@/assets/hero-dog-family.jpg";
-import silvia from "@/assets/silvia-placeholder.jpg";
-import prep from "@/assets/blog-preparacion.jpg";
-import convivencia from "@/assets/blog-convivencia.jpg";
+import embarazoAsset from "@/assets/embarazo-perro.jpg.asset.json";
+import familiaAsset from "@/assets/familia-jardin.jpg.asset.json";
+import nieveAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
+import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
- head: () => ({ meta: [
-  { title: "Dogs & Us Training | Perros y bebés, juntos con seguridad" },
-  { name: "description", content: "Educación canina para preparar a tu perro ante la llegada del bebé y acompañar una convivencia familiar segura y respetuosa." },
-  { property: "og:title", content: "Dogs & Us Training | Perros y bebés" },
-  { property: "og:description", content: "Acompañamiento profesional para familias multiespecie, desde el embarazo hasta los primeros años." },
-  { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" },
- ], links: [{ rel: "canonical", href: "/" }] }), component: HomePage,
+  head: () => ({
+    meta: [
+      { title: "Dogs and Us | Educación canina para familias" },
+      { name: "description", content: "Recursos y educación canina para una convivencia segura y feliz entre perros, bebés y niños, con Silvia Gómez en Barcelona." },
+      { property: "og:title", content: "Dogs and Us | Perros y bebés" },
+      { property: "og:description", content: "Educación canina para familias con perros y bebés, con Silvia Gómez en Barcelona." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+  }),
+  component: HomePage,
 });
 
-const journey = [
- ["Embarazo", "Prepara espacios, rutinas y habilidades con tiempo.", Heart],
- ["Recién nacido", "Acompaña las primeras presentaciones con calma.", Baby],
- ["Bebé", "Gestiona el movimiento y la curiosidad con seguridad.", Sparkles],
- ["Toddler", "Crea límites claros para una etapa muy activa.", ShieldCheck],
- ["Niño · 4–5 años", "Cultiva respeto, lectura y vínculo compartido.", Home],
-] as const;
-const resources = ["Checklist de preparación", "Biblioteca de sonidos de bebé", "Reglas de seguridad niño–perro", "Alimentos tóxicos para el perro", "Guía toddlers y perros"];
+const words = ["pasos para presentarlos", "prevención", "biblioteca de sonidos", "actividades en familia", "lenguaje canino"];
 
-function Mark({children}:{children:React.ReactNode}) { return <span className="editorial-mark">{children}</span>; }
-function HomePage() { return <>
- <section className="overflow-hidden px-5 pb-20 pt-10 sm:pb-28 sm:pt-16"><div className="relative mx-auto max-w-7xl lg:min-h-[680px]">
-  <div className="relative z-20 animate-rise lg:w-[62%]"><p className="mb-6 max-w-xs border-l-2 border-primary pl-3 text-xs font-bold uppercase text-muted-foreground">Educación canina para familias multiespecie</p><h1 className="text-5xl leading-[.93] sm:text-7xl lg:text-[6.6rem]">Prepara a tu perro para la llegada de tu <Mark>bebé</Mark> con calma y seguridad</h1><div className="mt-8 max-w-lg lg:ml-20"><p className="text-lg leading-relaxed text-muted-foreground">Te acompaño desde el embarazo para construir una convivencia respetuosa, segura y llena de confianza para toda la familia.</p><Button asChild size="lg" className="mt-7"><Link to="/recursos">Encuentra tu punto de partida <ArrowRight /></Link></Button></div></div>
-  <figure className="relative z-10 mt-12 animate-photo-drop lg:absolute lg:right-0 lg:top-4 lg:mt-0 lg:w-[47%]"><div className="border border-primary/25 bg-card p-2 pb-14"><img src={hero} width={1024} height={1280} alt="Mujer embarazada descansando junto a su perro en casa" className="aspect-[4/5] w-full object-cover"/><figcaption className="absolute bottom-5 left-6 font-display text-lg italic">Preparar hoy para convivir con calma.</figcaption></div><div className="absolute -bottom-7 -left-3 max-w-[210px] -rotate-2 border border-primary bg-secondary px-5 py-4 font-display text-lg font-semibold sm:-left-10">Más preparación.<br/>Más calma.<br/>Más bienestar.</div></figure>
- </div></section>
+function Typewriter() {
+  const [word, setWord] = useState("");
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
- <section className="border-y border-primary/20 bg-card px-5 py-8"><div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-[12rem_1fr]"><p className="self-center text-xs font-bold uppercase text-muted-foreground">Como me has visto en</p><div className="grid grid-cols-2 border-l border-primary/20 sm:grid-cols-4">{[1,2,3,4].map(i=><div key={i} className="grid h-12 place-items-center border-r border-primary/20 text-xs text-muted-foreground">LOGO / MEDIO</div>)}</div></div></section>
+  useEffect(() => {
+    const target = words[index] ?? words[0] ?? "";
+    const complete = word === target;
+    const empty = word.length === 0;
+    const delay = complete && !deleting ? 1600 : deleting ? 32 : 65;
+    const timer = window.setTimeout(() => {
+      if (complete && !deleting) return setDeleting(true);
+      if (empty && deleting) {
+        setDeleting(false);
+        setIndex((current) => (current + 1) % words.length);
+        return;
+      }
+      setWord(target.slice(0, word.length + (deleting ? -1 : 1)));
+    }, delay);
+    return () => window.clearTimeout(timer);
+  }, [deleting, index, word]);
 
- <section className="px-5 py-24 sm:py-32"><div className="mx-auto max-w-7xl"><div className="grid gap-5 md:grid-cols-[1fr_2fr]"><p className="text-xs font-bold uppercase text-muted-foreground">El recorrido</p><h2 className="max-w-4xl text-5xl leading-none sm:text-7xl">Una guía para cada <Mark>etapa</Mark> de vuestra familia</h2></div><div className="relative mt-16 grid gap-0 md:grid-cols-5 md:items-start before:absolute before:left-0 before:right-0 before:top-4 before:hidden before:border-t-2 before:border-primary md:before:block">{journey.map(([title,text,Icon],i)=><article key={title} className={`relative grid grid-cols-[3rem_1fr] gap-4 border-l-2 border-primary pb-10 pl-4 md:block md:border-l-0 md:pb-0 md:pl-0 ${i%2 ? 'md:mt-24' : ''}`}><span className="relative z-10 grid size-8 place-items-center border border-primary bg-secondary text-sm font-bold">{i+1}</span><div className="md:mt-6 md:pr-6"><Icon className="size-6"/><h3 className="mt-3 text-2xl">{title}</h3><p className="mt-2 text-sm leading-relaxed text-muted-foreground">{text}</p></div></article>)}</div></div></section>
+  return <p className="typewriter" aria-live="polite">{word}<span aria-hidden="true">|</span></p>;
+}
 
- <section className="bg-accent px-5 py-20 sm:py-28"><div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.4fr_.6fr]"><div><p className="text-xs font-bold uppercase">Programa insignia</p><h2 className="mt-5 max-w-4xl text-5xl leading-[.95] sm:text-7xl">[NOMBRE DEL MÉTODO / PROGRAMA]</h2><p className="mt-7 max-w-2xl text-lg leading-relaxed">Un espacio todo-en-uno con el material que necesitas desde el embarazo hasta una convivencia segura cuando tu peque tiene 4–5 años.</p><Button asChild className="mt-8"><Link to="/programa">Ver el programa <ArrowRight /></Link></Button></div><aside className="self-end border-l-2 border-primary pl-6 lg:-rotate-2"><CheckCircle2 className="size-9"/><p className="mt-4 font-display text-3xl italic">Acompañamiento claro, práctico y respetuoso.</p></aside></div></section>
+function Polaroid({ src, date, alt, direction = "left", className = "" }: { src: string; date: string; alt: string; direction?: "left" | "right"; className?: string }) {
+  return <figure className={`polaroid sway-${direction} ${className}`}>
+    <div className="polaroid-nail" aria-hidden="true" />
+    <div className="polaroid-frame">
+      <img src={src} alt={alt} />
+      <figcaption>{date}</figcaption>
+    </div>
+  </figure>;
+}
 
- <section className="bg-primary px-5 py-24 text-primary-foreground sm:py-32"><div className="mx-auto max-w-7xl"><p className="text-xs font-bold uppercase text-secondary">Otros servicios</p><h2 className="mt-4 max-w-3xl text-5xl leading-none sm:text-7xl">Elige el apoyo que encaja <em>contigo</em></h2><div className="mt-14 grid gap-10 lg:grid-cols-[1.15fr_.85fr]"><article className="border-y border-primary-foreground/30 py-8"><Dog className="size-9 text-secondary"/><h3 className="mt-14 text-4xl sm:text-5xl">Asesorías 1:1</h3><p className="mt-4 max-w-md text-primary-foreground/70">Online en todo el mundo y presencial en [CIUDAD].</p><Link to="/asesorias" className="mt-8 inline-flex items-center gap-2 font-semibold text-secondary">Saber más <ArrowRight className="size-4"/></Link></article><div className="divide-y divide-primary-foreground/25 border-y border-primary-foreground/25">{[["Cursos y guías","Material práctico para avanzar a tu ritmo.",BookOpen,"/recursos"],["Lenguaje canino","Aprende a escuchar lo que tu perro comunica.",Heart,"/programa"]].map(([t,d,I,to])=>{const Icon=I as typeof Dog; return <article key={String(t)} className="grid grid-cols-[auto_1fr] gap-5 py-8"><Icon className="size-7 text-secondary"/><div><h3 className="text-3xl">{String(t)}</h3><p className="mt-2 text-primary-foreground/70">{String(d)}</p><Link to={to as "/recursos"} className="mt-5 inline-flex items-center gap-2 font-semibold">Saber más <ArrowRight className="size-4"/></Link></div></article>})}</div></div></div></section>
+function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" }) {
+  return <article className="course-card">
+    <img src={src} alt="Familia compartiendo tiempo con su perro" loading="lazy" />
+    <h3>{title}</h3><p>{text}</p>
+    <Link to={to} className="mexican-button">{label}<ArrowRight /></Link>
+  </article>;
+}
 
- <section className="overflow-hidden px-5 py-24 sm:py-32"><div className="relative mx-auto max-w-6xl lg:min-h-[690px]"><figure className="relative w-[92%] max-w-xl -rotate-2 border border-primary/25 bg-card p-2 pb-12 lg:w-[52%]"><img src={silvia} width={912} height={1104} loading="lazy" alt="Retrato de referencia de Silvia Gómez junto a un perro" className="aspect-[4/5] w-full object-cover"/><figcaption className="absolute bottom-4 right-5 font-display italic">Silvia, educadora y mamá multiespecie</figcaption></figure><div className="relative z-10 -mt-8 ml-auto border-t-2 border-primary bg-background px-1 pt-8 lg:absolute lg:right-0 lg:top-24 lg:mt-0 lg:w-[56%] lg:px-10"><p className="text-xs font-bold uppercase text-muted-foreground">Sobre mí</p><h2 className="mt-3 text-5xl sm:text-7xl">Hola, soy <Mark>Silvia</Mark>.</h2><p className="mt-6 text-lg leading-relaxed">Soy Silvia Gómez. Educadora canina profesional, psicóloga educativa y mamá de dos. Acompaño a familias multiespecie a que perro y bebé crezcan juntos con bienestar y seguridad.</p><ul className="mt-7 grid gap-2 border-l-2 border-secondary pl-4 text-sm font-semibold sm:grid-cols-2">{["Educadora canina","Psicóloga educativa","Familias multiespecie","Mamá multiespecie"].map(x=><li key={x}>— {x}</li>)}</ul><Button asChild variant="outline" className="mt-8"><Link to="/sobre-mi">Conóceme mejor <ArrowRight /></Link></Button></div></div></section>
+const testimonials = Array.from({ length: 4 }, (_, i) => ({ quote: "[ESPACIO PARA RESEÑA REAL]", person: `[Cliente ${i + 1}] · [Perro]` }));
 
- <section className="border-y border-primary/20 bg-cream-deep px-5 py-20"><div className="mx-auto grid max-w-6xl gap-8 md:grid-cols-[10rem_1fr]"><div className="flex items-start gap-3"><ShieldCheck className="size-10"/><span className="font-display text-sm italic">Nota de trabajo</span></div><div><h2 className="max-w-4xl text-4xl leading-tight sm:text-6xl">Un método con evidencia y <Mark>respeto</Mark></h2><p className="mt-6 max-w-3xl border-l border-primary pl-6 text-lg leading-relaxed text-muted-foreground">Trabajo desde el refuerzo positivo y el bienestar animal, observando las necesidades del perro y de cada persona de la familia para crear pautas sostenibles.</p></div></div></section>
+function HomePage() {
+  return <div className="wall-bg">
+    <section className="home-hero">
+      <div className="hanging-lamp" aria-hidden="true"><span className="lamp-wire" /><span className="lamp-shade" /><span className="lamp-light" /></div>
+      <div className="home-hero-heading">
+        <h1>Educación canina para familias<br />con perros y bebés</h1>
+        <p className="hand">Recursos para un hogar seguro y feliz para todos</p>
+      </div>
+      <div className="hero-polaroids">
+        <Polaroid src={embarazoAsset.url} date="Octubre 2023" alt="Silvia embarazada junto a su perro" direction="left" className="hero-polaroid" />
+        <div className="hero-copy">
+          <p>prepara a tu perro para la llegada de tu bebé y evita o resuelve problemas de convivencia entre perros y niños</p>
+          <Link to="/programa" className="blush-button">Ver cursos <ArrowRight /></Link>
+        </div>
+        <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="hero-polaroid" />
+      </div>
+    </section>
 
- <section className="px-5 py-24 sm:py-32"><div className="mx-auto max-w-7xl"><div className="grid gap-5 md:grid-cols-[1fr_2fr]"><p className="text-xs font-bold uppercase text-muted-foreground">Recursos gratis</p><h2 className="max-w-4xl text-5xl leading-none sm:text-7xl">Pequeños recursos para empezar <Mark>hoy</Mark></h2></div><div className="mt-14 grid gap-7 md:grid-cols-2 lg:grid-cols-6">{resources.map((r,i)=><article key={r} className={`paper-cut p-6 ${i===1||i===4?'bg-accent':'bg-card'} ${i===0||i===3?'lg:col-span-4':'lg:col-span-2'} ${i===2?'lg:translate-y-8':''}`}><span className="font-display text-sm italic">Guía 0{i+1}</span><h3 className="mt-6 text-2xl sm:text-3xl">{r}</h3><p className="mt-3 text-sm text-muted-foreground">Una herramienta práctica para cuidar la convivencia en casa.</p><div className="mt-6 max-w-md"><LeadForm source="recurso_inicio" resource={r}/></div></article>)}</div></div></section>
+    <section className="question-band">
+      <div className="question-box">
+        <h2>¿Quieres hacer vida en familia tranquila y divertida sin que tu perro se sienta desplazado y asegurando una buena convivencia entre todos?</h2>
+        <Typewriter />
+        <div className="pink-dots" aria-hidden="true" />
+      </div>
+      <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
+      <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+    </section>
 
- <section className="border-y border-primary/20 bg-card px-5 py-24 sm:py-32"><div className="mx-auto max-w-7xl"><div className="max-w-xl"><p className="text-xs font-bold uppercase text-muted-foreground">Historias de familias</p><h2 className="mt-3 text-5xl sm:text-7xl">Vuestras palabras</h2></div><div className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-4">{[1,2,3,4].map(i=><article key={i} className={`paper-cut min-h-64 bg-background p-7 ${i%2?'lg:translate-y-10 lg:rotate-1':'lg:-rotate-1'}`}><p className="font-display text-5xl text-secondary">“</p><p className="mt-4 text-muted-foreground">[ESPACIO PARA RESEÑA REAL]</p><p className="mt-12 border-t border-primary/20 pt-4 font-semibold">[Cliente] · [Perro]</p></article>)}</div></div></section>
+    <section className="courses-section">
+      <div className="courses-grid">
+        <CourseCard src={embarazoAsset.url} title="Pre-Bebé" text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />
+        <CourseCard src={familiaAsset.url} title="Bebé y toddler" text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
+        <CourseCard src={picnicAsset.url} title="Lenguaje canino" text="Para comprender mejor lo que tu perro comunica." label="Aprender a leerle" to="/recursos" />
+      </div>
+      <Polaroid src={picnicAsset.url} date="Junio 2026" alt="Bebé y perro compartiendo un picnic" direction="right" className="picnic-polaroid" />
+    </section>
 
- <section className="px-5 py-24 sm:py-32"><div className="mx-auto max-w-6xl"><h2 className="text-5xl sm:text-7xl">Cómo <em>empezar</em></h2><div className="mt-12 divide-y-2 divide-primary border-y-2 border-primary">{[["01","Elige tu punto de partida"],["02","Sigue el material a tu ritmo"],["03","Construye una convivencia segura"]].map(([n,t],i)=><div className={`grid items-baseline gap-4 py-7 sm:grid-cols-[9rem_1fr] ${i===1?'sm:pl-20':''}`} key={n}><span className="font-display text-4xl italic text-muted-foreground">{n}</span><h3 className="text-3xl sm:text-4xl">{t}</h3></div>)}</div></div></section>
+    <section className="about-home">
+      <div className="about-inner">
+        <div className="about-collage">
+          <img src={embarazoAsset.url} alt="Silvia junto a su perro durante su embarazo" className="about-photo about-photo-one" />
+          <img src={familiaAsset.url} alt="Silvia con su familia y su perro" className="about-photo about-photo-two" />
+          <span className="hand about-who">¿quién</span><span className="hand about-am">soy?</span>
+        </div>
+        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><Link to="/sobre-mi" className="blush-button">Quiero saber más <ArrowRight /></Link></div>
+      </div>
+    </section>
 
- <section className="bg-secondary px-5 py-20"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.2fr_.8fr]"><div><p className="text-xs font-bold uppercase">Cartas para familias multiespecie</p><h2 className="mt-4 max-w-2xl text-5xl leading-none sm:text-6xl">Una dosis de calma para tu bandeja de entrada.</h2></div><div className="self-end border-l-2 border-primary pl-6"><p className="mb-5">Consejos prácticos, reflexiones y recursos para acompañaros semana a semana.</p><LeadForm source="newsletter_inicio" compact /></div></div></section>
+    <section className="resources-home">
+      <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
+      <div className="resources-grid">
+        {([
+          [embarazoAsset.url, "Guía: preparar a tu perro", "Checklist para las semanas previas a la llegada del bebé.", "guia_preparacion"],
+          [familiaAsset.url, "Mini clase: señales de calma", "Aprende a leer lo que tu perro te está diciendo.", "senales_calma"],
+          [picnicAsset.url, "Rutinas para los primeros días", "Cómo organizar espacios y horarios en casa.", "rutinas_primeros_dias"],
+        ] satisfies Array<[string, string, string, string]>).map(([src, title, text, resource]) => <article className="resource-card" key={title}>
+          <img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><p>{text}</p><LeadForm source="recurso_inicio" resource={resource} label="Descargar" />
+        </article>)}
+      </div>
+    </section>
 
- <section className="px-5 py-24 sm:py-32"><div className="mx-auto max-w-7xl"><div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase text-muted-foreground">Blog</p><h2 className="mt-3 text-5xl sm:text-7xl">Para leer con calma</h2></div><Button asChild variant="ghost"><Link to="/blog">Ver todo <ArrowRight /></Link></Button></div><div className="mt-12 grid gap-9 md:grid-cols-2 lg:grid-cols-[1.3fr_.7fr]">{[[prep,"Antes de que llegue el bebé","Cómo preparar nuevas rutinas con tu perro."],[convivencia,"Toddler y perro en casa","Claves para acompañar la curiosidad con seguridad."],[prep,"Aprender a leer a tu perro","Señales sutiles que ayudan a prevenir incomodidad."]].map(([img,t,d],i)=><article key={String(t)} className={`${i===0?'md:row-span-2':'grid gap-5 sm:grid-cols-[.9fr_1.1fr]'} border-t border-primary pt-4`}><img src={String(img)} loading="lazy" width={1024} height={768} alt="Perro tranquilo en un hogar familiar" className={`${i===0?'aspect-[4/3]':'aspect-square'} w-full object-cover`}/><div><p className="font-display text-sm italic">Lectura 0{i+1}</p><h3 className="mt-3 text-2xl sm:text-3xl">{String(t)}</h3><p className="mt-3 text-muted-foreground">{String(d)}</p></div></article>)}</div></div></section>
- </>; }
+    <section className="testimonials-home" id="testimonios">
+      <header><p className="section-label">Historias de familias</p><h2>Vuestras palabras</h2></header>
+      <div className="testimonial-window"><div className="testimonial-rail">{[...testimonials, ...testimonials].map((item, i) => <blockquote className="testimonial" key={i}><span>“</span><p>{item.quote}</p><footer>{item.person}</footer></blockquote>)}</div></div>
+    </section>
+
+    <section className="newsletter-home"><div><h2>Una dosis de calma en tu correo.</h2><p>Ideas y recursos para acompañar la convivencia semana a semana.</p></div><LeadForm source="newsletter_inicio" compact label="Inscríbeme" /></section>
+  </div>;
+}

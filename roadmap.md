@@ -8,6 +8,6 @@
 - [x] Verificar la experiencia en móvil y escritorio.
 - [x] Aplicar la dirección editorial de cuaderno de campo a toda la portada.
 - [x] Revisar cada sección rediseñada en móvil y escritorio.
-- [ ] Sustituir la portada por la landing de pared y polaroids aportada.
-- [ ] Integrar las fotos, el logo y las animaciones del archivo de referencia.
-- [ ] Verificar la nueva landing en móvil y escritorio.
+- [x] Sustituir la portada por la landing de pared y polaroids aportada.
+- [x] Integrar las fotos, el logo y las animaciones del archivo de referencia.
+- [x] Verificar la nueva landing en móvil y escritorio.

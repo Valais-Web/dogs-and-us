@@ -17,3 +17,6 @@
 - [x] Incorporar Blog al menú y verificar los cambios en móvil y escritorio.
 - [x] Actualizar el banner móvil, la cinta ondulada y la newsletter.
 - [x] Verificar estos cambios en móvil y escritorio.
+- [x] Suavizar las ondas y añadir la transición entre Quién soy y Recursos.
+- [x] Reorganizar la franja rosa con el mensaje del método CRECEN.
+- [x] Simplificar las tarjetas de cursos con fondo blanco y sin marco oscuro.

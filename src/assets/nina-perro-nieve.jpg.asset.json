@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "e06f9f9c-d58e-4ac1-916d-b2041c38e85e",
-  "project_id": "6cd675d8-7cdb-495c-88c7-8e374b8a680a",
-  "url": "/__l5e/assets-v1/e06f9f9c-d58e-4ac1-916d-b2041c38e85e/nina-perro-nieve.jpg",
-  "r2_key": "a/v1/6cd675d8-7cdb-495c-88c7-8e374b8a680a/e06f9f9c-d58e-4ac1-916d-b2041c38e85e/nina-perro-nieve.jpg",
-  "original_filename": "nina-perro-nieve.jpg",
-  "size": 159549,
   "content_type": "image/jpeg",
-  "created_at": "2026-09-21T07:00:34Z"
+  "created_at": "2026-09-21T07:00:34Z",
+  "original_filename": "nina-perro-nieve.jpg",
+  "project_id": "d511e11b-8ae4-465e-9e14-983d1c36b79b",
+  "r2_key": "a/v1/d511e11b-8ae4-465e-9e14-983d1c36b79b/e06f9f9c-d58e-4ac1-916d-b2041c38e85e/nina-perro-nieve.jpg",
+  "size": 159549,
+  "url": "/__l5e/assets-v1/e06f9f9c-d58e-4ac1-916d-b2041c38e85e/nina-perro-nieve.jpg",
+  "version": 1
 }

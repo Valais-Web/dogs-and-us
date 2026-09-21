@@ -103,15 +103,14 @@ function HomePage() {
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
       <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="intro-polaroid intro-polaroid-right" />
-      <div className="intro-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 72" preserveAspectRatio="none">
-          <path className="intro-wave-fill" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36 L1560,72 L-120,72 Z" />
-          <path className="intro-wave-line" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36" />
-        </svg>
-      </div>
     </section>
 
     <section className="question-band">
+      <div className="intro-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 72" preserveAspectRatio="none">
+          <path className="intro-wave-line" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36" />
+        </svg>
+      </div>
       <div className="scroll-story">
         <div className="scroll-story-media" aria-hidden="true"><img src={tallerLimitesAsset.url} alt="" /></div>
         <div className="scroll-story-overlay" aria-hidden="true" />

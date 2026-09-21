@@ -87,7 +87,6 @@ function HomePage() {
       </div>
       <div className="ribbon-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path className="ribbon-wave-fill" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60 L1530,0 L-90,0 Z" />
           <path className="ribbon-wave-line" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60" />
         </svg>
       </div>
@@ -133,6 +132,10 @@ function HomePage() {
       <div className="testimonial-window"><div className="testimonial-rail">{[...testimonials, ...testimonials].map((item, i) => <blockquote className="testimonial" key={i}><span>“</span><p>{item.quote}</p><footer>{item.person}</footer></blockquote>)}</div></div>
     </section>
 
-    <section className="newsletter-home"><div><h2>Una dosis de calma en tu correo.</h2><p>Ideas y recursos para acompañar la convivencia semana a semana.</p></div><LeadForm source="newsletter_inicio" compact label="Inscríbeme" /></section>
+    <section className="newsletter-home">
+      <figure className="newsletter-photo"><img src={familiaAsset.url} alt="Familia con niños y perro compartiendo tiempo en el jardín" loading="lazy" /></figure>
+      <div className="newsletter-copy"><h2>+ de 1000 dog moms y dog dads ya reciben nuestros tips mensuales.</h2><p>Este es mi compromiso contigo para que la convivencia entre tu perro y tu bebé mejore mientras crecen juntos.</p></div>
+      <LeadForm source="newsletter_inicio" compact label="Inscríbeme" />
+    </section>
   </div>;
 }

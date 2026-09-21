@@ -8,6 +8,7 @@ const nav = [
   { label: "Asesorías", to: "/asesorias" },
   { label: "Cursos y guías", to: "/programa" },
   { label: "Acerca de", to: "/sobre-mi" },
+  { label: "Blog", to: "/blog" },
   { label: "Testimonios", to: "/", hash: "testimonios" },
 ] as const;
 

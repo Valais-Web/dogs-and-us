@@ -13,3 +13,5 @@
 - [x] Verificar la nueva landing en móvil y escritorio.
 - [x] Actualizar el mensaje del método CRECEN y sustituir el recuadro por la sección fotográfica fija.
 - [x] Verificar la nueva sección fotográfica en móvil y escritorio.
+- [x] Añadir el banner dinámico, la onda verde y los ajustes de textos y fondos.
+- [x] Incorporar Blog al menú y verificar los cambios en móvil y escritorio.

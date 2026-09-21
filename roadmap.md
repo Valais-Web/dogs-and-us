@@ -10,4 +10,4 @@
 - [x] Revisar cada sección rediseñada en móvil y escritorio.
 - [x] Sustituir la portada por la landing de pared y polaroids aportada.
 - [x] Integrar las fotos, el logo y las animaciones del archivo de referencia.
-- [ ] Verificar la nueva landing en móvil y escritorio.
+- [x] Verificar la nueva landing en móvil y escritorio.

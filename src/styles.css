@@ -229,7 +229,7 @@
 .method-callout { position: relative; z-index: 5; align-self: center; display: grid; justify-items: center; width: min(27vw,290px); margin-top: 54px; text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
 .method-arrow { position: absolute; z-index: 5; top: 48%; left: 42%; width: clamp(84px,8vw,112px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(10deg); }
-.method-sticker { display: block; width: min(100%,290px); height: auto; transform: rotate(2deg); }
+.method-sticker { display: block; width: min(100%,290px); height: auto; transform: rotate(2deg); animation: float-sticker 4.5s ease-in-out infinite; }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
 .course-card { text-align: center; }
@@ -269,9 +269,9 @@
 .resource-card { text-align: center; }
 .resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card .tilt-card-face > p { min-height: 48px; margin: 9px 8px 20px; line-height: 1.55; }
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
-.testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
+.testimonials-home { overflow: hidden; padding: 90px 0 110px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
 .testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
-.newsletter-wave { position: relative; z-index: 3; height: 72px; margin-top: -36px; margin-bottom: -36px; overflow: hidden; background: var(--background); pointer-events: none; }
+.newsletter-wave { position: relative; z-index: 3; height: 72px; margin-top: -36px; margin-bottom: -36px; overflow: hidden; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); pointer-events: none; }
 .newsletter-wave svg { display: block; width: 100%; height: 72px; }
 .newsletter-wave-lower { fill: var(--popover); }
 .newsletter-wave-line { fill: none; stroke: var(--pink-hot); stroke-width: 24; stroke-linecap: round; }
@@ -285,6 +285,7 @@
 @keyframes float-b { 0%,100% { transform: rotate(5deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-22px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @keyframes values-marquee { to { transform: translateX(-50%); } }
+@keyframes float-sticker { 0%,100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-12px); } }
 
 @media (max-width: 767px) {
   .home-hero { min-height: auto; padding-top: 54px; }

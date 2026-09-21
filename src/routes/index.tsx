@@ -48,7 +48,6 @@ function CourseCard({ src, title, text, label, to }: { src: string; title: strin
 const testimonials = [
   { name: "Daniela Calderón", dog: "Shimmi y Yuki", text: "Amamos a Silvia. Siempre tiene una escucha activa hacia lo que está pasando con nuestros peludos. Toda gestión de comportamiento parte del respeto y el entendimiento. ¡Súper recomendada!" },
   { name: "Luisier Michel", dog: "Jack", text: "¡Muy, muy bueno! Una auténtica masterclass que me permitió entender muchas cosas sobre mi perro. Silvia es una persona encantadora y competente." },
-  { name: "Daniela G.", dog: "Cleo", text: "Súper profesional y, lo mejor, súper empática. Hasta ahora, la única que ha logrado ayudarme a largo plazo con mi Cleo. ¡Gracias!" },
   { name: "Yes Cruz", dog: "Cobain", text: "Dogs & Us Training ha sido la mejor elección para tratar la ansiedad por separación de Cobain. Silvia se toma el tiempo de explicar, dar alternativas y conseguir que el curso online sea claro. Hemos visto muchos avances positivos y una mejor comunicación entre nosotras." },
   { name: "Jorge Campos", dog: "Kobu", text: "Silvia es una persona increíble, apasionada y preparada. Pone todo su empeño en sus proyectos y sus programas me han ayudado mucho." },
   { name: "Rocío Zárate", dog: "", text: "Sus consejos nos han servido para entender y corregir el comportamiento de nuestra perrita. Ahora, con la llegada del bebé, seguiremos poniendo en práctica lo aprendido con Silvia." },
@@ -87,12 +86,12 @@ function HomePage() {
     <section className="home-intro">
       <Polaroid src={embarazoAsset.url} date="Octubre 2023" alt="Silvia embarazada junto a su perro" direction="left" className="intro-polaroid intro-polaroid-left" />
       <div className="home-intro-copy">
-        <div className="intro-notes" aria-label="Principios del método">
-          <p className="hand intro-note"><span aria-hidden="true">→</span>basado en<br />evidencia</p>
-          <p className="hand intro-note"><span aria-hidden="true">→</span>sin desplazar<br />a tu perro</p>
-          <p className="hand intro-note"><span aria-hidden="true">→</span>crecen en<br />conexión</p>
-        </div>
         <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
+        <div className="intro-notes" aria-label="Principios del método">
+          <p className="hand intro-note intro-note-one">basado en<br />evidencia<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M8 8 C12 35 30 51 58 56 M58 56 L45 43 M58 56 L42 62" /></svg></p>
+          <p className="hand intro-note intro-note-two">sin desplazar<br />a tu perro<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M62 8 C58 35 40 50 12 55 M12 55 L26 42 M12 55 L29 62" /></svg></p>
+          <p className="hand intro-note intro-note-three">crecen en<br />conexión<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M36 7 C37 27 37 38 34 57 M34 57 L24 43 M34 57 L45 44" /></svg></p>
+        </div>
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
       <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="intro-polaroid intro-polaroid-right" />

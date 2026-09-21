@@ -87,15 +87,25 @@ function HomePage() {
           <h2>¿Quieres hacer vida en familia tranquila y divertida sin que tu perro se sienta desplazado y asegurando una buena convivencia entre todos?</h2>
         </div>
       </div>
-      <div className="ribbon-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-          <path className="ribbon-wave-lower" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60 L1530,120 L-90,120 Z" />
-          <path className="ribbon-wave-line" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60" />
+      <div className="ribbon-wave ribbon-wave-photo" aria-hidden="true">
+        <div className="ribbon-wave-media"><img src={tallerLimitesAsset.url} alt="" /></div>
+        <div className="ribbon-wave-shade" />
+        <svg viewBox="0 0 1440 72" preserveAspectRatio="none">
+          <path className="ribbon-wave-lower" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36 L1560,72 L-120,72 Z" />
+          <path className="ribbon-wave-line" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36" />
         </svg>
       </div>
       <div className="baby-panel">
-        <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
-        <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+        <div className="baby-panel-inner">
+          <div className="baby-story">
+            <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
+            <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+          </div>
+          <div className="method-callout">
+            <p className="hand">para eso está</p>
+            <div className="method-sticker"><span>método</span><strong>CRECEN</strong></div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -118,6 +128,13 @@ function HomePage() {
         <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><Link to="/sobre-mi" className="blush-button">Quiero saber más <ArrowRight /></Link></div>
       </div>
     </section>
+
+    <div className="section-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 72" preserveAspectRatio="none">
+        <path className="section-wave-lower" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36 L1560,72 L-120,72 Z" />
+        <path className="ribbon-wave-line" d="M-120,36 C-80,24 -40,24 0,36 C40,48 80,48 120,36 C160,24 200,24 240,36 C280,48 320,48 360,36 C400,24 440,24 480,36 C520,48 560,48 600,36 C640,24 680,24 720,36 C760,48 800,48 840,36 C880,24 920,24 960,36 C1000,48 1040,48 1080,36 C1120,24 1160,24 1200,36 C1240,48 1280,48 1320,36 C1360,24 1400,24 1440,36 C1480,48 1520,48 1560,36" />
+      </svg>
+    </div>
 
     <section className="resources-home">
       <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>

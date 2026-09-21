@@ -9,6 +9,13 @@ import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
+import reviewOne from "@/assets/resena-9-52-21_p-m-.png.asset.json";
+import reviewTwo from "@/assets/resena-9-52-26_p-m-.png.asset.json";
+import reviewThree from "@/assets/resena-9-52-31_p-m-.png.asset.json";
+import reviewFour from "@/assets/resena-9-52-37_p-m-.png.asset.json";
+import reviewFive from "@/assets/resena-9-52-41_p-m-.png.asset.json";
+import reviewSix from "@/assets/resena-9-52-45_p-m-.png.asset.json";
+import reviewSeven from "@/assets/resena-9-52-51_p-m-.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,7 +52,15 @@ function CourseCard({ src, title, text, label, to }: { src: string; title: strin
   </article>;
 }
 
-const testimonials = Array.from({ length: 4 }, (_, i) => ({ quote: "[ESPACIO PARA RESEÑA REAL]", person: `[Cliente ${i + 1}] · [Perro]` }));
+const testimonials = [
+  { src: reviewOne.url, alt: "Reseña de Daniela Calderón" },
+  { src: reviewTwo.url, alt: "Reseña de Luisier Michel" },
+  { src: reviewThree.url, alt: "Reseña de Daniela G." },
+  { src: reviewFour.url, alt: "Reseña de Yes Cruz" },
+  { src: reviewFive.url, alt: "Reseña de Jorge Campos" },
+  { src: reviewSix.url, alt: "Reseña de Rocío Zárate" },
+  { src: reviewSeven.url, alt: "Reseña de Marión Tejada" },
+];
 
 const bannerWords = [
   "presentación segura",
@@ -79,10 +94,12 @@ function HomePage() {
     <section className="home-intro">
       <Polaroid src={embarazoAsset.url} date="Octubre 2023" alt="Silvia embarazada junto a su perro" direction="left" className="intro-polaroid intro-polaroid-left" />
       <div className="home-intro-copy">
-        <p className="hand intro-note intro-note-left">basado en evidencia</p>
-        <p className="hand intro-note intro-note-right">sin desplazar a tu perro</p>
-        <h2>Prepara a tu perro para la llegada de tu bebé y evita o resuelve problemas de convivencia entre perros y niños</h2>
-        <p className="hand intro-note intro-note-bottom">crecen en conexión</p>
+        <div className="intro-notes" aria-label="Principios del método">
+          <p className="hand intro-note"><span aria-hidden="true">→</span>basado en<br />evidencia</p>
+          <p className="hand intro-note"><span aria-hidden="true">→</span>sin desplazar<br />a tu perro</p>
+          <p className="hand intro-note"><span aria-hidden="true">→</span>crecen en<br />conexión</p>
+        </div>
+        <h2><span>Prepara a tu perro para la llegada</span><span>de tu bebé y evita o resuelve</span><span>problemas de convivencia entre</span><span>perros y niños</span></h2>
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
       <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="intro-polaroid intro-polaroid-right" />
@@ -112,10 +129,6 @@ function HomePage() {
         <div className="baby-panel-inner">
           <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
           <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
-          <svg className="method-arrow" viewBox="0 0 220 150" aria-hidden="true">
-            <path d="M14 96 C60 84 120 78 180 86" />
-            <path d="M180 86 L166 78 M180 86 L168 96" />
-          </svg>
           <div className="method-callout">
             <p className="hand">para eso está</p>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
@@ -166,7 +179,7 @@ function HomePage() {
 
     <section className="testimonials-home" id="testimonios">
       <header><h2>Ellos ya confiaron en Dogs and Us</h2></header>
-      <div className="testimonial-window"><div className="testimonial-rail">{[...testimonials, ...testimonials].map((item, i) => <blockquote className="testimonial" key={i}><span>“</span><p>{item.quote}</p><footer>{item.person}</footer></blockquote>)}</div></div>
+      <div className="testimonial-window"><div className="testimonial-rail">{[...testimonials, ...testimonials].map((item, i) => <figure className="testimonial" key={`${item.alt}-${i}`}><img src={item.src} alt={item.alt} loading="lazy" /></figure>)}</div></div>
     </section>
 
     <div className="newsletter-wave" aria-hidden="true">

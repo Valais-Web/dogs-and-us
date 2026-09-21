@@ -216,23 +216,20 @@
 .scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
 .scroll-story-copy { position: relative; z-index: 2; display: grid; min-height: clamp(680px,100vh,900px); place-items: center; padding: clamp(150px,22vh,260px) 24px; text-align: center; }
 .scroll-story-copy h2 { max-width: 27ch; color: var(--primary-foreground); font-size: clamp(2rem,4.5vw,4.5rem); line-height: 1.08; }
-.ribbon-wave { position: relative; z-index: 3; height: 72px; margin-top: -36px; margin-bottom: -36px; overflow: hidden; clip-path: inset(0); pointer-events: none; }
+.ribbon-wave { position: absolute; z-index: 3; right: 0; bottom: 0; left: 0; height: 72px; overflow: hidden; pointer-events: none; }
 .ribbon-wave svg { position: relative; z-index: 2; display: block; width: 100%; height: 72px; }
-.ribbon-wave-media, .ribbon-wave-shade { position: fixed; z-index: 0; inset: 0; }
-.ribbon-wave-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.ribbon-wave-shade { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
 .ribbon-wave-lower { fill: color-mix(in oklab, var(--blush) 28%, var(--popover)); }
 .ribbon-wave-line { fill: none; stroke: var(--secondary); stroke-width: 24; stroke-linecap: round; }
-.baby-panel { position: relative; z-index: 4; min-height: 520px; padding: 112px 24px 128px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }
-.baby-panel-inner { position: relative; display: grid; place-items: center; margin: 0 auto; max-width: 1180px; min-height: 280px; }
+.baby-panel { position: relative; z-index: 4; min-height: 420px; padding: 72px 24px 96px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }
+.baby-panel-inner { position: relative; display: grid; place-items: center; margin: 0 auto; max-width: 1180px; min-height: 250px; }
 .baby-story { display: grid; justify-items: center; width: min(100%,780px); }
-.baby-message { display: grid; justify-items: center; max-width: 680px; text-align: center; }
-.baby-message strong { font-family: var(--font-display); font-size: clamp(2.25rem,4.6vw,4.8rem); line-height: 1.02; }
+.baby-message { display: grid; justify-items: center; max-width: 600px; text-align: center; }
+.baby-message strong { font-family: var(--font-display); font-size: clamp(2.15rem,4vw,4.15rem); line-height: 1; }
 .baby-message .hand { margin-top: 12px; font-size: clamp(1.35rem,2.3vw,2.1rem); }
-.snow-polaroid { position: absolute; z-index: 6; bottom: -218px; left: clamp(4px,8vw,100px); width: min(20vw,165px); transform: rotate(3deg); }
-.method-callout { position: absolute; z-index: 5; top: -70px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
+.snow-polaroid { position: absolute; z-index: 6; bottom: -190px; left: clamp(4px,8vw,100px); width: min(20vw,155px); transform: rotate(3deg); }
+.method-callout { position: absolute; z-index: 5; top: 4px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
-.method-arrow { position: absolute; top: 20px; left: -24px; color: var(--foreground); font-size: clamp(2.4rem,4vw,4rem); transform: rotate(10deg); }
+.method-arrow { position: absolute; top: 2px; left: -32px; width: clamp(48px,5vw,72px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-8deg); }
 .method-sticker { display: block; width: min(100%,330px); height: auto; transform: rotate(2deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
@@ -300,13 +297,13 @@
   .scroll-story, .scroll-story-copy { min-height: 82vh; }
   .scroll-story-copy { padding-inline: 22px; }
   .values-track span { min-height: 60px; gap: 16px; padding-inline: 18px; }
-  .ribbon-wave, .ribbon-wave svg, .section-wave, .section-wave svg, .newsletter-wave, .newsletter-wave svg { height: 58px; }.ribbon-wave, .section-wave, .newsletter-wave { margin-top: -29px; margin-bottom: -29px; }
-  .baby-panel { min-height: 590px; padding: 150px 22px 132px; }
-  .baby-panel-inner { min-height: 300px; }
+  .ribbon-wave, .ribbon-wave svg, .section-wave, .section-wave svg, .newsletter-wave, .newsletter-wave svg { height: 58px; }.section-wave, .newsletter-wave { margin-top: -29px; margin-bottom: -29px; }
+  .baby-panel { min-height: 500px; padding: 132px 22px 96px; }
+  .baby-panel-inner { min-height: 270px; }
   .baby-message { padding: 0; }
-  .snow-polaroid { bottom: -205px; left: clamp(0px,5vw,28px); width: 125px; }
-  .method-callout { top: -126px; right: -12px; width: min(58vw,250px); }
-  .method-arrow { top: 10px; left: -17px; }
+  .snow-polaroid { bottom: -180px; left: clamp(0px,5vw,28px); width: 118px; }
+  .method-callout { top: -112px; right: -12px; width: min(58vw,250px); }
+  .method-arrow { top: 2px; left: -30px; width: 52px; }
   .method-sticker { width: min(58vw,250px); }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

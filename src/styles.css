@@ -302,8 +302,8 @@
   .baby-panel-inner { min-height: 270px; }
   .baby-message { padding: 0; }
   .snow-polaroid { bottom: -180px; left: clamp(0px,5vw,28px); width: 118px; }
-  .method-callout { top: -112px; right: -12px; width: min(58vw,250px); }
-  .method-arrow { top: 42px; left: -110px; width: 180px; transform: rotate(2deg); }
+  .method-callout { top: -130px; right: -12px; width: min(58vw,250px); }
+  .method-arrow { top: 42px; left: -84px; width: 124px; transform: rotate(2deg); }
   .method-sticker { width: min(58vw,250px); }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

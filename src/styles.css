@@ -302,7 +302,7 @@
   .baby-message { padding: 0; }
   .snow-polaroid { bottom: -170px; left: 50%; width: 118px; }
   .method-callout { bottom: 40px; right: 6px; width: min(56vw,230px); }
-  .method-arrow { top: auto; bottom: 150px; left: 54%; width: 92px; transform: rotate(18deg); }
+  .method-arrow { display: none; }
   .method-sticker { width: min(56vw,230px); }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

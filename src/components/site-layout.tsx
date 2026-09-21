@@ -20,9 +20,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
           <img src={logoAsset.url} alt="Dogs & Us" className="h-[70px] w-auto object-contain lg:h-[78px]" />
         </Link>
         <nav className="mr-auto hidden items-center gap-5 lg:flex" aria-label="Navegación principal">
-          {nav.map(([label,to]) => to.startsWith("/#")
-            ? <a key={to} href={to} className="nav-link">{label}</a>
-            : <Link key={to} to={to} className="nav-link">{label}</Link>)}
+          {nav.map(({ label, to, ...rest }) => <Link key={label} to={to} {...rest} className="nav-link">{label}</Link>)}
         </nav>
         <div className="ml-auto hidden items-center gap-5 lg:flex">
           <Button asChild className="rounded-full px-5 uppercase tracking-[.16em]"><Link to="/programa">Pack completo</Link></Button>

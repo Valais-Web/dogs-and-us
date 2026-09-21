@@ -229,7 +229,7 @@
 .snow-polaroid { position: absolute; z-index: 6; bottom: -190px; left: clamp(4px,8vw,100px); width: min(20vw,155px); transform: rotate(3deg); }
 .method-callout { position: absolute; z-index: 5; top: -54px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
-.method-arrow { position: absolute; top: 22px; left: clamp(-128px,-9vw,-92px); width: clamp(116px,11vw,152px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
+.method-arrow { position: absolute; top: 22px; left: clamp(-104px,-7vw,-74px); width: clamp(80px,7.5vw,104px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
 .method-sticker { display: block; width: min(100%,330px); height: auto; transform: rotate(2deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }

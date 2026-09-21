@@ -99,7 +99,7 @@ function HomePage() {
           <p className="hand intro-note"><span aria-hidden="true">→</span>sin desplazar<br />a tu perro</p>
           <p className="hand intro-note"><span aria-hidden="true">→</span>crecen en<br />conexión</p>
         </div>
-        <h2><span>Prepara a tu perro para la llegada</span><span>de tu bebé y evita o resuelve</span><span>problemas de convivencia entre</span><span>perros y niños</span></h2>
+        <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
       <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="intro-polaroid intro-polaroid-right" />

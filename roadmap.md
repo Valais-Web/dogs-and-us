@@ -20,3 +20,5 @@
 - [x] Suavizar las ondas y añadir la transición entre Quién soy y Recursos.
 - [x] Reorganizar la franja rosa con el mensaje del método CRECEN.
 - [x] Simplificar las tarjetas de cursos con fondo blanco y sin marco oscuro.
+- [x] Limpiar el fondo de portada y aclarar la franja del método CRECEN.
+- [x] Sustituir el sticker y añadir la onda entre reseñas y newsletter.

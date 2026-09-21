@@ -163,7 +163,7 @@
   ::selection { background: var(--secondary); color: var(--foreground); }
 }
 
-.wall-bg { background-color: var(--background); background-image: repeating-linear-gradient(90deg, color-mix(in oklab, var(--foreground) 3.5%, transparent) 0 1px, transparent 1px 148px), linear-gradient(180deg, color-mix(in oklab, var(--foreground) 5%, transparent), transparent 320px); }
+.wall-bg { background-color: var(--background); }
 .nav-link { font-size: 13px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; }
 .nav-link:hover, footer a:hover { color: var(--secondary); }
 .footer-label { margin-bottom: 16px; color: var(--secondary); font-size: 11px; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; }
@@ -223,17 +223,15 @@
 .ribbon-wave-shade { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
 .ribbon-wave-lower { fill: var(--blush); }
 .ribbon-wave-line { fill: none; stroke: var(--secondary); stroke-width: 24; stroke-linecap: round; }
-.baby-panel { position: relative; min-height: 480px; padding: 96px 24px 112px; background: var(--blush); }
+.baby-panel { position: relative; min-height: 480px; padding: 96px 24px 112px; background: color-mix(in oklab, var(--blush) 58%, var(--popover)); }
 .baby-panel-inner { display: grid; grid-template-columns: minmax(280px,1fr) minmax(280px,.9fr); align-items: center; gap: clamp(52px,9vw,140px); margin: 0 auto; max-width: 1080px; }
-.baby-story { display: grid; justify-items: start; }
-.baby-message { display: grid; justify-items: start; max-width: 620px; font-size: clamp(1.25rem,2vw,1.8rem); text-align: left; }
+.baby-story { display: grid; justify-items: center; }
+.baby-message { display: grid; justify-items: center; max-width: 620px; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
 .baby-message .hand { font-size: clamp(1.65rem,3vw,2.6rem); }
-.snow-polaroid { z-index: 4; width: min(100%,155px); margin-top: 24px; margin-left: clamp(8px,4vw,54px); transform: rotate(3deg); }
+.snow-polaroid { z-index: 4; width: min(100%,155px); margin-top: 24px; margin-right: clamp(0px,5vw,70px); transform: rotate(3deg); }
 .method-callout { display: grid; justify-items: center; text-align: center; transform: rotate(-2deg); }
-.method-callout > p { margin-bottom: 16px; color: var(--foreground); font-size: clamp(2rem,4vw,3.5rem); }
-.method-sticker { display: grid; width: min(100%,390px); min-height: 210px; place-content: center; border: 10px solid var(--secondary); border-radius: 46% 54% 43% 57% / 54% 43% 57% 46%; background: var(--secondary); color: var(--primary); filter: drop-shadow(5px 7px 0 color-mix(in oklab, var(--primary) 22%, transparent)); line-height: .84; transform: rotate(2deg); }
-.method-sticker span { font-family: var(--font-hand); font-size: clamp(1.5rem,3vw,2.5rem); }
-.method-sticker strong { font-family: var(--font-display); font-size: clamp(3rem,6vw,5.5rem); }
+.method-callout > p { margin-bottom: 8px; color: var(--foreground); font-size: clamp(1.3rem,2.4vw,2rem); }
+.method-sticker { display: block; width: min(100%,390px); height: auto; mix-blend-mode: multiply; filter: saturate(1.15) brightness(.86); transform: rotate(2deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
 .course-card { text-align: center; }
@@ -273,6 +271,9 @@
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
 .testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
+.newsletter-wave { position: relative; z-index: 3; height: 72px; margin-top: -36px; margin-bottom: -36px; overflow: hidden; background: var(--background); pointer-events: none; }
+.newsletter-wave svg { display: block; width: 100%; height: 72px; }
+.newsletter-wave-lower { fill: var(--popover); }
 .newsletter-home { display: grid; grid-template-columns: minmax(210px,.68fr) minmax(320px,1.18fr) minmax(280px,.82fr); align-items: center; gap: clamp(28px,4vw,54px); padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1180px)/2)); background: var(--popover); }
 .newsletter-photo { overflow: hidden; border-radius: 22px; transform: rotate(-2deg); }
 .newsletter-photo img { display: block; width: 100%; aspect-ratio: 4/5; object-fit: cover; }
@@ -294,12 +295,12 @@
   .scroll-story, .scroll-story-copy { min-height: 82vh; }
   .scroll-story-copy { padding-inline: 22px; }
   .values-track span { min-height: 60px; gap: 16px; padding-inline: 18px; }
-  .ribbon-wave, .ribbon-wave svg, .section-wave, .section-wave svg { height: 58px; }.ribbon-wave, .section-wave { margin-top: -29px; margin-bottom: -29px; }
+  .ribbon-wave, .ribbon-wave svg, .section-wave, .section-wave svg, .newsletter-wave, .newsletter-wave svg { height: 58px; }.ribbon-wave, .section-wave, .newsletter-wave { margin-top: -29px; margin-bottom: -29px; }
   .baby-panel { padding: 82px 22px 90px; }
   .baby-panel-inner { grid-template-columns: 1fr; gap: 52px; }
   .baby-message { padding: 0; }
-  .snow-polaroid { width: 125px; margin-left: 18px; }
-  .method-sticker { min-height: 170px; }
+  .snow-polaroid { width: 125px; margin-right: 42px; }
+  .method-sticker { width: min(86vw,330px); }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }
   .newsletter-home { grid-template-columns: 1fr; }.newsletter-photo { width: min(72vw,320px); }.newsletter-home .lead-form-inline { display: grid; }

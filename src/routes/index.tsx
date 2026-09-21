@@ -8,7 +8,7 @@ import nieveAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
-import portadaFamiliaAsset from "@/assets/portada-familia.jpg.asset.json";
+import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({

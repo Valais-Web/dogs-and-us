@@ -7,7 +7,7 @@ import familiaAsset from "@/assets/familia-jardin.jpg.asset.json";
 import nieveAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
-import methodStickerAsset from "@/assets/metodo-crecen-sticker.jpeg.asset.json";
+import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -104,7 +104,7 @@ function HomePage() {
           </div>
           <div className="method-callout">
             <p className="hand">para eso está</p>
-            <img className="method-sticker" src={methodStickerAsset.url} alt="Método CRECEN" />
+            <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
           </div>
         </div>
       </div>

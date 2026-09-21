@@ -231,7 +231,7 @@
 .snow-polaroid { z-index: 4; width: min(100%,155px); margin-top: 24px; margin-right: clamp(0px,5vw,70px); transform: rotate(3deg); }
 .method-callout { display: grid; justify-items: center; text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: 8px; color: var(--foreground); font-size: clamp(1.3rem,2.4vw,2rem); }
-.method-sticker { display: block; width: min(100%,390px); height: auto; mix-blend-mode: multiply; filter: saturate(1.15) brightness(.86); transform: rotate(2deg); }
+.method-sticker { display: block; width: min(100%,390px); height: auto; transform: rotate(2deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
 .course-card { text-align: center; }

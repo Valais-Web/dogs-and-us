@@ -11,5 +11,5 @@
 - [x] Sustituir la portada por la landing de pared y polaroids aportada.
 - [x] Integrar las fotos, el logo y las animaciones del archivo de referencia.
 - [x] Verificar la nueva landing en móvil y escritorio.
-- [ ] Actualizar el mensaje del método CRECEN y sustituir el recuadro por la sección fotográfica fija.
-- [ ] Verificar la nueva sección fotográfica en móvil y escritorio.
+- [x] Actualizar el mensaje del método CRECEN y sustituir el recuadro por la sección fotográfica fija.
+- [x] Verificar la nueva sección fotográfica en móvil y escritorio.

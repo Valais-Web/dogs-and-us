@@ -207,7 +207,7 @@
 .values-banner:hover .values-track { animation-play-state: paused; }
 .values-track span { display: inline-flex; min-height: 72px; align-items: center; gap: 22px; padding-inline: 24px; font-family: var(--font-display); font-size: clamp(1.05rem,2vw,1.6rem); font-weight: 800; white-space: nowrap; }
 .values-track i { color: var(--pink-hot); font-family: var(--font-sans); font-style: normal; font-size: .8em; }
-.home-intro { position: relative; min-height: 650px; overflow: visible; padding: 218px 24px 116px; background: var(--background); }
+.home-intro { position: relative; min-height: 680px; overflow: visible; padding: 292px 24px 104px; background: var(--background); }
 .home-intro-copy { position: relative; z-index: 4; display: grid; justify-items: center; margin: 0 auto; max-width: 980px; text-align: center; }
 .home-intro h2 { max-width: 890px; font-size: clamp(2.1rem,4vw,4.15rem); line-height: 1.02; }
 .home-intro h2 span { display: block; }
@@ -284,7 +284,7 @@
 .resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card .tilt-card-face > p { min-height: 48px; margin: 9px 8px 20px; line-height: 1.55; }
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { padding: 90px 24px 110px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; }
-.testimonials-home > header h2 { max-width: 850px; }
+.testimonials-home > header h2 { max-width: 1120px; }
 .testimonials-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(20px,2.5vw,30px); margin: 0 auto; max-width: 880px; align-items: start; }
 .testimonial-card { aspect-ratio: 1; }
 .testimonial-card .tilt-card-face { display: flex; min-height: 0; flex-direction: column; border: 0; background: var(--popover); padding: clamp(20px,2.2vw,28px); }

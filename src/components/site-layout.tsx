@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/dogs-and-us-logo.png.asset.json";
 
 const nav = [
-  ["Asesorías", "/asesorias"],
-  ["Cursos y guías", "/programa"],
-  ["Acerca de", "/sobre-mi"],
-  ["Testimonios", "/#testimonios"],
+  { label: "Asesorías", to: "/asesorias" },
+  { label: "Cursos y guías", to: "/programa" },
+  { label: "Acerca de", to: "/sobre-mi" },
+  { label: "Testimonios", to: "/", hash: "testimonios" },
 ] as const;
 
 export function SiteLayout({ children }: { children: ReactNode }) {

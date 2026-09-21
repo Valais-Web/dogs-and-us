@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { LeadForm } from "@/components/lead-form";
@@ -6,6 +6,7 @@ import embarazoAsset from "@/assets/embarazo-perro.jpg.asset.json";
 import familiaAsset from "@/assets/familia-jardin.jpg.asset.json";
 import nieveAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
+import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,33 +22,6 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
-
-const words = ["pasos para presentarlos", "prevención", "biblioteca de sonidos", "actividades en familia", "lenguaje canino"];
-
-function Typewriter() {
-  const [word, setWord] = useState("");
-  const [index, setIndex] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const target = words[index] ?? words[0] ?? "";
-    const complete = word === target;
-    const empty = word.length === 0;
-    const delay = complete && !deleting ? 1600 : deleting ? 32 : 65;
-    const timer = window.setTimeout(() => {
-      if (complete && !deleting) return setDeleting(true);
-      if (empty && deleting) {
-        setDeleting(false);
-        setIndex((current) => (current + 1) % words.length);
-        return;
-      }
-      setWord(target.slice(0, word.length + (deleting ? -1 : 1)));
-    }, delay);
-    return () => window.clearTimeout(timer);
-  }, [deleting, index, word]);
-
-  return <p className="typewriter" aria-live="polite">{word}<span aria-hidden="true">|</span></p>;
-}
 
 function Polaroid({ src, date, alt, direction = "left", className = "" }: { src: string; date: string; alt: string; direction?: "left" | "right"; className?: string }) {
   return <figure className={`polaroid sway-${direction} ${className}`}>
@@ -72,10 +46,9 @@ const testimonials = Array.from({ length: 4 }, (_, i) => ({ quote: "[ESPACIO PAR
 function HomePage() {
   return <div className="wall-bg">
     <section className="home-hero">
-      <div className="hanging-lamp" aria-hidden="true"><span className="lamp-wire" /><span className="lamp-shade" /><span className="lamp-light" /></div>
       <div className="home-hero-heading">
         <h1>Educación canina para familias<br />con perros y bebés</h1>
-        <p className="hand">Recursos para un hogar seguro y feliz para todos</p>
+        <p className="hand hero-subtitle">Un hogar seguro y feliz para todos<span>con el método CRECEN</span></p>
       </div>
       <div className="hero-polaroids">
         <Polaroid src={embarazoAsset.url} date="Octubre 2023" alt="Silvia embarazada junto a su perro" direction="left" className="hero-polaroid" />
@@ -88,10 +61,12 @@ function HomePage() {
     </section>
 
     <section className="question-band">
-      <div className="question-box">
-        <h2>¿Quieres hacer vida en familia tranquila y divertida sin que tu perro se sienta desplazado y asegurando una buena convivencia entre todos?</h2>
-        <Typewriter />
-        <div className="pink-dots" aria-hidden="true" />
+      <div className="scroll-story">
+        <div className="scroll-story-media" aria-hidden="true"><img src={tallerLimitesAsset.url} alt="" /></div>
+        <div className="scroll-story-overlay" aria-hidden="true" />
+        <div className="scroll-story-copy">
+          <h2>¿Quieres hacer vida en familia tranquila y divertida sin que tu perro se sienta desplazado y asegurando una buena convivencia entre todos?</h2>
+        </div>
       </div>
       <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
       <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />

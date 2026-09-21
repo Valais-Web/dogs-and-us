@@ -34,10 +34,12 @@ function Polaroid({ src, date, alt, direction = "left", className = "" }: { src:
 }
 
 function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" }) {
-  return <article className="course-card">
-    <img src={src} alt="Familia compartiendo tiempo con su perro" loading="lazy" />
-    <h3>{title}</h3><p>{text}</p>
-    <Link to={to} className="mexican-button">{label}<ArrowRight /></Link>
+  return <article className="course-card tilt-card">
+    <div className="tilt-card-face">
+      <img src={src} alt="Familia compartiendo tiempo con su perro" loading="lazy" />
+      <h3>{title}</h3><p>{text}</p>
+      <Link to={to} className="mexican-button">{label}<ArrowRight /></Link>
+    </div>
   </article>;
 }
 
@@ -87,11 +89,14 @@ function HomePage() {
       </div>
       <div className="ribbon-wave" aria-hidden="true">
         <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path className="ribbon-wave-lower" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60 L1530,120 L-90,120 Z" />
           <path className="ribbon-wave-line" d="M-90,60 C-60,26 -30,26 0,60 C30,94 60,94 90,60 C120,26 150,26 180,60 C210,94 240,94 270,60 C300,26 330,26 360,60 C390,94 420,94 450,60 C480,26 510,26 540,60 C570,94 600,94 630,60 C660,26 690,26 720,60 C750,94 780,94 810,60 C840,26 870,26 900,60 C930,94 960,94 990,60 C1020,26 1050,26 1080,60 C1110,94 1140,94 1170,60 C1200,26 1230,26 1260,60 C1290,94 1320,94 1350,60 C1380,26 1410,26 1440,60 C1470,94 1500,94 1530,60" />
         </svg>
       </div>
-      <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
-      <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+      <div className="baby-panel">
+        <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
+        <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+      </div>
     </section>
 
     <section className="courses-section">
@@ -121,8 +126,8 @@ function HomePage() {
           [embarazoAsset.url, "Guía: preparar a tu perro", "Checklist para las semanas previas a la llegada del bebé.", "guia_preparacion"],
           [familiaAsset.url, "Mini clase: señales de calma", "Aprende a leer lo que tu perro te está diciendo.", "senales_calma"],
           [picnicAsset.url, "Rutinas para los primeros días", "Cómo organizar espacios y horarios en casa.", "rutinas_primeros_dias"],
-        ] satisfies Array<[string, string, string, string]>).map(([src, title, text, resource]) => <article className="resource-card" key={title}>
-          <img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><p>{text}</p><LeadForm source="recurso_inicio" resource={resource} label="Descargar" />
+        ] satisfies Array<[string, string, string, string]>).map(([src, title, text, resource]) => <article className="resource-card tilt-card" key={title}>
+          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><p>{text}</p><LeadForm source="recurso_inicio" resource={resource} label="Descargar" /></div>
         </article>)}
       </div>
     </section>

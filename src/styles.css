@@ -208,7 +208,7 @@
 .values-banner:hover .values-track { animation-play-state: paused; }
 .values-track span { display: inline-flex; min-height: 72px; align-items: center; gap: 22px; padding-inline: 24px; font-family: var(--font-display); font-size: clamp(1.05rem,2vw,1.6rem); font-weight: 800; white-space: nowrap; }
 .values-track i { color: var(--pink-hot); font-family: var(--font-sans); font-style: normal; font-size: .8em; }
-.question-band { position: relative; padding: 0 0 132px; background: var(--blush); }
+.question-band { position: relative; }
 .scroll-story { position: relative; min-height: clamp(680px,100vh,900px); clip-path: inset(0); overflow: hidden; }
 .scroll-story-media, .scroll-story-overlay { position: fixed; inset: 0; }
 .scroll-story-media { z-index: 0; }
@@ -216,16 +216,25 @@
 .scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
 .scroll-story-copy { position: relative; z-index: 2; display: grid; min-height: clamp(680px,100vh,900px); place-items: center; padding: clamp(150px,22vh,260px) 24px; text-align: center; }
 .scroll-story-copy h2 { max-width: 27ch; color: var(--primary-foreground); font-size: clamp(2rem,4.5vw,4.5rem); line-height: 1.08; }
-.ribbon-wave { position: relative; z-index: 3; height: 120px; margin-top: -60px; overflow: hidden; background: var(--blush); }
-.ribbon-wave svg { display: block; width: 100%; height: 110px; }
+.ribbon-wave { position: relative; z-index: 3; height: 120px; margin-top: -60px; margin-bottom: -60px; overflow: hidden; pointer-events: none; }
+.ribbon-wave svg { display: block; width: 100%; height: 120px; }
+.ribbon-wave-lower { fill: var(--blush); }
 .ribbon-wave-line { fill: none; stroke: var(--secondary); stroke-width: 44; stroke-linecap: round; }
-.baby-message { margin: 36px auto 0; display: grid; justify-items: center; padding-inline: 24px; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
+.baby-panel { position: relative; min-height: 300px; padding: 114px 0 132px; background: var(--blush); }
+.baby-message { margin: 0 auto; display: grid; justify-items: center; padding-inline: 24px; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
 .baby-message .hand { font-size: clamp(1.65rem,3vw,2.6rem); }
 .snow-polaroid { position: absolute; z-index: 4; bottom: -90px; left: clamp(22px,5vw,78px); max-width: 205px; transform: rotate(3deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
 .course-card { text-align: center; }
-.course-card > img { width: 100%; aspect-ratio: 1; border-radius: 22px; object-fit: cover; }
+.tilt-card { position: relative; isolation: isolate; }
+.tilt-card::before { position: absolute; z-index: -1; inset: 0; border-radius: 22px; background: var(--secondary); content: ""; transform: rotate(0); transition: transform .35s cubic-bezier(.2,.8,.2,1); }
+.tilt-card:nth-child(2)::before { background: var(--blush); }
+.tilt-card:nth-child(3)::before { background: var(--pink-hot); }
+.tilt-card-face { height: 100%; border: 2px solid var(--primary); border-radius: 22px; background: var(--background); padding: 14px 14px 24px; transition: transform .35s cubic-bezier(.2,.8,.2,1); transform-origin: 50% 95%; }
+.tilt-card:hover::before, .tilt-card:focus-within::before { transform: rotate(3deg); }
+.tilt-card:hover .tilt-card-face, .tilt-card:focus-within .tilt-card-face { transform: rotate(-2.5deg) translate(-3px,-4px); }
+.course-card .tilt-card-face > img { width: 100%; aspect-ratio: 1; border-radius: 16px; object-fit: cover; }
 .course-card h3 { margin-top: 22px; font-size: clamp(1.75rem,3vw,2.5rem); }
 .course-card p { min-height: 48px; margin-top: 8px; font-size: 16px; }
 .picnic-polaroid { position: absolute; z-index: 5; right: clamp(24px,7vw,110px); bottom: -120px; max-width: 245px; }
@@ -244,8 +253,8 @@
 .resources-home > header { text-align: center; }.resources-home h2, .testimonials-home h2 { font-size: clamp(2.6rem,5vw,4.3rem); }
 .resources-home header .hand { margin-top: 4px; font-size: clamp(1.5rem,2.5vw,2.2rem); }
 .resources-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; margin: 52px auto 0; max-width: 1100px; }
-.resource-card { border: 2px solid var(--primary); border-radius: 26px; padding: 14px 14px 24px; }
-.resource-card > img { width: 100%; aspect-ratio: 4/3; border-radius: 16px; object-fit: cover; }
+.resource-card { border-radius: 22px; }
+.resource-card .tilt-card-face > img { width: 100%; aspect-ratio: 4/3; border-radius: 16px; object-fit: cover; }
 .resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card > p { margin: 9px 8px 20px; line-height: 1.55; }
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
@@ -271,7 +280,8 @@
   .scroll-story, .scroll-story-copy { min-height: 82vh; }
   .scroll-story-copy { padding-inline: 22px; }
   .values-track span { min-height: 60px; gap: 16px; padding-inline: 18px; }
-  .ribbon-wave, .ribbon-wave svg { height: 82px; }.ribbon-wave { margin-top: -41px; }
+  .ribbon-wave, .ribbon-wave svg { height: 82px; }.ribbon-wave { margin-top: -41px; margin-bottom: -41px; }
+  .baby-panel { padding-top: 92px; }
   .snow-polaroid { max-width: 145px; bottom: -60px; }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }
@@ -280,4 +290,9 @@
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}
+
+@media (hover: none) {
+  .tilt-card::before { transform: rotate(2deg); }
+  .tilt-card:nth-child(even)::before { transform: rotate(-2deg); }
 }

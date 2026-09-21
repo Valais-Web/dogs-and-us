@@ -226,11 +226,11 @@
 .baby-panel { position: relative; z-index: 4; min-height: 520px; padding: 112px 24px 128px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }
 .baby-panel-inner { position: relative; display: grid; place-items: center; margin: 0 auto; max-width: 1180px; min-height: 280px; }
 .baby-story { display: grid; justify-items: center; width: min(100%,780px); }
-.baby-message { display: grid; justify-items: center; max-width: 780px; text-align: center; }
+.baby-message { display: grid; justify-items: center; max-width: 680px; text-align: center; }
 .baby-message strong { font-family: var(--font-display); font-size: clamp(2.25rem,4.6vw,4.8rem); line-height: 1.02; }
 .baby-message .hand { margin-top: 12px; font-size: clamp(1.35rem,2.3vw,2.1rem); }
 .snow-polaroid { position: absolute; z-index: 6; bottom: -218px; left: clamp(4px,8vw,100px); width: min(20vw,165px); transform: rotate(3deg); }
-.method-callout { position: absolute; z-index: 5; top: -70px; right: -8px; display: grid; justify-items: center; width: min(31vw,340px); text-align: center; transform: rotate(-2deg); }
+.method-callout { position: absolute; z-index: 5; top: -70px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
 .method-arrow { position: absolute; top: 20px; left: -24px; color: var(--foreground); font-size: clamp(2.4rem,4vw,4rem); transform: rotate(10deg); }
 .method-sticker { display: block; width: min(100%,330px); height: auto; transform: rotate(2deg); }
@@ -270,7 +270,8 @@
 .resources-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); gap: 30px; margin: 52px auto 0; max-width: 1100px; }
 .resource-card { border-radius: 22px; }
 .resource-card .tilt-card-face > img { width: 100%; aspect-ratio: 1; border-radius: 16px; object-fit: cover; }
-.resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card > p { margin: 9px 8px 20px; line-height: 1.55; }
+.resource-card { text-align: center; }
+.resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card .tilt-card-face > p { min-height: 48px; margin: 9px 8px 20px; line-height: 1.55; }
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
 .testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }

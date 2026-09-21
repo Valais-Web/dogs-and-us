@@ -16,4 +16,4 @@
 - [x] Añadir el banner dinámico, la onda verde y los ajustes de textos y fondos.
 - [x] Incorporar Blog al menú y verificar los cambios en móvil y escritorio.
 - [x] Actualizar el banner móvil, la cinta ondulada y la newsletter.
-- [ ] Verificar estos cambios en móvil y escritorio.
+- [x] Verificar estos cambios en móvil y escritorio.

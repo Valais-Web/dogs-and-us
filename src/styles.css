@@ -192,6 +192,7 @@
 .home-hero-heading > p { margin-top: 24px; font-size: clamp(1.25rem,2.5vw,1.9rem); }
 .hero-subtitle { display: grid; gap: 4px; }
 .hero-subtitle span { color: var(--pink-hot); }
+.hero-subtitle strong { color: inherit; font-weight: 500; text-decoration-line: underline; text-decoration-color: var(--secondary); text-decoration-thickness: .16em; text-underline-offset: .18em; }
 .hero-polaroids { position: relative; z-index: 3; display: grid; grid-template-columns: minmax(180px,1fr) minmax(320px,46vw) minmax(180px,1fr); align-items: center; gap: clamp(20px,4vw,60px); margin: 58px auto 0; max-width: 1450px; }
 .hero-polaroid:first-child { transform: translateX(-12%) rotate(-3deg); }
 .hero-polaroid:last-child { justify-self: end; transform: translateX(12%) rotate(3deg); }
@@ -202,6 +203,11 @@
 .mexican-button { background: var(--pink-hot); color: var(--background); }
 .blush-button:hover, .mexican-button:hover { background: var(--primary); color: var(--primary-foreground); transform: translateY(-2px); }
 .blush-button svg, .mexican-button svg { width: 16px; }
+.values-banner { position: relative; z-index: 4; overflow: hidden; border-block: 2px solid var(--primary); background: var(--pink-hot); color: var(--background); }
+.values-track { display: flex; width: max-content; animation: values-marquee 34s linear infinite; }
+.values-banner:hover .values-track { animation-play-state: paused; }
+.values-track span { display: inline-flex; min-height: 72px; align-items: center; gap: 22px; padding-inline: 24px; font-family: var(--font-display); font-size: clamp(1.05rem,2vw,1.6rem); font-weight: 800; white-space: nowrap; }
+.values-track i { color: var(--secondary); font-family: var(--font-sans); font-style: normal; font-size: .8em; }
 .question-band { position: relative; padding: 0 0 132px; background: var(--blush); }
 .scroll-story { position: relative; min-height: clamp(680px,100vh,900px); clip-path: inset(0); overflow: hidden; }
 .scroll-story-media, .scroll-story-overlay { position: fixed; inset: 0; }
@@ -210,7 +216,11 @@
 .scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
 .scroll-story-copy { position: relative; z-index: 2; display: grid; min-height: clamp(680px,100vh,900px); place-items: center; padding: clamp(150px,22vh,260px) 24px; text-align: center; }
 .scroll-story-copy h2 { max-width: 27ch; color: var(--primary-foreground); font-size: clamp(2rem,4.5vw,4.5rem); line-height: 1.08; }
-.baby-message { margin: 66px auto 0; display: grid; justify-items: center; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
+.ribbon-wave { position: relative; z-index: 3; height: 110px; margin-top: -55px; overflow: hidden; }
+.ribbon-wave svg { display: block; width: 100%; height: 110px; }
+.ribbon-wave-fill { fill: var(--primary); }
+.ribbon-wave-line { fill: none; stroke: var(--primary); stroke-width: 44; stroke-linecap: round; }
+.baby-message { margin: 36px auto 0; display: grid; justify-items: center; padding-inline: 24px; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
 .baby-message .hand { font-size: clamp(1.65rem,3vw,2.6rem); }
 .snow-polaroid { position: absolute; z-index: 4; bottom: -90px; left: clamp(22px,5vw,78px); max-width: 205px; transform: rotate(3deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
@@ -241,13 +251,14 @@
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
 .testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
-.newsletter-home { display: grid; grid-template-columns: 1fr minmax(310px,.8fr); align-items: end; gap: 50px; padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1120px)/2)); background: var(--secondary); }
+.newsletter-home { display: grid; grid-template-columns: 1fr minmax(310px,.8fr); align-items: end; gap: 50px; padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1120px)/2)); background: var(--popover); }
 .newsletter-home h2 { font-size: clamp(2.4rem,5vw,4.4rem); line-height: 1; }.newsletter-home p { margin-top: 18px; font-size: 18px; }
 @keyframes sway-left { 0% { transform: rotate(-3deg); } 10% { transform: rotate(-5deg); } 25% { transform: rotate(-1deg); } 40%,100% { transform: rotate(-3deg); } }
 @keyframes sway-right { 0% { transform: rotate(3deg); } 10% { transform: rotate(1deg); } 25% { transform: rotate(5deg); } 40%,100% { transform: rotate(3deg); } }
 @keyframes float-a { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-4deg) translateY(-16px); } }
 @keyframes float-b { 0%,100% { transform: rotate(5deg) translateY(0); } 50% { transform: rotate(5deg) translateY(-22px); } }
 @keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes values-marquee { to { transform: translateX(-50%); } }
 
 @media (max-width: 767px) {
   .home-hero { min-height: auto; padding-top: 54px; }
@@ -258,6 +269,8 @@
   .hero-polaroid:last-child { transform: rotate(3deg) !important; }
   .scroll-story, .scroll-story-copy { min-height: 82vh; }
   .scroll-story-copy { padding-inline: 22px; }
+  .values-track span { min-height: 60px; gap: 16px; padding-inline: 18px; }
+  .ribbon-wave, .ribbon-wave svg { height: 82px; }.ribbon-wave { margin-top: -41px; }
   .snow-polaroid { max-width: 145px; bottom: -60px; }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

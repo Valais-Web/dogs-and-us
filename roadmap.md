@@ -25,3 +25,4 @@
 - [x] Aclarar la franja CRECEN, recolocar su contenido y solapar la polaroid con Cursos.
 - [x] Igualar las tarjetas de Recursos con las de Cursos y corregir los colores de las ondas.
 - [x] Reorganizar la franja rosa con texto a la izquierda, polaroid central y sticker a la derecha.
+- [x] Dividir la apertura en portada fotográfica y presentación editorial con polaroids entre secciones.

@@ -30,7 +30,7 @@ function Typewriter() {
   const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    const target = words[index];
+    const target = words[index] ?? words[0] ?? "";
     const complete = word === target;
     const empty = word.length === 0;
     const delay = complete && !deleting ? 1600 : deleting ? 32 : 65;
@@ -120,11 +120,11 @@ function HomePage() {
     <section className="resources-home">
       <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
       <div className="resources-grid">
-        {[
+        {([
           [embarazoAsset.url, "Guía: preparar a tu perro", "Checklist para las semanas previas a la llegada del bebé.", "guia_preparacion"],
           [familiaAsset.url, "Mini clase: señales de calma", "Aprende a leer lo que tu perro te está diciendo.", "senales_calma"],
           [picnicAsset.url, "Rutinas para los primeros días", "Cómo organizar espacios y horarios en casa.", "rutinas_primeros_dias"],
-        ].map(([src, title, text, resource]) => <article className="resource-card" key={title}>
+        ] satisfies Array<[string, string, string, string]>).map(([src, title, text, resource]) => <article className="resource-card" key={title}>
           <img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><p>{text}</p><LeadForm source="recurso_inicio" resource={resource} label="Descargar" />
         </article>)}
       </div>

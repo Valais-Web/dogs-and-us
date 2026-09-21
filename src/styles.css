@@ -240,7 +240,7 @@
 .resource-card h3 { margin: 20px 8px 0; font-size: clamp(1.4rem,2vw,1.8rem); }.resource-card > p { margin: 9px 8px 20px; line-height: 1.55; }
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { overflow: hidden; padding: 90px 0 110px; }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; padding: 0 24px; }
-.testimonial-window { overflow: hidden; }.testimonial blockquote > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial blockquote p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
+.testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
 .newsletter-home { display: grid; grid-template-columns: 1fr minmax(310px,.8fr); align-items: end; gap: 50px; padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1120px)/2)); background: var(--secondary); }
 .newsletter-home h2 { font-size: clamp(2.4rem,5vw,4.4rem); line-height: 1; }.newsletter-home p { margin-top: 18px; font-size: 18px; }
 @keyframes cursor-blink { 50% { opacity: 0; } }

@@ -96,16 +96,14 @@ function HomePage() {
       </div>
       <div className="baby-panel">
         <div className="baby-panel-inner">
-          <div className="baby-story">
-            <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
-            <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
-          </div>
+          <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
+          <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
+          <svg className="method-arrow" viewBox="0 0 220 150" aria-hidden="true">
+            <path d="M14 96 C60 84 120 78 180 86" />
+            <path d="M180 86 L166 78 M180 86 L168 96" />
+          </svg>
           <div className="method-callout">
             <p className="hand">para eso está</p>
-            <svg className="method-arrow" viewBox="0 0 220 150" aria-hidden="true">
-              <path d="M14 132 C40 92 78 66 124 52 C158 41 182 33 200 24" />
-              <path d="M200 24 L182 22 M200 24 L194 42" />
-            </svg>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
           </div>
         </div>

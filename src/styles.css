@@ -190,10 +190,8 @@
 .home-hero-heading { position: relative; z-index: 2; margin: 0 auto; max-width: 1100px; text-align: center; }
 .home-hero h1 { color: var(--secondary); font-size: clamp(2.8rem,6.2vw,4.875rem); line-height: .98; }
 .home-hero-heading > p { margin-top: 24px; font-size: clamp(1.25rem,2.5vw,1.9rem); }
-.hanging-lamp { position: absolute; top: 0; right: clamp(32px,8vw,150px); width: 150px; height: 300px; pointer-events: none; }
-.lamp-wire { position: absolute; left: 74px; top: 0; width: 2px; height: 105px; background: var(--primary); opacity: .55; }
-.lamp-shade { position: absolute; left: 40px; top: 104px; z-index: 2; width: 70px; height: 38px; border-radius: 0 0 40px 40px; background: var(--primary); }
-.lamp-light { position: absolute; left: 0; top: 128px; width: 150px; height: 160px; background: radial-gradient(ellipse at top, color-mix(in oklab, var(--secondary) 28%, transparent), transparent 70%); }
+.hero-subtitle { display: grid; gap: 4px; }
+.hero-subtitle span { color: var(--pink-hot); }
 .hero-polaroids { position: relative; z-index: 3; display: grid; grid-template-columns: minmax(180px,1fr) minmax(320px,46vw) minmax(180px,1fr); align-items: center; gap: clamp(20px,4vw,60px); margin: 58px auto 0; max-width: 1450px; }
 .hero-polaroid:first-child { transform: translateX(-12%) rotate(-3deg); }
 .hero-polaroid:last-child { justify-self: end; transform: translateX(12%) rotate(3deg); }
@@ -204,12 +202,14 @@
 .mexican-button { background: var(--pink-hot); color: var(--background); }
 .blush-button:hover, .mexican-button:hover { background: var(--primary); color: var(--primary-foreground); transform: translateY(-2px); }
 .blush-button svg, .mexican-button svg { width: 16px; }
-.question-band { position: relative; padding: 0 24px 132px; background: linear-gradient(to bottom, transparent 165px, var(--blush) 165px); }
-.question-box { position: relative; z-index: 3; margin: 0 auto; max-width: 1000px; min-height: 365px; border: 2px solid var(--lime); border-radius: 42px; background: var(--background); padding: clamp(42px,6vw,74px) clamp(24px,6vw,74px) 42px; text-align: center; }
-.question-box h2 { max-width: 47ch; margin: auto; font-size: clamp(1.45rem,2.3vw,2.15rem); line-height: 1.22; }
-.typewriter { min-height: 1.35em; margin-top: 34px; color: var(--pink-hot); font-family: var(--font-display); font-size: clamp(2rem,5vw,3.875rem); font-weight: 800; line-height: 1.1; }
-.typewriter span { animation: cursor-blink .8s steps(1) infinite; }
-.pink-dots { width: min(100%,520px); margin: 28px auto 0; border-bottom: 2px dotted color-mix(in oklab, var(--pink-hot) 35%, transparent); }
+.question-band { position: relative; padding: 0 0 132px; background: var(--blush); }
+.scroll-story { position: relative; min-height: clamp(680px,100vh,900px); clip-path: inset(0); overflow: hidden; }
+.scroll-story-media, .scroll-story-overlay { position: fixed; inset: 0; }
+.scroll-story-media { z-index: 0; }
+.scroll-story-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
+.scroll-story-copy { position: relative; z-index: 2; display: grid; min-height: clamp(680px,100vh,900px); place-items: center; padding: clamp(150px,22vh,260px) 24px; text-align: center; }
+.scroll-story-copy h2 { max-width: 27ch; color: var(--primary-foreground); font-size: clamp(2rem,4.5vw,4.5rem); line-height: 1.08; }
 .baby-message { margin: 66px auto 0; display: grid; justify-items: center; font-size: clamp(1.25rem,2vw,1.8rem); text-align: center; }
 .baby-message .hand { font-size: clamp(1.65rem,3vw,2.6rem); }
 .snow-polaroid { position: absolute; z-index: 4; bottom: -90px; left: clamp(22px,5vw,78px); max-width: 205px; transform: rotate(3deg); }
@@ -243,8 +243,6 @@
 .testimonial-window { overflow: hidden; }.testimonial > span { color: var(--pink-hot); font-family: var(--font-display); font-size: 48px; }.testimonial > p { min-height: 100px; }.testimonial footer { margin-top: 30px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-top: 14px; font-weight: 600; }
 .newsletter-home { display: grid; grid-template-columns: 1fr minmax(310px,.8fr); align-items: end; gap: 50px; padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1120px)/2)); background: var(--secondary); }
 .newsletter-home h2 { font-size: clamp(2.4rem,5vw,4.4rem); line-height: 1; }.newsletter-home p { margin-top: 18px; font-size: 18px; }
-@keyframes cursor-blink { 50% { opacity: 0; } }
-
 @keyframes sway-left { 0% { transform: rotate(-3deg); } 10% { transform: rotate(-5deg); } 25% { transform: rotate(-1deg); } 40%,100% { transform: rotate(-3deg); } }
 @keyframes sway-right { 0% { transform: rotate(3deg); } 10% { transform: rotate(1deg); } 25% { transform: rotate(5deg); } 40%,100% { transform: rotate(3deg); } }
 @keyframes float-a { 0%,100% { transform: rotate(-4deg) translateY(0); } 50% { transform: rotate(-4deg) translateY(-16px); } }
@@ -253,13 +251,13 @@
 
 @media (max-width: 767px) {
   .home-hero { min-height: auto; padding-top: 54px; }
-  .home-hero-heading { padding-top: 85px; }
-  .hanging-lamp { right: -20px; transform: scale(.75); transform-origin: top; }
+  .home-hero-heading { padding-top: 28px; }
   .hero-polaroids { grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 36px; }
   .hero-copy { grid-column: 1 / -1; grid-row: 1; }
   .hero-polaroid { position: relative !important; height: auto !important; padding-top: 18px; transform: rotate(-3deg) !important; }
   .hero-polaroid:last-child { transform: rotate(3deg) !important; }
-  .question-band { padding-inline: 14px; }.question-box { border-radius: 28px; }.typewriter { display: grid; min-height: 2.4em; place-items: center; }
+  .scroll-story, .scroll-story-copy { min-height: 82vh; }
+  .scroll-story-copy { padding-inline: 22px; }
   .snow-polaroid { max-width: 145px; bottom: -60px; }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

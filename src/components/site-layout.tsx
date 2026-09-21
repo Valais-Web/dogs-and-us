@@ -29,9 +29,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <Button variant="ghost" size="icon" className="ml-auto lg:hidden" aria-label={open ? "Cerrar menú" : "Abrir menú"} onClick={() => setOpen(!open)}>{open ? <X /> : <Menu />}</Button>
       </div>
       {open && <nav className="border-t border-primary/10 bg-background px-5 py-5 lg:hidden" aria-label="Navegación móvil">
-        <div className="mx-auto grid max-w-[1240px] gap-1">{nav.map(([label,to]) => to.startsWith("/#")
-          ? <a key={to} href={to} onClick={() => setOpen(false)} className="border-b border-primary/15 py-3 font-medium">{label}</a>
-          : <Link key={to} to={to} onClick={() => setOpen(false)} className="border-b border-primary/15 py-3 font-medium">{label}</Link>)}
+        <div className="mx-auto grid max-w-[1240px] gap-1">{nav.map(({ label, to, ...rest }) => <Link key={label} to={to} {...rest} onClick={() => setOpen(false)} className="border-b border-primary/15 py-3 font-medium">{label}</Link>)}
           <Link to="/programa" onClick={() => setOpen(false)} className="mt-3 rounded-full bg-primary px-5 py-3 text-center text-sm font-semibold uppercase tracking-[.14em] text-primary-foreground">Pack completo</Link>
           <a href="#" className="py-3 text-center text-sm uppercase tracking-[.14em]">Área cliente</a>
         </div>

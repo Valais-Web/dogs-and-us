@@ -22,3 +22,5 @@
 - [x] Simplificar las tarjetas de cursos con fondo blanco y sin marco oscuro.
 - [x] Limpiar el fondo de portada y aclarar la franja del método CRECEN.
 - [x] Sustituir el sticker y añadir la onda entre reseñas y newsletter.
+- [x] Aclarar la franja CRECEN, recolocar su contenido y solapar la polaroid con Cursos.
+- [x] Igualar las tarjetas de Recursos con las de Cursos y corregir los colores de las ondas.

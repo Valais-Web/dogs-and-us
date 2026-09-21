@@ -223,13 +223,13 @@
 .baby-panel { position: relative; z-index: 4; min-height: 420px; padding: 72px 24px 96px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }
 .baby-panel-inner { position: relative; display: grid; place-items: center; margin: 0 auto; max-width: 1180px; min-height: 250px; }
 .baby-story { display: grid; justify-items: center; width: min(100%,780px); }
-.baby-message { display: grid; justify-items: center; max-width: 600px; text-align: center; }
+.baby-message { display: grid; justify-items: center; max-width: 600px; text-align: center; margin-top: 56px; }
 .baby-message strong { font-family: var(--font-display); font-size: clamp(2.15rem,4vw,4.15rem); line-height: 1; }
 .baby-message .hand { margin-top: 12px; font-size: clamp(1.35rem,2.3vw,2.1rem); }
 .snow-polaroid { position: absolute; z-index: 6; bottom: -190px; left: clamp(4px,8vw,100px); width: min(20vw,155px); transform: rotate(3deg); }
-.method-callout { position: absolute; z-index: 5; top: 4px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
+.method-callout { position: absolute; z-index: 5; top: -54px; right: -18px; display: grid; justify-items: center; width: min(27vw,290px); text-align: center; transform: rotate(-2deg); }
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
-.method-arrow { position: absolute; top: 22px; left: clamp(-190px,-13vw,-135px); width: clamp(170px,16vw,220px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
+.method-arrow { position: absolute; top: 22px; left: clamp(-104px,-7vw,-74px); width: clamp(80px,7.5vw,104px); height: auto; overflow: visible; fill: none; stroke: var(--pink-hot); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; transform: rotate(-5deg); }
 .method-sticker { display: block; width: min(100%,330px); height: auto; transform: rotate(2deg); }
 .courses-section { position: relative; padding: 150px 24px 170px; background: var(--background); }
 .courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
@@ -302,8 +302,8 @@
   .baby-panel-inner { min-height: 270px; }
   .baby-message { padding: 0; }
   .snow-polaroid { bottom: -180px; left: clamp(0px,5vw,28px); width: 118px; }
-  .method-callout { top: -112px; right: -12px; width: min(58vw,250px); }
-  .method-arrow { top: 42px; left: -110px; width: 180px; transform: rotate(2deg); }
+  .method-callout { top: -130px; right: -12px; width: min(58vw,250px); }
+  .method-arrow { top: 42px; left: -84px; width: 124px; transform: rotate(2deg); }
   .method-sticker { width: min(58vw,250px); }
   .courses-section { padding-top: 125px; padding-bottom: 150px; }.picnic-polaroid { right: 18px; bottom: -95px; max-width: 175px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }

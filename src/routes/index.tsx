@@ -102,8 +102,9 @@ function HomePage() {
           </div>
           <div className="method-callout">
             <p className="hand">para eso está</p>
-            <svg className="method-arrow" viewBox="0 0 90 110" aria-hidden="true">
-              <path d="M28 8 C10 23 18 55 40 52 C61 49 61 27 43 28 C25 30 30 62 48 78 C58 87 67 91 77 91 M62 78 C66 88 72 94 81 96 M78 82 C78 88 80 93 84 98" />
+            <svg className="method-arrow" viewBox="0 0 220 150" aria-hidden="true">
+              <path d="M10 136 C7 96 28 66 61 72 C92 78 70 111 50 96 C27 78 62 39 112 35 C142 32 165 30 193 22" />
+              <path d="M173 10 C180 15 187 19 198 21 C190 29 184 37 180 47" />
             </svg>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
           </div>

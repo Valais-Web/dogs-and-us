@@ -356,7 +356,7 @@
   .ribbon-wave, .ribbon-wave svg, .section-wave, .section-wave svg, .newsletter-wave, .newsletter-wave svg { height: 52px; }.section-wave, .newsletter-wave { margin-top: -26px; margin-bottom: -26px; }
   .baby-panel { min-height: 0; padding: 62px 22px 56px; }
   .baby-panel-inner { grid-template-columns: 1fr; align-items: center; gap: 18px; min-height: 0; }
-  .baby-message { max-width: 100%; padding: 0; }
+  .baby-message { max-width: 100%; padding: 0; justify-items: center; text-align: center; }
   .baby-message strong { font-size: clamp(1.5rem,6.6vw,1.75rem); }
   .baby-message strong span { white-space: normal; }
   .baby-message .hand { margin-top: 8px; font-size: 1.05rem; white-space: normal; }

@@ -7,10 +7,12 @@ import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
-import portada1035Asset from "@/assets/portada-1035.jpg.asset.json";
 import portada5476Asset from "@/assets/portada-5476.jpg.asset.json";
 import portada7064Asset from "@/assets/portada-7064.jpg.asset.json";
 import newsletterSticker from "@/assets/recibe-valor-sticker.jpeg.asset.json";
+import shimmiYukiAsset from "@/assets/shimmi-y-yuki.jpg.asset.json";
+import kobuAsset from "@/assets/kobu.jpg.asset.json";
+import cobainAsset from "@/assets/cobain.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,10 +40,10 @@ function CourseCard({ src, title, text, label, to }: { src: string; title: strin
 }
 
 const testimonials = [
-  { name: "Daniela Calderón", dog: "Shimmi y Yuki", text: "Amamos a Silvia. Siempre tiene una escucha activa hacia lo que está pasando con nuestros peludos. Toda gestión de comportamiento parte del respeto y el entendimiento. ¡Súper recomendada!" },
+  { name: "Daniela Calderón", dog: "Shimmi y Yuki", image: shimmiYukiAsset.url, text: "Amamos a Silvia. Siempre tiene una escucha activa hacia lo que está pasando con nuestros peludos. Toda gestión de comportamiento parte del respeto y el entendimiento. ¡Súper recomendada!" },
   { name: "Luisier Michel", dog: "Jack", text: "¡Muy, muy bueno! Una auténtica masterclass que me permitió entender muchas cosas sobre mi perro. Silvia es una persona encantadora y competente." },
-  { name: "Yes Cruz", dog: "Cobain", text: "Dogs & Us Training ha sido la mejor elección para tratar la ansiedad por separación de Cobain. Silvia se toma el tiempo de explicar, dar alternativas y conseguir que el curso online sea claro. Hemos visto muchos avances positivos y una mejor comunicación entre nosotras." },
-  { name: "Jorge Campos", dog: "Kobu", text: "Silvia es una persona increíble, apasionada y preparada. Pone todo su empeño en sus proyectos y sus programas me han ayudado mucho." },
+  { name: "Yes Cruz", dog: "Cobain", image: cobainAsset.url, text: "Dogs & Us Training ha sido la mejor elección para tratar la ansiedad por separación de Cobain. Silvia se toma el tiempo de explicar, dar alternativas y conseguir que el curso online sea claro. Hemos visto muchos avances positivos y una mejor comunicación entre nosotras." },
+  { name: "Jorge Campos", dog: "Kobu", image: kobuAsset.url, text: "Silvia es una persona increíble, apasionada y preparada. Pone todo su empeño en sus proyectos y sus programas me han ayudado mucho." },
   { name: "Rocío Zárate", dog: "", text: "Sus consejos nos han servido para entender y corregir el comportamiento de nuestra perrita. Ahora, con la llegada del bebé, seguiremos poniendo en práctica lo aprendido con Silvia." },
   { name: "Marión Tejada", dog: "", text: "El curso para preparar la llegada del bebé hizo la transición mucho más suave con nuestro perrito. Un mes después del parto, está tranquilo con el bebé y su llanto. Las clases son fáciles de seguir y todo está muy bien explicado. Lo recomiendo 100 %." },
 ];
@@ -62,7 +64,6 @@ function HomePage() {
     <section className="home-hero home-hero-photo">
       <div className="home-hero-gallery" aria-hidden="true">
         <img src={portadaFamiliaAsset.url} alt="" />
-        <img src={portada1035Asset.url} alt="" />
         <img src={portada5476Asset.url} alt="" />
         <img src={portada7064Asset.url} alt="" />
       </div>
@@ -114,7 +115,7 @@ function HomePage() {
       </div>
       <div className="baby-panel">
         <div className="baby-panel-inner">
-          <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
+          <div className="baby-message"><strong><span>la llegada de un bebé no es</span><span>fácil para nosotros...</span></strong><span className="hand">para nuestros perros tampoco</span></div>
           <div className="method-callout">
             <p className="hand">para eso está</p>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
@@ -153,11 +154,11 @@ function HomePage() {
       <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
       <div className="resources-grid">
         {([
-          [embarazoAsset.url, "Guía: preparar a tu perro", "Checklist para las semanas previas a la llegada del bebé.", "guia_preparacion"],
-          [familiaAsset.url, "Mini clase: señales de calma", "Aprende a leer lo que tu perro te está diciendo.", "senales_calma"],
-          [picnicAsset.url, "Rutinas para los primeros días", "Cómo organizar espacios y horarios en casa.", "rutinas_primeros_dias"],
-        ] satisfies Array<[string, string, string, string]>).map(([src, title, text, resource]) => <article className="resource-card tilt-card" key={title}>
-          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><p>{text}</p><LeadForm source="recurso_inicio" resource={resource} label="Descargar" /></div>
+          [embarazoAsset.url, "Guía: preparar a tu perro"],
+          [familiaAsset.url, "Mini clase: señales de calma"],
+          [picnicAsset.url, "Rutinas para los primeros días"],
+        ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
+          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
         </article>)}
       </div>
     </section>
@@ -169,7 +170,7 @@ function HomePage() {
           <div className="tilt-card-face">
             <span className="testimonial-quote" aria-hidden="true">“</span>
             <blockquote>{item.text}</blockquote>
-            <footer><span className="testimonial-mark" aria-hidden="true" /> <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
+            <footer>{item.image ? <img className="testimonial-mark" src={item.image} alt={`Foto de ${item.dog}`} /> : <span className="testimonial-mark" aria-hidden="true" />} <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
           </div>
         </article>)}</div>
       </div>

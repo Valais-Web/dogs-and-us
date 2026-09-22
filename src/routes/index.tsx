@@ -7,6 +7,9 @@ import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
+import portada1035Asset from "@/assets/portada-1035.jpg.asset.json";
+import portada5476Asset from "@/assets/portada-5476.jpg.asset.json";
+import portada7064Asset from "@/assets/portada-7064.jpg.asset.json";
 import newsletterSticker from "@/assets/recibe-valor-sticker.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
@@ -57,7 +60,12 @@ const bannerWords = [
 function HomePage() {
   return <div className="wall-bg">
     <section className="home-hero home-hero-photo">
-      <img className="home-hero-photo-media" src={portadaFamiliaAsset.url} alt="Silvia junto a su familia" />
+      <div className="home-hero-gallery" aria-hidden="true">
+        <img src={portadaFamiliaAsset.url} alt="" />
+        <img src={portada1035Asset.url} alt="" />
+        <img src={portada5476Asset.url} alt="" />
+        <img src={portada7064Asset.url} alt="" />
+      </div>
       <div className="home-hero-photo-shade" aria-hidden="true" />
       <div className="home-hero-heading">
         <h1>Educación canina para familias<br />con perros y bebés</h1>
@@ -76,9 +84,10 @@ function HomePage() {
       <div className="home-intro-copy">
         <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
         <div className="intro-notes" aria-label="Principios del método">
-          <p className="hand intro-note intro-note-one">basado en<br />evidencia<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M8 8 C12 35 30 51 58 56 M58 56 L45 43 M58 56 L42 62" /></svg></p>
-          <p className="hand intro-note intro-note-two">sin desplazar<br />a tu perro<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M62 8 C58 35 40 50 12 55 M12 55 L26 42 M12 55 L29 62" /></svg></p>
-          <p className="hand intro-note intro-note-three">crecen en<br />conexión<svg viewBox="0 0 70 70" aria-hidden="true"><path d="M36 7 C37 27 37 38 34 57 M34 57 L24 43 M34 57 L45 44" /></svg></p>
+          <p className="hand intro-note intro-note-one">basado en<br />evidencia</p>
+          <p className="hand intro-note intro-note-two">sin desplazar<br />a tu perro</p>
+          <p className="hand intro-note intro-note-three">crecen en<br />conexión</p>
+          <p className="hand intro-note intro-note-four">educación<br />respetuosa</p>
         </div>
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
@@ -156,7 +165,7 @@ function HomePage() {
     <section className="testimonials-home" id="testimonios">
       <header><h2>Ellos ya confiaron en Dogs and Us</h2></header>
       <div className="testimonials-viewport">
-        <div className="testimonials-track">{[...testimonials, ...testimonials].map((item, index) => <article className="testimonial-card tilt-card" key={`${item.name}-${index}`}>
+        <div className="testimonials-track">{[...testimonials, ...testimonials].map((item, index) => <article className={`testimonial-card tilt-card${item.name === "Yes Cruz" ? " testimonial-card-long" : ""}`} key={`${item.name}-${index}`}>
           <div className="tilt-card-face">
             <span className="testimonial-quote" aria-hidden="true">“</span>
             <blockquote>{item.text}</blockquote>

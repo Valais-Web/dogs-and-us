@@ -134,6 +134,7 @@ function HomePage() {
     </section>
 
     <section className="courses-section">
+      <h2 className="courses-title">Empieza tu camino como mamá multiespecie</h2>
       <div className="courses-grid">
         <CourseCard src={metodoCrecenCompletoAsset.url} title="Método CRECEN completo" text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
         <CourseCard src={embarazoAsset.url} title="Pre-Bebé" text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />

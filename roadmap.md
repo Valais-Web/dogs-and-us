@@ -33,3 +33,6 @@
 - [x] Ajustar el sticker de newsletter, la reseña de Yes Cruz y las frases de presentación.
 - [x] Verificar los cambios en móvil y escritorio.
 - [x] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.
+- [ ] Actualizar las fotos de Bebé y toddler y Lenguaje canino.
+- [ ] Añadir tres tarjetas nuevas con las fotos aportadas.
+- [ ] Verificar las seis tarjetas en móvil y escritorio.

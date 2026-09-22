@@ -31,4 +31,4 @@
 - [x] Retirar las polaroids, animar las reseñas en una fila y añadir el sticker de newsletter.
 - [x] Crear una portada que alterne entre las cuatro fotos familiares.
 - [x] Ajustar el sticker de newsletter, la reseña de Yes Cruz y las frases de presentación.
-- [ ] Verificar los cambios en móvil y escritorio.
+- [x] Verificar los cambios en móvil y escritorio.

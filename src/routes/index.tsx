@@ -159,6 +159,7 @@ function HomePage() {
           [embarazoAsset.url, "Guía: preparar a tu perro"],
           [familiaAsset.url, "Mini clase: señales de calma"],
           [picnicAsset.url, "Rutinas para los primeros días"],
+          [tallerLimitesAsset.url, "Plantilla: plan de presentación"],
         ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
         </article>)}

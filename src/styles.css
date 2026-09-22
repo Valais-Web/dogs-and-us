@@ -327,7 +327,7 @@
 @keyframes values-marquee { to { transform: translateX(-50%); } }
 @keyframes testimonials-slide { to { transform: translateX(calc(-50% - 12px)); } }
 @keyframes float-sticker { 0%,100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-12px); } }
-@keyframes wobble-sticker { 0%,100% { transform: rotate(0deg); } 50% { transform: rotate(180deg); } }
+@keyframes wobble-sticker { 0%,100% { transform: rotate(0deg); } 25% { transform: rotate(70deg); } 50% { transform: rotate(0deg); } 75% { transform: rotate(-70deg); } }
 @keyframes hero-photo-cycle { 0%,30% { opacity: 1; transform: scale(1); } 33.333%,100% { opacity: 0; transform: scale(1.025); } }
 
 @media (max-width: 767px) {

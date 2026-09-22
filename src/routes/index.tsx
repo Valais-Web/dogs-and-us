@@ -83,10 +83,12 @@ function HomePage() {
 
     <section className="home-intro">
       <div className="home-intro-copy">
-        <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
-        <div className="intro-notes" aria-label="Principios del método">
+        <div className="intro-notes intro-notes-top" aria-label="Principios del método">
           <p className="hand intro-note intro-note-one">basado en<br />evidencia</p>
           <p className="hand intro-note intro-note-two">sin desplazar<br />a tu perro</p>
+        </div>
+        <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
+        <div className="intro-notes intro-notes-bottom" aria-label="Principios del método">
           <p className="hand intro-note intro-note-three">crecen en<br />conexión</p>
           <p className="hand intro-note intro-note-four">educación<br />respetuosa</p>
         </div>
@@ -157,6 +159,7 @@ function HomePage() {
           [embarazoAsset.url, "Guía: preparar a tu perro"],
           [familiaAsset.url, "Mini clase: señales de calma"],
           [picnicAsset.url, "Rutinas para los primeros días"],
+          [tallerLimitesAsset.url, "Plantilla: plan de presentación"],
         ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
         </article>)}

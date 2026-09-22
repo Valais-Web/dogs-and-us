@@ -317,7 +317,7 @@
 .newsletter-home { display: grid; grid-template-columns: minmax(210px,.68fr) minmax(320px,1.18fr) minmax(280px,.82fr); align-items: center; gap: clamp(28px,4vw,54px); padding: clamp(62px,8vw,100px) max(24px,calc((100vw - 1180px)/2)); background: var(--popover); }
 .newsletter-photo { position: relative; overflow: visible; border-radius: 22px; transform: rotate(-2deg); }
 .newsletter-photo > img:first-child { display: block; width: 100%; aspect-ratio: 4/5; border-radius: 22px; object-fit: cover; }
-.newsletter-photo .newsletter-sticker { position: absolute; z-index: 2; top: -38px; right: -38px; width: clamp(110px,12vw,150px); height: auto; transform: rotate(8deg); }
+.newsletter-photo .newsletter-sticker { position: absolute; z-index: 2; top: -38px; right: -38px; width: clamp(110px,12vw,150px); height: auto; transform-origin: center; animation: wobble-sticker 6s ease-in-out infinite; }
 .newsletter-home h2 { font-size: clamp(2.15rem,4vw,3.8rem); line-height: 1.02; }.newsletter-home p { margin-top: 18px; max-width: 56ch; font-size: 18px; line-height: 1.55; }
 @keyframes sway-left { 0% { transform: rotate(-3deg); } 10% { transform: rotate(-5deg); } 25% { transform: rotate(-1deg); } 40%,100% { transform: rotate(-3deg); } }
 @keyframes sway-right { 0% { transform: rotate(3deg); } 10% { transform: rotate(1deg); } 25% { transform: rotate(5deg); } 40%,100% { transform: rotate(3deg); } }

@@ -6,6 +6,7 @@ import familyAsset from "@/assets/familia-jardin.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import pregnancyAsset from "@/assets/embarazo-perro.jpg.asset.json";
 import snowAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
+import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";
 const PRICE = "49 €";
@@ -28,7 +29,7 @@ const benefits = [
   "Sentirte cómoda, segura y tranquila durante toda la convivencia, desde el embarazo hasta la etapa toddler.",
   "Tener el hogar multiespecie que imaginaste: con límites claros, afecto real y sin estrés diario.",
   "Que tu perro desarrolle una relación con sus hijos desde el respeto y la confianza.",
-  "Que tus hijos también aprendan identificar señales de incomodidad de tu perro.",
+  "Que tus hijos también aprendan a identificar señales de incomodidad de tu perro.",
 ];
 
 const modules = [
@@ -40,31 +41,18 @@ const modules = [
   [familyAsset.url, "Situaciones comunes", "Qué hacer ante los momentos que más preocupan en casa."],
 ];
 
-const included = [
-  "Módulo Pre-bebé completo con videos prácticos",
-  "Módulo de presentación al llegar del hospital",
-  "Módulo para bebés móviles y toddlers",
-  "Infografías y checklists descargables",
-  "Biblioteca de sonidos para preparar a tu perro",
-  "Video de presentación real con perra y mi hija",
-  "Tutoriales paso a paso para entrenar órdenes útiles",
-  "Acceso de por vida + todas las actualizaciones",
-  "Método para enseñar a tus hijos sobre convivencia canina",
-];
-
 const testimonials = [
-  ["Un curso super completo. Cualquier duda o preocupación se fue al completar el programa. Recomiendo si tu perro está acostumbrado a ser el bebé de la casa.", "Estefanía Suarez", "mamá de Baco y de Leo"],
-  ["Me encantó porque no demanda mucho tiempo y se adapta súper bien a cada estilo de vida.", "Clem y Diego", "papás de Pepin y Nora"],
+  ["Un curso súper completo. Cualquier duda o preocupación se fue al completar el programa. Recomiendo si tu perro está acostumbrado a ser el bebé de la casa.", "Estefanía Suárez", "mamá de Baco y de Leo"],
+  ["Me encantó porque no demanda mucho tiempo y se adapta súper bien a cada estilo de vida.", "Clem y Diego", "papás de Pepín y Nora"],
   ["Muy recomendado si vas a tener un primer bebé o si tu perro es muy nervioso con niños pequeños.", "Nela y Kylae", "papás de Coco, Luna y Joaquín"],
 ];
 
 const faqs = [
   ["¿Funciona si mi perro es muy nervioso o reactivo?", "Sí, trabaja desde la gestión del entorno y la desensibilización progresiva; si es reactividad grave, recomiendo acompañamiento individual."],
-  ["¿Cuanto tiempo necesito dedicarle al día?", "Con 10 o 15 minutos al día es suficiente."],
+  ["¿Cuánto tiempo necesito dedicarle al día?", "Con 10 o 15 minutos al día es suficiente."],
   ["¿Puedo acceder a cualquier hora?", "Sí, 100% online y disponible las 24 horas desde cualquier dispositivo."],
-  ["¿En cuanto tiempo tengo que terminarlo?", "No hay plazo, acceso de por vida, avanzas a tu ritmo."],
-  ["¿Sirva si mi bebé ya nació?", "Sí, hay módulos para la presentación y para la convivencia con bebés móviles y toddlers."],
-  ["¿Hay devolución si no me convence?", "Sí, 14 días desde la compra para escribirme y te devuelvo el importe completo."],
+  ["¿En cuánto tiempo tengo que terminarlo?", "No hay plazo, acceso de por vida, avanzas a tu ritmo."],
+  ["¿Sirve si mi bebé ya nació?", "Sí, hay módulos para la presentación y para la convivencia con bebés móviles y toddlers."],
 ];
 
 export const Route = createFileRoute("/programa")({
@@ -115,7 +103,7 @@ function ProgramPage() {
       </div></section>
 
       <section className="crecen-section crecen-story"><div className="crecen-container crecen-story-grid">
-        <div><p className="crecen-label">Mi historia</p><h2>Hola! Soy Silvia <span className="crecen-hand">Gómez</span></h2>
+        <div><h2><span className="crecen-hand">¡Hola!</span> Soy Silvia Gómez</h2>
           <p>Soy psicóloga educativa y clínica, educadora canina profesional, mamá perruna de Moka y mamá humana de Olivia y Thiago.</p>
           <p>Decidí crear este programa porque las únicas opciones existentes demandaban muchísimo tiempo y energía, algo que como embarazada o mamá reciente no tenemos.</p>
           <p>Mi prioridad es que tengas la información esencial, basada en evidencia y respetuosa para que puedas sentirte cómoda, segura y feliz con la llegada de tu bebé y con la convivencia perro-bebé.</p>
@@ -133,19 +121,14 @@ function ProgramPage() {
         <div className="crecen-cta"><BuyButton>¡Lo quiero!</BuyButton></div>
       </div></section>
 
-      <section className="crecen-section crecen-inside"><div className="crecen-container crecen-inside-container">
-        <div className="crecen-evidence">basado en<br /><strong>evidencia</strong><br />científica</div>
+      <section className="crecen-section crecen-inside" id="comprar"><div className="crecen-container crecen-inside-container">
+        <img className="crecen-evidence" src={evidenceSticker} alt="Basado en evidencia científica" />
         <p className="crecen-overline">Así se ve por dentro</p><h2 className="crecen-centered-title">Videos, guías y checklists en cualquier dispositivo</h2>
         <div className="crecen-devices">
           <div className="crecen-laptop"><div className="crecen-screen"><img src={familyAsset.url} alt="Vista del Método CRECEN en ordenador" /><div><strong>Método CRECEN</strong><span>clases en video, paso a paso</span></div></div><i /><b /></div>
           <div className="crecen-phone"><div className="crecen-screen"><img src={pregnancyAsset.url} alt="Vista de la guía en móvil" /><div><em>la guía</em><strong>Preparar a tu perro antes del bebé</strong><span>Checklist incluida</span></div></div></div>
         </div>
         <div className="crecen-features">{[["Videos cortos","Clases de pocos minutos, pensadas para ver con el bebé en brazos."],["Guías descargables","Infografías y checklists para imprimir y tener a mano en casa."],["Biblioteca de sonidos","Audios para habituar a tu perro a los sonidos del bebé, poco a poco."],["Desde el móvil","Todo disponible 24/7 en móvil, tablet u ordenador, a tu ritmo."]].map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>
-      </div></section>
-
-      <section className="crecen-section crecen-included" id="comprar"><div className="crecen-container">
-        <p className="crecen-overline">Contenidos incluidos</p><h2 className="crecen-centered-title">Al inscribirte tendrás acceso a todo esto</h2>
-        <div className="crecen-included-grid">{included.map((item) => <article key={item}>{item}</article>)}</div>
         <div className="crecen-price"><strong>{PRICE}</strong><BuyButton>Comprarlo ya</BuyButton><span>pago único · acceso de por vida</span></div>
       </div></section>
 

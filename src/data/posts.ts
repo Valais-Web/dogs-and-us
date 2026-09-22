@@ -658,7 +658,7 @@ export function readingMinutes(post: Post) {
     }
   }
   for (const [q, a] of post.faqs) words += (q + " " + a).split(/\s+/).length;
-  return Math.max(1, Math.round(words / 200));
+  return Math.max(3, Math.round(words / 200));
 }
 
 export function getPost(slug: string) {

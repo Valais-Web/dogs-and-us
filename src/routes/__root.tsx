@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
@@ -115,10 +116,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const isProgramPage = useRouterState({ select: (state) => state.location.pathname === "/programa" });
 
   return (
     <QueryClientProvider client={queryClient}>
-      <SiteLayout><Outlet /></SiteLayout>
+      {isProgramPage ? <Outlet /> : <SiteLayout><Outlet /></SiteLayout>}
     </QueryClientProvider>
   );
 }

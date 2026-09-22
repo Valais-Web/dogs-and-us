@@ -37,5 +37,5 @@
 - [x] Añadir tres tarjetas nuevas con las fotos aportadas.
 - [x] Verificar las seis tarjetas en móvil y escritorio.
 
-- [ ] Recrear la landing completa del Método CRECEN en /programa.
+- [x] Recrear la landing completa del Método CRECEN en /programa.
 - [ ] Verificar la landing en móvil y escritorio.

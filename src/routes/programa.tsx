@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import logoAsset from "@/assets/dogs-and-us-logo.png.asset.json";
+import headerLogoAsset from "@/assets/logo.png.asset.json";
 import familyAsset from "@/assets/familia-jardin.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import pregnancyAsset from "@/assets/embarazo-perro.jpg.asset.json";
@@ -8,6 +9,7 @@ import snowAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 
 const URL_COMPRA = "#comprar";
 const PRICE = "49 €";
+const methodLetters: Array<[string, string]> = [["C","Comunicación"],["R","Refuerzo"],["E","Emociones"],["C","Control del entorno"],["E","Estructura"],["N","Necesidades"]];
 
 const situations = [
   "Estás embarazada y quieres evitar que tu perro se sienta desplazado.",
@@ -84,7 +86,7 @@ function BuyButton({ children, hero = false }: { children: string; hero?: boolea
 function ProgramPage() {
   return <div className="crecen-page">
     <header className="crecen-header"><div className="crecen-header-inner">
-      <Link to="/" aria-label="Dogs & Us, inicio"><img src={logoAsset.url} alt="Dogs & Us" /></Link>
+      <Link to="/" aria-label="Dogs & Us, inicio"><img src={headerLogoAsset.url} alt="Dogs & Us" /></Link>
       <BuyButton>Inscribirme ahora</BuyButton>
     </div></header>
 
@@ -122,7 +124,7 @@ function ProgramPage() {
 
       <section className="crecen-section crecen-method"><div className="crecen-container">
         <p className="crecen-method-intro">Una educación multiespecie con el método CRECEN, tomando en cuenta los 6 elementos indispensables:</p>
-        <div className="crecen-letters">{[["C","Comunicación"],["R","Refuerzo"],["E","Emociones"],["C","Control del entorno"],["E","Estructura"],["N","Necesidades"]].map(([letter, word]) => <article key={letter + word}><strong>{letter}</strong><span>{word}</span></article>)}</div>
+        <div className="crecen-letters">{methodLetters.map(([letter, word]) => <article key={letter + word}><strong>{letter}</strong><span>{word}</span></article>)}</div>
       </div></section>
 
       <section className="crecen-section"><div className="crecen-container">

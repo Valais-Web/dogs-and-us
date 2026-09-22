@@ -285,7 +285,7 @@
 .resource-card form { margin-inline: 8px; }.resource-card .lead-input { display: none; }.resource-card .lead-button { background: var(--pink-hot); color: var(--background); }
 .testimonials-home { padding: 90px 24px 110px; background: color-mix(in oklab, var(--blush) 28%, var(--popover)); }.testimonials-home > header { margin: 0 auto 46px; max-width: 1120px; }
 .testimonials-home > header h2 { max-width: 1120px; }
-.testimonials-viewport { width: 100%; overflow: hidden; padding: 10px 0 22px; }
+.testimonials-viewport { width: 100%; max-width: 880px; margin: 0 auto; overflow: hidden; padding: 10px 0 22px; }
 .testimonials-track { display: flex; width: max-content; gap: clamp(20px,2.5vw,30px); padding-left: 24px; animation: testimonials-slide 42s linear infinite; }
 .testimonials-track:hover { animation-play-state: paused; }
 .testimonial-card { width: min(27vw,280px); flex: 0 0 min(27vw,280px); aspect-ratio: 1; }

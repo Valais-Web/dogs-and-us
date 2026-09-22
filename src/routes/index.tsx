@@ -1,10 +1,8 @@
-import { type ReactNode } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { LeadForm } from "@/components/lead-form";
 import embarazoAsset from "@/assets/embarazo-perro.jpg.asset.json";
 import familiaAsset from "@/assets/familia-jardin.jpg.asset.json";
-import nieveAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";

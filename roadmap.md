@@ -40,3 +40,5 @@
 - [x] Recrear la landing completa del Método CRECEN en /programa.
 - [x] Verificar la landing en móvil y escritorio.
 - [x] Ajustar textos, sticker, precio y preguntas de la landing del Método CRECEN.
+
+- [x] Crear el blog (/blog), la plantilla de artículo y las 10 entradas.

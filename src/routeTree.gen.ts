@@ -16,6 +16,8 @@ import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as ProgramaRouteImport } from './routes/programa'
 import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as SobreMiRouteImport } from './routes/sobre-mi'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,34 +54,49 @@ const SobreMiRoute = SobreMiRouteImport.update({
   path: '/sobre-mi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/asesorias': typeof AsesoriasRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/sobre-mi': typeof SobreMiRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/asesorias': typeof AsesoriasRoute
-  '/blog': typeof BlogRoute
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/sobre-mi': typeof SobreMiRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/asesorias': typeof AsesoriasRoute
-  '/blog': typeof BlogRoute
+  '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/sobre-mi': typeof SobreMiRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -91,15 +108,18 @@ export interface FileRouteTypes {
     | '/programa'
     | '/recursos'
     | '/sobre-mi'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/asesorias'
-    | '/blog'
     | '/contacto'
     | '/programa'
     | '/recursos'
     | '/sobre-mi'
+    | '/blog/$slug'
+    | '/blog'
   id:
     | '__root__'
     | '/'
@@ -109,12 +129,14 @@ export interface FileRouteTypes {
     | '/programa'
     | '/recursos'
     | '/sobre-mi'
+    | '/blog/$slug'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AsesoriasRoute: typeof AsesoriasRoute
-  BlogRoute: typeof BlogRoute
+  BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
   ProgramaRoute: typeof ProgramaRoute
   RecursosRoute: typeof RecursosRoute
@@ -172,13 +194,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SobreMiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
   }
 }
+
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AsesoriasRoute: AsesoriasRoute,
-  BlogRoute: BlogRoute,
+  BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
   ProgramaRoute: ProgramaRoute,
   RecursosRoute: RecursosRoute,

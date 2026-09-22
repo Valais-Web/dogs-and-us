@@ -115,7 +115,7 @@ function HomePage() {
       </div>
       <div className="baby-panel">
         <div className="baby-panel-inner">
-          <div className="baby-message"><strong><span>la llegada de un bebé</span><span>no es fácil para nosotros...</span></strong><span className="hand">para nuestros perros tampoco</span></div>
+          <div className="baby-message"><strong><span>la llegada de un bebé no es</span><span>fácil para nosotros...</span></strong><span className="hand">para nuestros perros tampoco</span></div>
           <div className="method-callout">
             <p className="hand">para eso está</p>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />

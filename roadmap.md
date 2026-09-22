@@ -32,4 +32,4 @@
 - [x] Crear una portada que alterne entre las cuatro fotos familiares.
 - [x] Ajustar el sticker de newsletter, la reseña de Yes Cruz y las frases de presentación.
 - [x] Verificar los cambios en móvil y escritorio.
-- [ ] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.
+- [x] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.

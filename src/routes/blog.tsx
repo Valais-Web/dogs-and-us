@@ -1,3 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router"; import { ContentPage } from "@/components/content-page"; import prep from "@/assets/blog-preparacion.jpg"; import convivencia from "@/assets/blog-convivencia.jpg";
-export const Route=createFileRoute("/blog")({head:()=>({meta:[{title:"Blog | Dogs & Us Training"},{name:"description",content:"Consejos de educación canina, seguridad y convivencia para familias con perros y peques."},{property:"og:title",content:"Blog de Dogs & Us Training"},{property:"og:description",content:"Lecturas para acompañar cada etapa de tu familia multiespecie."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:Page});
-function Page(){return <ContentPage eyebrow="Blog" title="Ideas para convivir con más calma y confianza." intro="Artículos sobre preparación, lenguaje canino, seguridad y bienestar familiar."><div className="grid gap-7 md:grid-cols-3">{[[prep,"Preparar al perro antes del bebé"],[convivencia,"Toddlers y perros"],[prep,"Señales de calma caninas"]].map(([img,t])=><article key={t}><img src={img} width={1024} height={768} loading="lazy" alt="Perro en un hogar preparado para un bebé" className="aspect-[4/3] rounded-3xl object-cover"/><h2 className="mt-5 text-2xl">{t}</h2><p className="mt-2 text-sm text-muted-foreground">[Artículo próximamente]</p></article>)}</div></ContentPage>}
+import { createFileRoute, Outlet } from "@tanstack/react-router";
+import { BlogHeader, BlogNewsletter, BlogFooter } from "@/components/blog-chrome";
+
+export const Route = createFileRoute("/blog")({ component: BlogLayout });
+
+function BlogLayout() {
+  return (
+    <div className="blog-page">
+      <BlogHeader />
+      <main>
+        <Outlet />
+      </main>
+      <BlogNewsletter />
+      <BlogFooter />
+    </div>
+  );
+}

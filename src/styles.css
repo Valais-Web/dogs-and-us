@@ -351,7 +351,7 @@
   .method-sticker { width: min(56vw,230px); }
   .courses-section { padding-top: 100px; padding-bottom: 120px; }
   .about-home { padding-top: 145px; }.about-inner { grid-template-columns: 1fr; }.about-collage { min-height: 460px; }.about-copy { padding-top: 12px; }
-  .newsletter-home { grid-template-columns: 1fr; }.newsletter-photo { width: min(72vw,320px); }.newsletter-photo .newsletter-sticker { top: -36px; right: -34px; width: 142px; }.newsletter-home .lead-form-inline { display: grid; }
+  .newsletter-home { grid-template-columns: 1fr; }.newsletter-photo { width: min(72vw,320px); }.newsletter-photo .newsletter-sticker { top: -40px; right: -38px; width: 168px; }.newsletter-home .lead-form-inline { display: grid; }
   .pink-overlap { padding-inline: 20px !important; }
   .resources-grid { grid-template-columns: repeat(3,minmax(190px,230px)); overflow-x: auto; justify-content: start; padding: 8px 18px 18px; margin-inline: -22px; }
 }

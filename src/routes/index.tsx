@@ -9,7 +9,7 @@ import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
 import portada5476Asset from "@/assets/portada-5476.jpg.asset.json";
 import portada7064Asset from "@/assets/portada-7064.jpg.asset.json";
-import newsletterSticker from "@/assets/recibe-valor-sticker.jpeg.asset.json";
+import newsletterSticker from "@/assets/newsletter-sticker.png";
 import shimmiYukiAsset from "@/assets/shimmi-y-yuki.jpg.asset.json";
 import kobuAsset from "@/assets/kobu.jpg.asset.json";
 import cobainAsset from "@/assets/cobain.jpg.asset.json";
@@ -186,7 +186,7 @@ function HomePage() {
     <section className="newsletter-home">
       <figure className="newsletter-photo">
         <img src={familiaAsset.url} alt="Familia con niños y perro compartiendo tiempo en el jardín" loading="lazy" />
-        <img className="newsletter-sticker" src={newsletterSticker.url} alt="Recibe valor en tu buzón" loading="lazy" />
+        <img className="newsletter-sticker" src={newsletterSticker} alt="Tips y recursos en tu buzón" loading="lazy" />
       </figure>
       <div className="newsletter-copy"><h2>+ de 1000 dog moms y dog dads ya reciben nuestros tips mensuales.</h2><p>Este es mi compromiso contigo para que la convivencia entre tu perro y tu bebé mejore mientras crecen juntos.</p></div>
       <LeadForm source="newsletter_inicio" compact label="Inscríbeme" />

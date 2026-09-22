@@ -132,12 +132,12 @@ function HomePage() {
 
     <section className="courses-section">
       <div className="courses-grid">
+        <CourseCard src={metodoCrecenCompletoAsset.url} title="Método CRECEN completo" text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
         <CourseCard src={embarazoAsset.url} title="Pre-Bebé" text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />
+        <CourseCard src={presentacionPerroBebeAsset.url} title="Presentación" text="Para preparar el primer encuentro entre perro y bebé." label="Preparar el encuentro" to="/programa" />
+        <CourseCard src={perroBebeMovilAsset.url} title="Perros y bebé móvil" text="Para acompañar sus primeros movimientos juntos." label="Ver curso" to="/programa" />
         <CourseCard src={picnicAsset.url} title="Bebé y toddler" text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
         <CourseCard src={lenguajeCaninoBebeAsset.url} title="Lenguaje canino" text="Para comprender mejor lo que tu perro comunica." label="Aprender a leerle" to="/recursos" />
-        <CourseCard src={perroBebeMovilAsset.url} title="Perros y bebé móvil" text="Para acompañar sus primeros movimientos juntos." label="Ver curso" to="/programa" />
-        <CourseCard src={metodoCrecenCompletoAsset.url} title="Método CRECEN completo" text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
-        <CourseCard src={presentacionPerroBebeAsset.url} title="Presentación" text="Para preparar el primer encuentro entre perro y bebé." label="Preparar el encuentro" to="/programa" />
       </div>
     </section>
 

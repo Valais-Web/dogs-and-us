@@ -506,8 +506,8 @@
 .blog-card-meta { margin-top: 14px; font-family: "Shantell Sans", cursive; font-weight: 500; font-size: 14px; color: var(--b-olive); }
 
 .blog-pagination { display: flex; justify-content: center; gap: 12px; margin-top: 40px; }
-.blog-page { width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--b-border); background: #fff; font-family: "Figtree", sans-serif; font-weight: 600; cursor: pointer; }
-.blog-page.is-active { background: var(--b-ink); border-color: var(--b-ink); color: var(--b-cream); }
+.blog-page-btn { width: 44px; height: 44px; border-radius: 999px; border: 2px solid var(--b-border); background: #fff; font-family: "Figtree", sans-serif; font-weight: 600; cursor: pointer; }
+.blog-page-btn.is-active { background: var(--b-ink); border-color: var(--b-ink); color: var(--b-cream); }
 .blog-empty { background: var(--b-pale); border-radius: 22px; padding: 36px; text-align: center; }
 .blog-empty-title { font-family: "Figtree", sans-serif; font-weight: 800; font-size: 20px; margin-bottom: 8px; }
 .blog-empty .blog-button { margin-top: 20px; }

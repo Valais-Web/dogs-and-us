@@ -139,7 +139,7 @@ function BlogIndex() {
                 <button
                   key={n}
                   type="button"
-                  className={`blog-page${n === current ? " is-active" : ""}`}
+                  className={`blog-page-btn${n === current ? " is-active" : ""}`}
                   onClick={() => setPage(n)}
                 >
                   {n}

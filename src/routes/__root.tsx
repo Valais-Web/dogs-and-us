@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,600;0,700;0,800;1,600&family=Jost:wght@300;400;500&family=Shantell+Sans:wght@500&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,600;0,700;0,800;1,600&family=Jost:wght@300;400;500;600&family=Shantell+Sans:wght@500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
   }),
@@ -116,11 +116,11 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const isProgramPage = useRouterState({ select: (state) => state.location.pathname === "/programa" });
+  const isBareLayout = useRouterState({ select: (state) => state.location.pathname === "/programa" || state.location.pathname.startsWith("/blog") });
 
   return (
     <QueryClientProvider client={queryClient}>
-      {isProgramPage ? <Outlet /> : <SiteLayout><Outlet /></SiteLayout>}
+      {isBareLayout ? <Outlet /> : <SiteLayout><Outlet /></SiteLayout>}
     </QueryClientProvider>
   );
 }

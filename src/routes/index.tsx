@@ -17,6 +17,9 @@ import lenguajeCaninoBebeAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.jso
 import perroBebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import metodoCrecenCompletoAsset from "@/assets/metodo-crecen-completo.jpg.asset.json";
 import presentacionPerroBebeAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
+import recursoEnriquecimientoAsset from "@/assets/recurso-enriquecimiento-raza.jpg.asset.json";
+import recursoLenguajeAsset from "@/assets/recurso-lenguaje-canino-basico.jpg.asset.json";
+import recursoViajeAsset from "@/assets/recurso-viaje-perros-ninos.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -163,10 +166,10 @@ function HomePage() {
       <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
       <div className="resources-grid">
         {([
-          [embarazoAsset.url, "Guía: preparar a tu perro"],
-          [familiaAsset.url, "Mini clase: señales de calma"],
-          [picnicAsset.url, "Rutinas para los primeros días"],
-          [tallerLimitesAsset.url, "Plantilla: plan de presentación"],
+          [recursoEnriquecimientoAsset.url, "Guía de enriquecimiento por raza"],
+          [recursoLenguajeAsset.url, "Lenguaje canino básico"],
+          [recursoViajeAsset.url, "Checklist viaje con perros y niños"],
+          [embarazoAsset.url, "Checklist de preparación pre-bebé"],
         ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
         </article>)}

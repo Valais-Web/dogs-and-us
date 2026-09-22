@@ -34,3 +34,5 @@
 - [x] Verificar los cambios en móvil y escritorio.
 
 - [ ] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.
+
+- [ ] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.

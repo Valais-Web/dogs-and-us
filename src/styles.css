@@ -379,6 +379,7 @@
   .resources-home h2, .testimonials-home h2 { font-size: clamp(1.8rem,7.4vw,2.3rem); }
   .resources-home header .hand { font-size: 1.15rem; }
   .resources-grid { grid-template-columns: repeat(2,minmax(0,1fr)); justify-content: stretch; gap: 14px; margin-top: 30px; padding: 0; }
+  .resource-card { aspect-ratio: 4/5; }
   .resource-card h3 { font-size: 1rem; }
   .testimonials-home { padding-block: 64px; }
   .newsletter-home { grid-template-columns: 1fr; gap: 26px; padding: 62px 22px 66px; justify-items: center; text-align: center; }

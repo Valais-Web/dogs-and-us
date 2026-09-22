@@ -39,3 +39,4 @@
 
 - [x] Recrear la landing completa del Método CRECEN en /programa.
 - [x] Verificar la landing en móvil y escritorio.
+- [x] Ajustar textos, sticker, precio y preguntas de la landing del Método CRECEN.

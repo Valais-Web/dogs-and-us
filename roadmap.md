@@ -35,4 +35,4 @@
 - [x] Ajustar separaciones, bloque CRECEN, recursos y reseñas con fotos de perros.
 - [x] Actualizar las fotos de Bebé y toddler y Lenguaje canino.
 - [x] Añadir tres tarjetas nuevas con las fotos aportadas.
-- [ ] Verificar las seis tarjetas en móvil y escritorio.
+- [x] Verificar las seis tarjetas en móvil y escritorio.

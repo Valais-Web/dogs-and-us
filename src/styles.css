@@ -251,7 +251,7 @@
 .method-callout > p { margin-bottom: -4px; color: var(--foreground); font-size: clamp(1rem,1.7vw,1.45rem); }
 .method-sticker { display: block; width: min(100%,290px); height: auto; transform: rotate(2deg); animation: float-sticker 4.5s ease-in-out infinite; }
 .courses-section { position: relative; padding: 110px 24px 130px; background: var(--background); }
-.courses-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(230px,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
+.courses-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: clamp(28px,4vw,54px); margin: 0 auto; max-width: 1080px; }
 .course-card { text-align: center; }
 .tilt-card { position: relative; isolation: isolate; }
 .tilt-card::before { position: absolute; z-index: -1; inset: 0; border-radius: 22px; background: var(--secondary); content: ""; transform: rotate(0); transition: transform .35s cubic-bezier(.2,.8,.2,1); }

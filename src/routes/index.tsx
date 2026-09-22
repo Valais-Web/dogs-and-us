@@ -8,7 +8,7 @@ import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
 import portada5476Asset from "@/assets/portada-5476.jpg.asset.json";
-import portada7064Asset from "@/assets/portada-7064.jpg.asset.json";
+import portada7064Asset from "@/assets/portada-nina-banco.jpg.asset.json";
 import newsletterSticker from "@/assets/newsletter-sticker.png";
 import shimmiYukiAsset from "@/assets/shimmi-y-yuki.jpg.asset.json";
 import kobuAsset from "@/assets/kobu.jpg.asset.json";

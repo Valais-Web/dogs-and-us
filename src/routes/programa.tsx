@@ -9,7 +9,7 @@ import snowAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";
-const PRICE = "49 €";
+const PRICE = "59 €";
 const methodLetters: Array<[string, string]> = [["C","Comunicación"],["R","Refuerzo"],["E","Emociones"],["C","Control del entorno"],["E","Estructura"],["N","Necesidades"]];
 
 const situations = [

@@ -29,6 +29,6 @@
 - [x] Ajustar portada, ondas, polaroids y composición editorial de la presentación.
 - [x] Incorporar las reseñas reales adjuntas y verificar la portada en móvil y escritorio.
 - [x] Retirar las polaroids, animar las reseñas en una fila y añadir el sticker de newsletter.
-- [ ] Crear una portada que alterne entre las cuatro fotos familiares.
-- [ ] Ajustar el sticker de newsletter, la reseña de Yes Cruz y las frases de presentación.
+- [x] Crear una portada que alterne entre las cuatro fotos familiares.
+- [x] Ajustar el sticker de newsletter, la reseña de Yes Cruz y las frases de presentación.
 - [ ] Verificar los cambios en móvil y escritorio.

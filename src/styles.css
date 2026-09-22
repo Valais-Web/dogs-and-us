@@ -344,6 +344,7 @@
   .baby-panel { min-height: 470px; padding: 96px 22px 80px; }
   .baby-panel-inner { grid-template-columns: 1fr 1fr; align-items: start; min-height: 300px; }
   .baby-message { grid-column: 1 / -1; padding: 0; }
+  .baby-message strong { font-size: clamp(1.58rem, 7vw, 1.75rem); }
   .baby-message strong span { white-space: normal; }
   .baby-message .hand { white-space: normal; }
   .method-callout { grid-column: 2; grid-row: 2; justify-self: end; width: min(48vw,210px); margin-top: 92px; }

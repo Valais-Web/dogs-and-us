@@ -83,10 +83,12 @@ function HomePage() {
 
     <section className="home-intro">
       <div className="home-intro-copy">
-        <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
-        <div className="intro-notes" aria-label="Principios del método">
+        <div className="intro-notes intro-notes-top" aria-label="Principios del método">
           <p className="hand intro-note intro-note-one">basado en<br />evidencia</p>
           <p className="hand intro-note intro-note-two">sin desplazar<br />a tu perro</p>
+        </div>
+        <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
+        <div className="intro-notes intro-notes-bottom" aria-label="Principios del método">
           <p className="hand intro-note intro-note-three">crecen en<br />conexión</p>
           <p className="hand intro-note intro-note-four">educación<br />respetuosa</p>
         </div>

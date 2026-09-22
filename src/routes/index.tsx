@@ -9,6 +9,7 @@ import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import methodSticker from "@/assets/metodo-crecen-sticker-dark.png";
 import portadaFamiliaAsset from "@/assets/portada-familia-correcta.jpg.asset.json";
+import newsletterSticker from "@/assets/recibe-valor-sticker.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -24,16 +25,6 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
-
-function Polaroid({ src, date, alt, direction = "left", className = "" }: { src: string; date: string; alt: string; direction?: "left" | "right"; className?: string }) {
-  return <figure className={`polaroid sway-${direction} ${className}`}>
-    <div className="polaroid-nail" aria-hidden="true" />
-    <div className="polaroid-frame">
-      <img src={src} alt={alt} />
-      <figcaption>{date}</figcaption>
-    </div>
-  </figure>;
-}
 
 function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" }) {
   return <article className="course-card tilt-card">
@@ -84,7 +75,6 @@ function HomePage() {
     </section>
 
     <section className="home-intro">
-      <Polaroid src={embarazoAsset.url} date="Octubre 2023" alt="Silvia embarazada junto a su perro" direction="left" className="intro-polaroid intro-polaroid-left" />
       <div className="home-intro-copy">
         <h2><span>Prepara a tu perro para la llegada</span>{" "}<span>de tu bebé y evita o resuelve</span>{" "}<span>problemas de convivencia entre</span>{" "}<span>perros y niños</span></h2>
         <div className="intro-notes" aria-label="Principios del método">
@@ -94,7 +84,6 @@ function HomePage() {
         </div>
         <Link to="/programa" className="mexican-button">Ver cursos <ArrowRight /></Link>
       </div>
-      <Polaroid src={familiaAsset.url} date="Abril 2026" alt="Familia con niños y perro en el jardín" direction="right" className="intro-polaroid intro-polaroid-right" />
     </section>
 
     <section className="question-band">
@@ -119,7 +108,6 @@ function HomePage() {
       <div className="baby-panel">
         <div className="baby-panel-inner">
           <div className="baby-message"><strong>la llegada de un bebé no es fácil para nosotros...</strong><span className="hand">para nuestros perros tampoco</span></div>
-          <Polaroid src={nieveAsset.url} date="Noviembre 2024" alt="Niña caminando con su perro en la nieve" className="snow-polaroid" />
           <div className="method-callout">
             <p className="hand">para eso está</p>
             <img className="method-sticker" src={methodSticker} alt="Método CRECEN" />
@@ -134,7 +122,6 @@ function HomePage() {
         <CourseCard src={familiaAsset.url} title="Bebé y toddler" text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
         <CourseCard src={picnicAsset.url} title="Lenguaje canino" text="Para comprender mejor lo que tu perro comunica." label="Aprender a leerle" to="/recursos" />
       </div>
-      <Polaroid src={picnicAsset.url} date="Junio 2026" alt="Bebé y perro compartiendo un picnic" direction="right" className="picnic-polaroid" />
     </section>
 
     <section className="about-home">
@@ -170,13 +157,15 @@ function HomePage() {
 
     <section className="testimonials-home" id="testimonios">
       <header><h2>Ellos ya confiaron en Dogs and Us</h2></header>
-      <div className="testimonials-grid">{testimonials.map((item) => <article className="testimonial-card tilt-card" key={item.name}>
-        <div className="tilt-card-face">
-          <span className="testimonial-quote" aria-hidden="true">“</span>
-          <blockquote>{item.text}</blockquote>
-          <footer><span className="testimonial-mark" aria-hidden="true" /> <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
-        </div>
-      </article>)}</div>
+      <div className="testimonials-viewport">
+        <div className="testimonials-track">{[...testimonials, ...testimonials].map((item, index) => <article className="testimonial-card tilt-card" key={`${item.name}-${index}`}>
+          <div className="tilt-card-face">
+            <span className="testimonial-quote" aria-hidden="true">“</span>
+            <blockquote>{item.text}</blockquote>
+            <footer><span className="testimonial-mark" aria-hidden="true" /> <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
+          </div>
+        </article>)}</div>
+      </div>
     </section>
 
     <div className="newsletter-wave" aria-hidden="true">
@@ -187,7 +176,10 @@ function HomePage() {
     </div>
 
     <section className="newsletter-home">
-      <figure className="newsletter-photo"><img src={familiaAsset.url} alt="Familia con niños y perro compartiendo tiempo en el jardín" loading="lazy" /></figure>
+      <figure className="newsletter-photo">
+        <img src={familiaAsset.url} alt="Familia con niños y perro compartiendo tiempo en el jardín" loading="lazy" />
+        <img className="newsletter-sticker" src={newsletterSticker.url} alt="Recibe valor en tu buzón" loading="lazy" />
+      </figure>
       <div className="newsletter-copy"><h2>+ de 1000 dog moms y dog dads ya reciben nuestros tips mensuales.</h2><p>Este es mi compromiso contigo para que la convivencia entre tu perro y tu bebé mejore mientras crecen juntos.</p></div>
       <LeadForm source="newsletter_inicio" compact label="Inscríbeme" />
     </section>

@@ -212,7 +212,7 @@
 .values-track i { color: var(--pink-hot); font-family: var(--font-sans); font-style: normal; font-size: .8em; }
 .home-intro { position: relative; min-height: 480px; overflow: visible; padding: 150px 24px 104px; background: var(--background); }
 .home-intro-copy { position: relative; z-index: 4; display: grid; justify-items: center; margin: 0 auto; max-width: 980px; text-align: center; }
-.home-intro h2 { max-width: 890px; font-size: clamp(2.1rem,4vw,4.15rem); line-height: 1.02; }
+.home-intro h2 { max-width: 890px; margin-top: 64px; font-size: clamp(2.1rem,4vw,4.15rem); line-height: 1.02; }
 .home-intro h2 span { display: block; }
 .intro-notes { position: absolute; left: -65px; right: -65px; pointer-events: none; }
 .intro-notes-top { top: -10px; }

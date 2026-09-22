@@ -170,7 +170,7 @@ function HomePage() {
           <div className="tilt-card-face">
             <span className="testimonial-quote" aria-hidden="true">“</span>
             <blockquote>{item.text}</blockquote>
-             {item.image ? <img className="testimonial-mark" src={item.image} alt="" /> : <span className="testimonial-mark" aria-hidden="true" />} <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
+            <footer>{item.image ? <img className="testimonial-mark" src={item.image} alt={`Foto de ${item.dog}`} /> : <span className="testimonial-mark" aria-hidden="true" />} <div><strong>{item.name}</strong>{item.dog && <small>Perro: {item.dog}</small>}</div></footer>
           </div>
         </article>)}</div>
       </div>

@@ -92,18 +92,18 @@ function ProgramPage() {
       </section>
 
       <section className="crecen-section crecen-sage"><div className="crecen-container">
-        <h2>Estás en el lugar correcto si estás alguna <span className="crecen-hand">de estas situaciones</span></h2>
+        <h2>Estás en el lugar correcto si estás alguna <span className="crecen-hand crecen-hand-pale">de estas situaciones</span></h2>
         <div className="crecen-situations">{situations.map((item) => <article key={item}>{item}</article>)}</div>
       </div></section>
 
       <section className="crecen-section"><div className="crecen-container">
-        <h2 className="crecen-centered-title">Después del programa lograrás <span className="crecen-hand">esto</span></h2>
+        <h2 className="crecen-centered-title">Después del programa <span className="crecen-hand crecen-hand-pink">lograrás</span> esto</h2>
         <div className="crecen-benefits">{benefits.map((item, index) => <article key={item}><span>{String(index + 1).padStart(2, "0")}</span><p>{item}</p></article>)}</div>
         <div className="crecen-cta"><BuyButton>Inscribirme ahora</BuyButton></div>
       </div></section>
 
       <section className="crecen-section crecen-story"><div className="crecen-container crecen-story-grid">
-        <div><h2><span className="crecen-hand">¡Hola!</span> Soy Silvia Gómez</h2>
+        <div><h2><span className="crecen-hand crecen-hand-lime">¡Hola!</span> Soy Silvia Gómez</h2>
           <p>Soy psicóloga educativa y clínica, educadora canina profesional, mamá perruna de Moka y mamá humana de Olivia y Thiago.</p>
           <p>Decidí crear este programa porque las únicas opciones existentes demandaban muchísimo tiempo y energía, algo que como embarazada o mamá reciente no tenemos.</p>
           <p>Mi prioridad es que tengas la información esencial, basada en evidencia y respetuosa para que puedas sentirte cómoda, segura y feliz con la llegada de tu bebé y con la convivencia perro-bebé.</p>
@@ -125,8 +125,8 @@ function ProgramPage() {
         <img className="crecen-evidence" src={evidenceSticker} alt="Basado en evidencia científica" />
         <p className="crecen-overline">Así se ve por dentro</p><h2 className="crecen-centered-title">Videos, guías y checklists en cualquier dispositivo</h2>
         <div className="crecen-devices">
-          <div className="crecen-laptop"><div className="crecen-screen"><img src={familyAsset.url} alt="Vista del Método CRECEN en ordenador" /><div><strong>Método CRECEN</strong><span>clases en video, paso a paso</span></div></div><i /><b /></div>
-          <div className="crecen-phone"><div className="crecen-screen"><img src={pregnancyAsset.url} alt="Vista de la guía en móvil" /><div><em>la guía</em><strong>Preparar a tu perro antes del bebé</strong><span>Checklist incluida</span></div></div></div>
+          <div className="crecen-laptop"><div className="crecen-screen"><img src={familyAsset.url} alt="Vista del Método CRECEN en ordenador" /><div><strong>Método CRECEN</strong><span>on demand</span></div></div><i /><b /></div>
+          <div className="crecen-phone"><div className="crecen-screen"><img src={pregnancyAsset.url} alt="Vista del programa en móvil" /><div><strong>Tu perro y tu bebé en todas las etapas</strong><span>Paso a paso</span></div></div></div>
         </div>
         <div className="crecen-features">{[["Videos cortos","Clases de pocos minutos, pensadas para ver con el bebé en brazos."],["Guías descargables","Infografías y checklists para imprimir y tener a mano en casa."],["Biblioteca de sonidos","Audios para habituar a tu perro a los sonidos del bebé, poco a poco."],["Desde el móvil","Todo disponible 24/7 en móvil, tablet u ordenador, a tu ritmo."]].map(([title,text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>
         <div className="crecen-price"><strong>{PRICE}</strong><BuyButton>Comprarlo ya</BuyButton><span>pago único · acceso de por vida</span></div>

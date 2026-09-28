@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="robots" content="noindex"><title>Forms</title></head>
+<body>
+  <!-- Static copies so Netlify detects the forms at deploy time. Fields must match the React forms. -->
+  <form name="lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="lead" />
+    <input name="bot-field" />
+    <input type="email" name="email" />
+    <input type="text" name="source" />
+    <input type="text" name="resource" />
+    <input type="text" name="consent" />
+  </form>
+  <form name="blog-newsletter" data-netlify="true" netlify-honeypot="bot-field" hidden>
+    <input type="hidden" name="form-name" value="blog-newsletter" />
+    <input name="bot-field" />
+    <input type="email" name="email" />
+    <input type="text" name="source" />
+    <input type="text" name="consent" />
+  </form>
+</body>
+</html>

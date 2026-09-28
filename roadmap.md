@@ -42,3 +42,5 @@
 - [x] Ajustar textos, sticker, precio y preguntas de la landing del Método CRECEN.
 
 - [x] Crear el blog (/blog), la plantilla de artículo y las 10 entradas.
+
+- [x] Cambiar las fotos de portada y módulos de /programa.

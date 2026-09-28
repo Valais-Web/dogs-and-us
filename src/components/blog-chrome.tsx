@@ -1,6 +1,5 @@
 import { useState, type FormEvent } from "react";
 import { Link } from "@tanstack/react-router";
-import { supabase } from "@/integrations/supabase/client";
 import { trackFormSubmit } from "@/lib/form-tracking";
 import headerLogo from "@/assets/logo.png.asset.json";
 import footerLogo from "@/assets/dogs-and-us-logo.png.asset.json";
@@ -30,10 +29,7 @@ export function BlogNewsletter() {
   async function submit(e: FormEvent) {
     e.preventDefault();
     setState("saving");
-    const [{ error }] = await Promise.all([
-      supabase.from("leads").insert({ email, source: "blog", resource: null, consent: true }),
-      trackFormSubmit("blog-newsletter", { email, source: "blog", consent: "true" }),
-    ]);
+    const error = !(await trackFormSubmit("blog-newsletter", { email, source: "blog", consent: "true" }));
     setState(error ? "error" : "done");
     if (!error) setEmail("");
   }

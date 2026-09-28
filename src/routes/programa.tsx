@@ -8,8 +8,8 @@ import pregnancyAsset from "@/assets/embarazo-perro.jpg.asset.json";
 import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
 import presentacionAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
 import bebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
-import toddlerAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
-import ensenarAsset from "@/assets/ensenar-hijo-perro.jpg.asset.json";
+import toddlersNieveAsset from "@/assets/perros-toddlers-nieve.jpg.asset.json";
+import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";
@@ -41,7 +41,7 @@ const modules = [
   [pregnancyAsset.url, "Preparación del perro para la llegada del bebé", "Rutinas, órdenes útiles y biblioteca de sonidos antes del parto."],
   [presentacionAsset.url, "Presentación del bebé al perro", "Una presentación segura y adaptada a tu perro y a tu familia."],
   [bebeMovilAsset.url, "Perros y bebés móviles", "Cuando el bebé gatea y explora, la convivencia cambia."],
-  [toddlerAsset.url, "Perros y toddlers", "Juego, límites y respeto mutuo en la etapa toddler."],
+  [toddlersNieveAsset.url, "Perros y toddlers", "Juego, límites y respeto mutuo en la etapa toddler."],
   [ensenarAsset.url, "Enseña a tu hijo (según tu etapa) a interactuar con tu perro", "Qué hacer ante los momentos que más preocupan en casa."],
 ];
 

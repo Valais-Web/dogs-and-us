@@ -5,7 +5,11 @@ import headerLogoAsset from "@/assets/logo.png.asset.json";
 import familyAsset from "@/assets/familia-jardin.jpg.asset.json";
 import picnicAsset from "@/assets/bebe-perro-picnic.jpg.asset.json";
 import pregnancyAsset from "@/assets/embarazo-perro.jpg.asset.json";
-import snowAsset from "@/assets/nina-perro-nieve.jpg.asset.json";
+import tallerLimitesAsset from "@/assets/taller-limites.png.asset.json";
+import presentacionAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
+import bebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
+import toddlersNieveAsset from "@/assets/perros-toddlers-nieve.jpg.asset.json";
+import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";
@@ -35,10 +39,10 @@ const benefits = [
 const modules = [
   [picnicAsset.url, "Lenguaje canino", "Aprende a leer lo que tu perro te está diciendo."],
   [pregnancyAsset.url, "Preparación del perro para la llegada del bebé", "Rutinas, órdenes útiles y biblioteca de sonidos antes del parto."],
-  [familyAsset.url, "Presentación del bebé al perro", "Una presentación segura y adaptada a tu perro y a tu familia."],
-  [snowAsset.url, "Perros y bebés móviles", "Cuando el bebé gatea y explora, la convivencia cambia."],
-  [picnicAsset.url, "Perros y toddlers", "Juego, límites y respeto mutuo en la etapa toddler."],
-  [familyAsset.url, "Situaciones comunes", "Qué hacer ante los momentos que más preocupan en casa."],
+  [presentacionAsset.url, "Presentación del bebé al perro", "Una presentación segura y adaptada a tu perro y a tu familia."],
+  [bebeMovilAsset.url, "Perros y bebés móviles", "Cuando el bebé gatea y explora, la convivencia cambia."],
+  [toddlersNieveAsset.url, "Perros y toddlers", "Juego, límites y respeto mutuo en la etapa toddler."],
+  [ensenarAsset.url, "Enseña a tu hijo (según tu etapa) a interactuar con tu perro", "Qué hacer ante los momentos que más preocupan en casa."],
 ];
 
 const testimonials = [
@@ -80,7 +84,7 @@ function ProgramPage() {
 
     <main>
       <section className="crecen-hero">
-        <img className="crecen-hero-bg" src={familyAsset.url} alt="Familia con su bebé y su perra en el jardín" />
+        <img className="crecen-hero-bg" src={tallerLimitesAsset.url} alt="Niños jugando con su perra junto a un banco en el bosque" />
         <div className="crecen-hero-veil" />
         <div className="crecen-hero-inner">
           <p className="crecen-kicker">100% online y a tu ritmo</p>

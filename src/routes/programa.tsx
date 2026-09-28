@@ -155,6 +155,6 @@ function ProgramPage() {
       <section className="crecen-section crecen-closing"><div className="crecen-narrow"><h2>Tu familia multiespecie se merece empezar <span className="crecen-hand">bien</span></h2><p>Seguridad, bienestar y tranquilidad para todos — perro, bebé y tú.</p><BuyButton>Comprar ahora</BuyButton></div></section>
     </main>
 
-    <footer className="crecen-footer"><img src={logoAsset.url} alt="Dogs & Us" /><p>Recursos en línea para acompañar una convivencia segura y feliz entre perros y bebés.<br />Este sitio no está afiliado a Facebook™ ni a Instagram™. El contenido es propiedad de Dogs & Us y se basa en la formación y la experiencia profesional de Silvia Gómez; no sustituye una valoración conductual individual.</p><a href="mailto:dogsandus.es@gmail.com">dogsandus.es@gmail.com</a></footer>
+    <footer className="crecen-footer"><img src={logoAsset.url} alt="Dogs & Us" /><p>Recursos en línea para acompañar una convivencia segura y feliz entre perros y bebés.<br />Este sitio no está afiliado a Facebook™ ni a Instagram™. El contenido es propiedad de Dogs & Us y se basa en la formación y la experiencia profesional de Silvia Gómez; no sustituye una valoración conductual individual.</p><a href="mailto:dogsandus.es@gmail.com">dogsandus.es@gmail.com</a><p className="crecen-footer-credit">Hosted by <a href="https://valaisweb.ch" target="_blank" rel="noreferrer">Valais Web</a> &amp; Ads by <a href="https://flashads.ch" target="_blank" rel="noreferrer">Flash Ads</a></p></footer>
   </div>;
 }

@@ -586,3 +586,10 @@
   .blog-header-logo { height: 42px; }
   .blog-grid { grid-template-columns: 1fr; }
 }
+
+.blog-footer-credit { margin-top: 26px; font-size: 11px; color: rgba(254,249,246,0.4); }
+.blog-page .blog-footer .blog-footer-credit a { display: inline; margin-top: 0; color: rgba(254,249,246,0.4); text-decoration: underline; text-underline-offset: 2px; }
+.blog-page .blog-footer .blog-footer-credit a:hover { color: rgba(254,249,246,0.75); }
+.crecen-footer-credit { margin-top: 26px !important; font-size: 11px; color: rgba(254,249,246,0.4) !important; }
+.crecen-footer-credit a { margin-top: 0; font-size: 11px; color: rgba(254,249,246,0.4); text-decoration: underline; text-underline-offset: 2px; }
+.crecen-footer-credit a:hover { color: rgba(254,249,246,0.75); }

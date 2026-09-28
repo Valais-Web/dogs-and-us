@@ -80,6 +80,9 @@ export function BlogFooter() {
         valoración conductual individual.
       </p>
       <a href="mailto:dogsandus.es@gmail.com">dogsandus.es@gmail.com</a>
+      <p className="blog-footer-credit">
+        Hosted by <a href="https://valaisweb.ch" target="_blank" rel="noreferrer">Valais Web</a> &amp; Ads by <a href="https://flashads.ch" target="_blank" rel="noreferrer">Flash Ads</a>
+      </p>
     </footer>
   );
 }

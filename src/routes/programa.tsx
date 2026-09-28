@@ -18,7 +18,7 @@ const situations = [
   "Tu bebé empieza a moverse y tu perro reacciona con inseguridad.",
   "No sabrías cómo actuar si tu perro gruñe, ladra o muestra incomodidad cerca de tu bebé.",
   "Quieres un vínculo bonito, seguro y positivo desde el principio.",
-  "Buscas un programa que no te demande horas.",
+  "No sabes cómo enseñar a tus hijos a relacionarse cuidadosamente con tu perro.",
 ];
 
 const benefits = [
@@ -84,15 +84,15 @@ function ProgramPage() {
         <div className="crecen-hero-veil" />
         <div className="crecen-hero-inner">
           <p className="crecen-kicker">100% online y a tu ritmo</p>
-          <h1>Método<br />CRECEN</h1>
-          <p className="crecen-hero-hand">para familias multiespecie</p>
+          <h1>Un espacio para que tu perro y tu hijo crezcan juntos en armonía</h1>
+          <p className="crecen-hero-hand">Con el método CRECEN para familias multiespecie</p>
           <p className="crecen-hero-copy">Todo lo que necesitas para que la llegada de tu bebé y la convivencia con tu perro sean experiencias seguras, tranquilas y felices.</p>
           <BuyButton hero>Quiero unirme ahora →</BuyButton>
         </div>
       </section>
 
       <section className="crecen-section crecen-sage"><div className="crecen-container">
-        <h2>Estás en el lugar correcto si reconoces alguna <span className="crecen-hand">de estas situaciones</span></h2>
+        <h2>Estás en el lugar correcto si estás alguna <span className="crecen-hand">de estas situaciones</span></h2>
         <div className="crecen-situations">{situations.map((item) => <article key={item}>{item}</article>)}</div>
       </div></section>
 

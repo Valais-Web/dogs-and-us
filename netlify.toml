@@ -1,11 +1,8 @@
 [build]
   command = "bun install && bun run build"
-  publish = "dist/client"
+  # On Netlify, the build auto-selects the Netlify preset: static files go to
+  # "dist" and the server-rendering function is generated automatically.
+  publish = "dist"
 
 [build.environment]
-  NODE_VERSION = "20"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+  NODE_VERSION = "22"

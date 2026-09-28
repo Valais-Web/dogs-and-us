@@ -45,6 +45,9 @@ export function SiteLayout({ children }: { children: ReactNode }) {
         <div><p className="footer-label">Contacto</p><div className="grid gap-2.5 text-[15px] text-primary-foreground/85"><a href="mailto:dogsandus.es@gmail.com">dogsandus.es@gmail.com</a><a href="https://www.instagram.com/dogsandus.training/" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.youtube.com/channel/UCCPesAd8arSZWM38A7nENWA" target="_blank" rel="noreferrer">YouTube</a></div></div>
       </div>
       <div className="mx-auto mt-12 flex max-w-[1240px] flex-wrap justify-between gap-4 border-t border-primary-foreground/20 pt-5 text-xs text-primary-foreground/60"><span>© 2026 Dogs and Us. Todos los derechos reservados.</span><span>Privacidad · Cookies · Aviso legal</span></div>
+      <div className="mx-auto mt-3 max-w-[1240px] text-center text-[11px] text-primary-foreground/40">
+        Hosted by <a href="https://valaisweb.ch" target="_blank" rel="noreferrer" className="underline-offset-2 hover:text-primary-foreground/70 hover:underline">Valais Web</a> &amp; Ads by <a href="https://flashads.ch" target="_blank" rel="noreferrer" className="underline-offset-2 hover:text-primary-foreground/70 hover:underline">Flash Ads</a>
+      </div>
     </footer>
   </div>;
 }

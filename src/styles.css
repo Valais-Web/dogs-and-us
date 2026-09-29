@@ -195,7 +195,7 @@
 .consultation-card-copy > p { margin-top: 14px; color: var(--muted-foreground); font-size: 17px; line-height: 1.55; }
 .consultation-card ul { display: grid; gap: 14px; }
 .consultation-card li { display: flex; align-items: flex-start; gap: 11px; font-size: 15px; line-height: 1.35; }
-.consultation-card li svg { width: 19px; height: 19px; flex: 0 0 19px; color: var(--pink-hot); }
+.consultation-card li svg { width: 19px; height: 19px; flex: 0 0 19px; color: var(--primary); }
 .consultation-card-action { display: grid; justify-items: stretch; gap: 18px; border-left: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-left: clamp(22px,3vw,38px); }
 .consultation-card-action > p { display: grid; gap: 2px; }
 .consultation-card-action span { color: var(--muted-foreground); font-size: 13px; text-transform: uppercase; }
@@ -302,6 +302,13 @@
 .resource-card .tilt-card-face { border: 0; background: var(--popover); }
 .tilt-card:hover::before, .tilt-card:focus-within::before { transform: rotate(3deg); }
 .tilt-card:hover .tilt-card-face, .tilt-card:focus-within .tilt-card-face { transform: rotate(-2.5deg) translate(-3px,-4px); }
+.consultation-card-face { border: 1px solid color-mix(in oklab, var(--blush) 80%, var(--background)); }
+.consultation-card-action { min-width: 0; }
+.consultation-card-action button { width: 100%; max-width: 100%; min-width: 0; padding-inline: 20px; }
+@media (max-width: 1023px) {
+  .consultation-card-face { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+  .consultation-card-action { border-top: 1px solid color-mix(in oklab, var(--foreground) 14%, transparent); border-left: 0; padding-top: 22px; padding-left: 0; }
+}
 .course-card .tilt-card-face > img { width: 100%; aspect-ratio: 1; border-radius: 16px; object-fit: cover; }
 .course-card h3 { margin-top: 22px; font-size: clamp(1.15rem,1.55vw,1.45rem); line-height: 1.08; }
 .course-card p { min-height: 48px; margin-top: 8px; font-size: 16px; }

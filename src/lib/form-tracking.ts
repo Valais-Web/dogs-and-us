@@ -9,6 +9,11 @@ export async function trackFormSubmit(formName: string, fields: Record<string, s
   if (typeof window === "undefined") return false;
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({ event: "form_submit", form_name: formName, ...fields });
+  if (fields.email) {
+    import("./systeme.functions")
+      .then(({ subscribeToSysteme }) => subscribeToSysteme({ data: { email: fields.email, source: fields.source } }))
+      .catch((err) => console.error("systeme.io subscribe failed", err));
+  }
   try {
     const res = await fetch("/__forms.html", {
       method: "POST",

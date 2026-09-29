@@ -44,3 +44,4 @@
 - [x] Crear el blog (/blog), la plantilla de artículo y las 10 entradas.
 
 - [x] Cambiar las fotos de portada y módulos de /programa.
+- [x] Rediseñar Asesorías con tres tipos de consulta y solicitud mediante Netlify Forms.

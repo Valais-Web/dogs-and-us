@@ -31,7 +31,7 @@ const consultations = [
     title: "Convivencia perro y bebé/niño",
     description: "Mi perro empezó a comportarse muy diferente y raro alrededor de mi hijo. Se ve muy desconfiado y hace conductas que no me gustan.",
     points: [
-      "Valoración de la convivencia actual",
+      "90 minutos de videollamada",
       "Lectura de señales y situaciones de tensión",
       "Pautas personalizadas para toda la familia",
       "Plan práctico para recuperar la calma",
@@ -41,7 +41,7 @@ const consultations = [
     title: "Agresividad hacia mi hijo",
     description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
     points: [
-      "Valoración prioritaria del caso",
+      "90 minutos de videollamada",
       "Medidas inmediatas para reducir riesgos",
       "Identificación de señales y desencadenantes",
       "Plan personalizado de seguridad y manejo",
@@ -51,7 +51,7 @@ const consultations = [
     title: "Voy a tener un bebé",
     description: "Estoy embarazada y quiero preparar a mi perro para la llegada de mi bebé.",
     points: [
-      "Valoración de rutinas y necesidades",
+      "90 minutos de videollamada",
       "Preparación gradual antes del nacimiento",
       "Pautas para la presentación perro-bebé",
       "Plan adaptado a vuestra nueva etapa",

@@ -124,9 +124,9 @@ function ConsultationForm({ consultation, onComplete }: { consultation: Consulta
 function Page() {
   const [selected, setSelected] = useState<ConsultationTitle | null>(null);
 
-  return <ContentPage eyebrow="Asesorías 1:1" title="Una mirada cercana para vuestra situación concreta." intro="Sesiones online personalizadas para las necesidades de tu perro y tu familia." showCta={false}>
+  return <ContentPage eyebrow="Asesorías 1:1" title="¿Necesitas ayuda personalizada?" intro="Si tienes alguna duda concreta escríbeme a dogsandus.es@gmail.com" showCta={false}>
     <section className="consultations" aria-labelledby="consultations-title">
-      <header className="consultations-heading"><p className="hand">elige el apoyo que necesitáis</p><h2 id="consultations-title">Tipos de consulta</h2></header>
+      <header className="consultations-heading"><p className="hand">Sesiones personalizadas 1:1</p><h2 id="consultations-title">Tipos de consulta</h2></header>
       <div className="consultation-list">
         {consultations.map((item) => <article className="consultation-card tilt-card" key={item.title}>
           <div className="tilt-card-face consultation-card-face">

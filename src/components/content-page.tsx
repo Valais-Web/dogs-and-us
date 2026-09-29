@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function ContentPage({ eyebrow, title, intro, children, showCta = true }: { eyebrow: string; title: string; intro: string; children: React.ReactNode; showCta?: boolean }) {
+export function ContentPage({ eyebrow, title, intro, children, showCta = true }: { eyebrow: string; title: string; intro: string; children?: React.ReactNode; showCta?: boolean }) {
  return <>
   <section className="bg-primary px-5 py-20 text-primary-foreground sm:py-28"><div className="mx-auto max-w-5xl animate-rise"><p className="mb-5 text-sm font-bold uppercase tracking-widest text-secondary">{eyebrow}</p><h1 className="max-w-4xl text-5xl leading-[1.02] sm:text-7xl">{title}</h1><p className="mt-6 max-w-2xl text-lg leading-relaxed text-primary-foreground/80">{intro}</p></div></section>
   <section className="px-5 py-20 sm:py-28"><div className="mx-auto max-w-5xl">{children}</div></section>

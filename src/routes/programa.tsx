@@ -10,6 +10,7 @@ import presentacionAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
 import bebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import toddlersNieveAsset from "@/assets/perros-toddlers-nieve.jpg.asset.json";
 import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
+import silviaHolaAsset from "@/assets/silvia-hola.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";

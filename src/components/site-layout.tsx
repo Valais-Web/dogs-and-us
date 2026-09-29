@@ -6,6 +6,7 @@ import logoAsset from "@/assets/dogs-and-us-logo.png.asset.json";
 
 const nav = [
   { label: "Cursos y guías", to: "/programa" },
+  { label: "Sesiones 1:1", to: "/asesorias" },
   { label: "Acerca de", to: "/sobre-mi" },
   { label: "Blog", to: "/blog" },
 ] as const;

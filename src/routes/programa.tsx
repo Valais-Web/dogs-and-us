@@ -10,6 +10,7 @@ import presentacionAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
 import bebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import toddlersNieveAsset from "@/assets/perros-toddlers-nieve.jpg.asset.json";
 import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
+import silviaHolaAsset from "@/assets/silvia-hola.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "#comprar";
@@ -111,7 +112,7 @@ function ProgramPage() {
           <p>Soy psicóloga educativa y clínica, educadora canina profesional, mamá perruna de Moka y mamá humana de Olivia y Thiago.</p>
           <p>Decidí crear este programa porque las únicas opciones existentes demandaban muchísimo tiempo y energía, algo que como embarazada o mamá reciente no tenemos.</p>
           <p>Mi prioridad es que tengas la información esencial, basada en evidencia y respetuosa para que puedas sentirte cómoda, segura y feliz con la llegada de tu bebé y con la convivencia perro-bebé.</p>
-        </div><img src={picnicAsset.url} alt="Silvia con Moka y su bebé" />
+        </div><img src={silviaHolaAsset.url} alt="Silvia Gómez sonriendo frente a su ordenador con una taza de café" />
       </div></section>
 
       <section className="crecen-section crecen-method"><div className="crecen-container">
@@ -120,7 +121,7 @@ function ProgramPage() {
       </div></section>
 
       <section className="crecen-section"><div className="crecen-container">
-        <h2>¿Qué temas veré en el Método CRECEN <span className="crecen-hand">por dentro</span>?</h2>
+        <h2>¿Qué temas veré en el Método <span className="crecen-word-lime">CRECEN</span> <span className="crecen-hand">por dentro</span>?</h2>
         <div className="crecen-modules">{modules.map(([image, title, description], index) => <article key={title} className="crecen-module"><div className="crecen-module-photo"><img src={image} alt="" /><span>{String(index + 1).padStart(2, "0")}</span></div><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
         <div className="crecen-cta"><BuyButton>¡Lo quiero!</BuyButton></div>
       </div></section>
@@ -142,7 +143,7 @@ function ProgramPage() {
       </div></section>
 
       <section className="crecen-section crecen-compare"><div className="crecen-container">
-        <h2 className="crecen-centered-title">La diferencia con el adiestramiento <span className="crecen-hand">tradicional</span></h2>
+        <h2 className="crecen-centered-title">La diferencia con el adiestramiento <span className="crecen-hand crecen-hand-pink">tradicional</span></h2>
         <div className="crecen-compare-grid"><article><h3>Adiestramiento tradicional</h3>{["Trabaja con el perro aislado, sin contar con la dinámica de la familia.","Se apoya en la obediencia y la corrección en lugar del bienestar.","Actúa cuando el problema ya apareció.","Exige sesiones largas y desplazamientos.","No contempla las etapas del desarrollo del bebé."].map(item => <p key={item}>{item}</p>)}</article><article><h3>Método CRECEN</h3>{["Educación multiespecie: perro, bebé y familia como un mismo sistema.","Enfoque respetuoso y basado en evidencia, centrado en el bienestar.","Prevención: preparas a tu perro antes de que llegue el bebé.","100% online, a tu ritmo y sin salir de casa.","Acompaña cada etapa: embarazo, recién nacido, bebé móvil y toddler."].map(item => <p key={item}>{item}</p>)}</article></div>
       </div></section>
 

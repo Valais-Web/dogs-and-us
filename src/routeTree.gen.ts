@@ -15,7 +15,6 @@ import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactoRouteImport } from './routes/contacto'
 import { Route as ProgramaRouteImport } from './routes/programa'
 import { Route as RecursosRouteImport } from './routes/recursos'
-import { Route as SobreMiRouteImport } from './routes/sobre-mi'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 
@@ -49,11 +48,6 @@ const RecursosRoute = RecursosRouteImport.update({
   path: '/recursos',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SobreMiRoute = SobreMiRouteImport.update({
-  id: '/sobre-mi',
-  path: '/sobre-mi',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -72,7 +66,6 @@ export interface FileRoutesByFullPath {
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
-  '/sobre-mi': typeof SobreMiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -82,7 +75,6 @@ export interface FileRoutesByTo {
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
-  '/sobre-mi': typeof SobreMiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog': typeof BlogIndexRoute
 }
@@ -94,7 +86,6 @@ export interface FileRoutesById {
   '/contacto': typeof ContactoRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
-  '/sobre-mi': typeof SobreMiRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/blog/': typeof BlogIndexRoute
 }
@@ -107,7 +98,6 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/programa'
     | '/recursos'
-    | '/sobre-mi'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesByTo: FileRoutesByTo
@@ -117,7 +107,6 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/programa'
     | '/recursos'
-    | '/sobre-mi'
     | '/blog/$slug'
     | '/blog'
   id:
@@ -128,7 +117,6 @@ export interface FileRouteTypes {
     | '/contacto'
     | '/programa'
     | '/recursos'
-    | '/sobre-mi'
     | '/blog/$slug'
     | '/blog/'
   fileRoutesById: FileRoutesById
@@ -140,7 +128,6 @@ export interface RootRouteChildren {
   ContactoRoute: typeof ContactoRoute
   ProgramaRoute: typeof ProgramaRoute
   RecursosRoute: typeof RecursosRoute
-  SobreMiRoute: typeof SobreMiRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -187,13 +174,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RecursosRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/sobre-mi': {
-      id: '/sobre-mi'
-      path: '/sobre-mi'
-      fullPath: '/sobre-mi'
-      preLoaderRoute: typeof SobreMiRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/blog/': {
       id: '/blog/'
       path: '/'
@@ -230,7 +210,6 @@ const rootRouteChildren: RootRouteChildren = {
   ContactoRoute: ContactoRoute,
   ProgramaRoute: ProgramaRoute,
   RecursosRoute: RecursosRoute,
-  SobreMiRoute: SobreMiRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

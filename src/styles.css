@@ -182,6 +182,45 @@
 .lead-input { min-height: 50px; min-width: 0; flex: 1 1 200px; border: 1px solid var(--primary); border-radius: 999px; background: transparent; padding: 0 20px; color: var(--foreground); outline: none; }
 .lead-input:focus { box-shadow: 0 0 0 2px var(--secondary); }
 .lead-button { min-height: 50px; border-radius: 999px; padding-inline: 28px; text-transform: uppercase; letter-spacing: .12em; }
+.consultations { margin: 0 auto; max-width: 1100px; }
+.consultations-heading { margin-bottom: 42px; text-align: center; }
+.consultations-heading .hand { color: var(--pink-hot); font-size: clamp(1.1rem,2vw,1.45rem); }
+.consultations-heading h2 { margin-top: 4px; font-size: clamp(2.2rem,4vw,3.8rem); line-height: 1; }
+.consultation-list { display: grid; gap: 32px; }
+.consultation-card:nth-child(1)::before { background: var(--secondary); }
+.consultation-card:nth-child(2)::before { background: var(--pink-hot); }
+.consultation-card:nth-child(3)::before { background: var(--blush); }
+.consultation-card-face { display: grid; grid-template-columns: minmax(0,1.15fr) minmax(280px,1fr) minmax(180px,.55fr); align-items: center; gap: clamp(24px,4vw,52px); border: 0; background: var(--popover); padding: clamp(28px,4vw,46px); text-align: left; }
+.consultation-card-copy h3 { color: var(--primary); font-size: clamp(1.55rem,2.5vw,2.2rem); line-height: 1.05; }
+.consultation-card-copy > p { margin-top: 14px; color: var(--muted-foreground); font-size: 17px; line-height: 1.55; }
+.consultation-card ul { display: grid; gap: 14px; }
+.consultation-card li { display: flex; align-items: flex-start; gap: 11px; font-size: 15px; line-height: 1.35; }
+.consultation-card li svg { width: 19px; height: 19px; flex: 0 0 19px; color: var(--primary); }
+.consultation-card-action { display: grid; justify-items: stretch; gap: 18px; border-left: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); padding-left: clamp(22px,3vw,38px); }
+.consultation-card-action > p { display: grid; gap: 2px; }
+.consultation-card-action span { color: var(--muted-foreground); font-size: 13px; text-transform: uppercase; }
+.consultation-card-action strong { font-family: var(--font-display); font-size: 2rem; }
+.consultation-card-action button, .consultation-submit { border-color: var(--pink-hot); background: var(--pink-hot); color: var(--background); }
+.consultation-card-action button:hover, .consultation-submit:hover { background: var(--primary); color: var(--primary-foreground); }
+.consultation-dialog { display: block; width: calc(100% - 32px); max-width: 900px; max-height: calc(100vh - 32px); overflow-y: auto; border: 0; border-radius: 8px; padding: clamp(24px,4vw,48px); }
+.consultation-dialog > button { display: grid; width: 36px; height: 36px; place-items: center; border-radius: 50%; background: var(--muted); opacity: 1; }
+.consultation-dialog [data-slot="dialog-title"], .consultation-dialog h2 { font-size: clamp(1.8rem,3vw,2.7rem); }
+.consultation-dialog [data-slot="dialog-description"], .consultation-dialog header p { margin-top: 8px; color: var(--pink-hot); font-family: var(--font-display); font-size: 15px; font-weight: 700; }
+.consultation-form { display: grid; gap: 24px; margin-top: 28px; }
+.consultation-form-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 28px; }
+.consultation-field { display: grid; gap: 8px; }
+.consultation-field > span { color: var(--primary); font-family: var(--font-display); font-size: 15px; font-weight: 700; }
+.consultation-field input, .consultation-field textarea { width: 100%; border: 1px solid var(--primary); border-radius: 4px; background: var(--popover); padding: 12px 14px; color: var(--foreground); outline: none; }
+.consultation-field input { min-height: 48px; }
+.consultation-field textarea { min-height: 112px; resize: vertical; }
+.consultation-field input:focus, .consultation-field textarea:focus { border-color: var(--pink-hot); box-shadow: 0 0 0 2px color-mix(in oklab, var(--pink-hot) 20%, transparent); }
+.consultation-field input::placeholder, .consultation-field textarea::placeholder { color: var(--muted-foreground); opacity: .8; }
+.consultation-submit { justify-self: start; min-width: 220px; }
+.consultation-error { color: var(--destructive); font-weight: 600; }
+.consultation-success { display: grid; justify-items: center; gap: 14px; padding: 50px 10px 30px; text-align: center; }
+.consultation-success > svg { width: 52px; height: 52px; color: var(--pink-hot); }
+.consultation-success h3 { font-size: 2rem; }
+.consultation-success p { max-width: 430px; color: var(--muted-foreground); }
 .testimonial-rail { display: flex; width: max-content; align-items: center; gap: 22px; padding: 0 24px; animation: marquee 75s linear infinite; }
 .testimonial-rail:hover { animation-play-state: paused; }
 .testimonial { width: clamp(310px,52vw,620px); flex: 0 0 clamp(310px,52vw,620px); overflow: hidden; border-radius: 8px; background: var(--popover); box-shadow: 0 14px 30px color-mix(in oklab, var(--foreground) 12%, transparent); }
@@ -263,6 +302,13 @@
 .resource-card .tilt-card-face { border: 0; background: var(--popover); }
 .tilt-card:hover::before, .tilt-card:focus-within::before { transform: rotate(3deg); }
 .tilt-card:hover .tilt-card-face, .tilt-card:focus-within .tilt-card-face { transform: rotate(-2.5deg) translate(-3px,-4px); }
+.consultation-card-face { border: 1px solid color-mix(in oklab, var(--blush) 80%, var(--background)); }
+.consultation-card-action { min-width: 0; }
+.consultation-card-action button { width: 100%; max-width: 100%; min-width: 0; padding-inline: 20px; }
+@media (max-width: 1023px) {
+  .consultation-card-face { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px; }
+  .consultation-card-action { border-top: 1px solid color-mix(in oklab, var(--foreground) 14%, transparent); border-left: 0; padding-top: 22px; padding-left: 0; }
+}
 .course-card .tilt-card-face > img { width: 100%; aspect-ratio: 1; border-radius: 16px; object-fit: cover; }
 .course-card h3 { margin-top: 22px; font-size: clamp(1.15rem,1.55vw,1.45rem); line-height: 1.08; }
 .course-card p { min-height: 48px; margin-top: 8px; font-size: 16px; }
@@ -367,6 +413,16 @@
   .method-sticker { width: 100%; }
   .courses-section { padding: 64px 22px 72px; }
   .courses-grid { grid-template-columns: 1fr; gap: 30px; max-width: 340px; }
+  .consultations-heading { margin-bottom: 30px; }
+  .consultation-list { gap: 26px; }
+  .consultation-card-face { grid-template-columns: 1fr; gap: 24px; padding: 26px 22px; }
+  .consultation-card-copy > p { font-size: 16px; }
+  .consultation-card-action { gap: 14px; border-top: 1px solid color-mix(in oklab, var(--foreground) 18%, transparent); border-left: 0; padding-top: 22px; padding-left: 0; }
+  .consultation-card-action button { width: 100%; }
+  .consultation-dialog { width: calc(100% - 20px); max-height: calc(100vh - 20px); padding: 24px 18px; }
+  .consultation-form-grid { grid-template-columns: 1fr; gap: 20px; }
+  .consultation-form { gap: 20px; }
+  .consultation-submit { width: 100%; }
   .course-card h3 { margin-top: 14px; font-size: 1rem; }
   .course-card p { min-height: 0; font-size: 15px; }
   .course-card .tilt-card-face > img { aspect-ratio: 4/3; }
@@ -422,7 +478,7 @@
 .crecen-page a.crecen-button:hover { color: var(--crecen-cream); }
 .crecen-header .crecen-button { min-height: 44px; padding: 13px 26px; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .crecen-section { padding: clamp(56px,7vw,92px) 24px; }.crecen-container { width: min(100%,1160px); margin-inline: auto; }.crecen-narrow { width: min(100%,900px); margin-inline: auto; }
-.crecen-page h2 { font-size: clamp(28px,3.6vw,48px); }.crecen-hand { font-family: "Shantell Sans", cursive; font-weight: 700; letter-spacing: 0; }.crecen-hand-pale { color: var(--crecen-pink); }.crecen-hand-pink { color: var(--crecen-pink); }.crecen-hand-lime { color: #A8C236; }.crecen-centered-title { max-width: 960px; margin-inline: auto !important; text-align: center; }.crecen-sage { background: var(--crecen-sage); }.crecen-story, .crecen-included { background: var(--crecen-pale); }
+.crecen-page h2 { font-size: clamp(28px,3.6vw,48px); }.crecen-hand { font-family: "Shantell Sans", cursive; font-weight: 700; letter-spacing: 0; }.crecen-hand-pale { color: var(--crecen-pink); }.crecen-hand-pink { color: var(--crecen-pink); }.crecen-hand-lime { color: #A8C236; }.crecen-word-lime { color: #d2db76; }.crecen-centered-title { max-width: 960px; margin-inline: auto !important; text-align: center; }.crecen-sage { background: var(--crecen-sage); }.crecen-story, .crecen-included { background: var(--crecen-pale); }
 .crecen-hero { position: relative; display: flex; min-height: clamp(560px,78vh,820px); align-items: center; overflow: hidden; padding: 68px 24px; color: var(--crecen-cream); }
 .crecen-hero-bg, .crecen-hero-veil { position: absolute; inset: 0; width: 100%; height: 100%; }.crecen-hero-bg { object-fit: cover; object-position: center 45%; }.crecen-hero-veil { background: linear-gradient(100deg,rgba(40,48,28,.95) 0%,rgba(40,48,28,.86) 34%,rgba(40,48,28,.52) 62%,rgba(40,48,28,.34) 100%); }
 .crecen-hero-inner { position: relative; z-index: 1; width: min(100%,1240px); margin: 0 auto; }.crecen-kicker { margin-bottom: 20px !important; font-family: "Figtree",sans-serif; font-size: clamp(11px,1.15vw,14px); font-weight: 600; letter-spacing: .24em; text-transform: uppercase; }.crecen-hero h1 { font-size: clamp(38px,4.6vw,66px); line-height: 1.04; letter-spacing: -.02em; }.crecen-hero-hand { margin-top: 18px !important; font-family: "Shantell Sans",cursive; font-size: clamp(19px,2.2vw,30px); font-weight: 600; color: #A8C236; }.crecen-hero-copy { max-width: 44ch; margin-top: 24px !important; font-size: clamp(16px,1.5vw,20px); }.crecen-button-hero { margin-top: 30px; padding: 18px 40px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; }.crecen-button-hero:hover { background: var(--crecen-pale); color: var(--crecen-dark); }.crecen-page a.crecen-button-hero:hover { color: var(--crecen-dark); }

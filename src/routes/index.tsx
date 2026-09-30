@@ -152,7 +152,7 @@ function HomePage() {
           <img src={familiaAsset.url} alt="Silvia con su familia y su perro" className="about-photo about-photo-two" />
           <span className="hand about-who">¿quién</span><span className="hand about-am">soy?</span>
         </div>
-        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><Link to="/sobre-mi" className="blush-button">Quiero saber más <ArrowRight /></Link></div>
+        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p></div>
       </div>
     </section>
 

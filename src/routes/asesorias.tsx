@@ -35,7 +35,7 @@ const consultations = [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
       "Plan de intervención personalizado",
-      "Acceso automático al programa CRECEN",
+      "Acceso completo al programa CRECEN",
     ],
   },
   {
@@ -46,7 +46,7 @@ const consultations = [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
       "Plan de intervención personalizado",
-      "Acceso automático al programa CRECEN",
+      "Acceso completo al programa CRECEN",
     ],
   },
   {
@@ -57,7 +57,7 @@ const consultations = [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
       "Plan de intervención personalizado",
-      "Acceso automático al programa CRECEN",
+      "Acceso completo al programa CRECEN",
     ],
   },
 ] as const;

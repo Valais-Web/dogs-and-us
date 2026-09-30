@@ -121,7 +121,7 @@ function ProgramPage() {
       </div></section>
 
       <section className="crecen-section"><div className="crecen-container">
-        <h2>¿Qué temas veré en el Método CRECEN <span className="crecen-hand">por dentro</span>?</h2>
+        <h2>¿Qué temas veré en el Método <span className="crecen-word-lime">CRECEN</span> <span className="crecen-hand">por dentro</span>?</h2>
         <div className="crecen-modules">{modules.map(([image, title, description], index) => <article key={title} className="crecen-module"><div className="crecen-module-photo"><img src={image} alt="" /><span>{String(index + 1).padStart(2, "0")}</span></div><div><h3>{title}</h3><p>{description}</p></div></article>)}</div>
         <div className="crecen-cta"><BuyButton>¡Lo quiero!</BuyButton></div>
       </div></section>

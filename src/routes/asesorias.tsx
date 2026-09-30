@@ -30,16 +30,7 @@ const consultations = [
   {
     title: "Convivencia perro y bebé/niño",
     description: "Mi perro empezó a comportarse muy diferente y raro alrededor de mi hijo. Se ve muy desconfiado y hace conductas que no me gustan.",
-    points: [
-      "90 minutos de videollamada",
-      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
-      "Plan de intervención personalizado",
-      "Acceso automático al programa CRECEN",
-    ],
-  },
-  {
-    title: "Agresividad hacia mi hijo",
-    description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
+    price: "99 €",
     points: [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
@@ -50,6 +41,18 @@ const consultations = [
   {
     title: "Voy a tener un bebé",
     description: "Estoy embarazada y quiero preparar a mi perro para la llegada de mi bebé.",
+    price: "99 €",
+    points: [
+      "90 minutos de videollamada",
+      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
+      "Plan de intervención personalizado",
+      "Acceso automático al programa CRECEN",
+    ],
+  },
+  {
+    title: "Agresividad hacia mi hijo",
+    description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
+    price: "127 €",
     points: [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
@@ -81,7 +84,7 @@ const longFields = [
   ["referral_source", "¿Cómo conociste Dogs & Us?"],
 ] as const;
 
-function ConsultationForm({ consultation, onComplete }: { consultation: ConsultationTitle; onComplete: () => void }) {
+function ConsultationForm({ consultation, price, onComplete }: { consultation: ConsultationTitle; price: string; onComplete: () => void }) {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   async function submit(event: FormEvent<HTMLFormElement>) {
@@ -102,7 +105,7 @@ function ConsultationForm({ consultation, onComplete }: { consultation: Consulta
   return <form name="consultation-request" data-netlify="true" netlify-honeypot="bot-field" onSubmit={submit} className="consultation-form">
     <input type="hidden" name="form-name" value="consultation-request" />
     <input type="hidden" name="consultation_type" value={consultation} />
-    <input type="hidden" name="price" value="99 €" />
+    <input type="hidden" name="price" value={price} />
     <p className="hidden"><label>No rellenes este campo: <input name="bot-field" /></label></p>
     <div className="consultation-form-grid">
       {shortFields.map(([name, label, type, placeholder]) => <label key={name} className="consultation-field">
@@ -132,7 +135,7 @@ function Page() {
           <div className="tilt-card-face consultation-card-face">
             <div className="consultation-card-copy"><h3>{item.title}</h3><p>{item.description}</p></div>
             <ul>{item.points.map((point) => <li key={point}><PawPrint aria-hidden="true" /><span>{point}</span></li>)}</ul>
-            <div className="consultation-card-action"><p><span>Precio por sesión</span><strong>99 €</strong></p><Button size="lg" onClick={() => setSelected(item.title)}>Solicitar sesión <ArrowRight aria-hidden="true" /></Button></div>
+            <div className="consultation-card-action"><p><span>Precio por sesión</span><strong>{item.price}</strong></p><Button size="lg" onClick={() => setSelected(item.title)}>Solicitar sesión <ArrowRight aria-hidden="true" /></Button></div>
           </div>
         </article>)}
       </div>
@@ -140,7 +143,7 @@ function Page() {
 
     <Dialog open={selected !== null} onOpenChange={(open) => { if (!open) setSelected(null); }}>
       <DialogContent className="consultation-dialog">
-        {selected && <><DialogHeader><DialogTitle>Solicitar sesión</DialogTitle><DialogDescription>{selected} · 99 €</DialogDescription></DialogHeader><ConsultationForm key={selected} consultation={selected} onComplete={() => setSelected(null)} /></>}
+        {selected && <><DialogHeader><DialogTitle>Solicitar sesión</DialogTitle><DialogDescription>{selected} · {consultations.find((item) => item.title === selected)!.price}</DialogDescription></DialogHeader><ConsultationForm key={selected} consultation={selected} price={consultations.find((item) => item.title === selected)!.price} onComplete={() => setSelected(null)} /></>}
       </DialogContent>
     </Dialog>
   </ContentPage>;

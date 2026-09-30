@@ -32,9 +32,9 @@ const consultations = [
     description: "Mi perro empezó a comportarse muy diferente y raro alrededor de mi hijo. Se ve muy desconfiado y hace conductas que no me gustan.",
     points: [
       "90 minutos de videollamada",
-      "Lectura de señales y situaciones de tensión",
-      "Pautas personalizadas para toda la familia",
-      "Plan práctico para recuperar la calma",
+      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
+      "Plan de intervención personalizado",
+      "Acceso automático al programa CRECEN",
     ],
   },
   {
@@ -42,9 +42,9 @@ const consultations = [
     description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
     points: [
       "90 minutos de videollamada",
-      "Medidas inmediatas para reducir riesgos",
-      "Identificación de señales y desencadenantes",
-      "Plan personalizado de seguridad y manejo",
+      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
+      "Plan de intervención personalizado",
+      "Acceso automático al programa CRECEN",
     ],
   },
   {
@@ -52,9 +52,9 @@ const consultations = [
     description: "Estoy embarazada y quiero preparar a mi perro para la llegada de mi bebé.",
     points: [
       "90 minutos de videollamada",
-      "Preparación gradual antes del nacimiento",
-      "Pautas para la presentación perro-bebé",
-      "Plan adaptado a vuestra nueva etapa",
+      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
+      "Plan de intervención personalizado",
+      "Acceso automático al programa CRECEN",
     ],
   },
 ] as const;

@@ -143,7 +143,7 @@ function ProgramPage() {
       </div></section>
 
       <section className="crecen-section crecen-compare"><div className="crecen-container">
-        <h2 className="crecen-centered-title">La diferencia con el adiestramiento <span className="crecen-hand">tradicional</span></h2>
+        <h2 className="crecen-centered-title">La diferencia con el adiestramiento <span className="crecen-hand crecen-hand-pink">tradicional</span></h2>
         <div className="crecen-compare-grid"><article><h3>Adiestramiento tradicional</h3>{["Trabaja con el perro aislado, sin contar con la dinámica de la familia.","Se apoya en la obediencia y la corrección en lugar del bienestar.","Actúa cuando el problema ya apareció.","Exige sesiones largas y desplazamientos.","No contempla las etapas del desarrollo del bebé."].map(item => <p key={item}>{item}</p>)}</article><article><h3>Método CRECEN</h3>{["Educación multiespecie: perro, bebé y familia como un mismo sistema.","Enfoque respetuoso y basado en evidencia, centrado en el bienestar.","Prevención: preparas a tu perro antes de que llegue el bebé.","100% online, a tu ritmo y sin salir de casa.","Acompaña cada etapa: embarazo, recién nacido, bebé móvil y toddler."].map(item => <p key={item}>{item}</p>)}</article></div>
       </div></section>
 

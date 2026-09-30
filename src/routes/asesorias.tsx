@@ -30,16 +30,7 @@ const consultations = [
   {
     title: "Convivencia perro y bebé/niño",
     description: "Mi perro empezó a comportarse muy diferente y raro alrededor de mi hijo. Se ve muy desconfiado y hace conductas que no me gustan.",
-    points: [
-      "90 minutos de videollamada",
-      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
-      "Plan de intervención personalizado",
-      "Acceso automático al programa CRECEN",
-    ],
-  },
-  {
-    title: "Agresividad hacia mi hijo",
-    description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
+    price: "99 €",
     points: [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
@@ -50,6 +41,18 @@ const consultations = [
   {
     title: "Voy a tener un bebé",
     description: "Estoy embarazada y quiero preparar a mi perro para la llegada de mi bebé.",
+    price: "99 €",
+    points: [
+      "90 minutos de videollamada",
+      "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
+      "Plan de intervención personalizado",
+      "Acceso automático al programa CRECEN",
+    ],
+  },
+  {
+    title: "Agresividad hacia mi hijo",
+    description: "Mi perro ha mordido o ha intentado morder a mi hijo o a otro niño.",
+    price: "127 €",
     points: [
       "90 minutos de videollamada",
       "Análisis de videos con instrucciones claras entre tu perro en la situación problema",
@@ -81,7 +84,7 @@ const longFields = [
   ["referral_source", "¿Cómo conociste Dogs & Us?"],
 ] as const;
 
-function ConsultationForm({ consultation, onComplete }: { consultation: ConsultationTitle; onComplete: () => void }) {
+function ConsultationForm({ consultation, price, onComplete }: { consultation: ConsultationTitle; price: string; onComplete: () => void }) {
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
 
   async function submit(event: FormEvent<HTMLFormElement>) {

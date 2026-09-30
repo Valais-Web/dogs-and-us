@@ -105,7 +105,7 @@ function ConsultationForm({ consultation, price, onComplete }: { consultation: C
   return <form name="consultation-request" data-netlify="true" netlify-honeypot="bot-field" onSubmit={submit} className="consultation-form">
     <input type="hidden" name="form-name" value="consultation-request" />
     <input type="hidden" name="consultation_type" value={consultation} />
-    <input type="hidden" name="price" value="99 €" />
+    <input type="hidden" name="price" value={price} />
     <p className="hidden"><label>No rellenes este campo: <input name="bot-field" /></label></p>
     <div className="consultation-form-grid">
       {shortFields.map(([name, label, type, placeholder]) => <label key={name} className="consultation-field">
@@ -135,7 +135,7 @@ function Page() {
           <div className="tilt-card-face consultation-card-face">
             <div className="consultation-card-copy"><h3>{item.title}</h3><p>{item.description}</p></div>
             <ul>{item.points.map((point) => <li key={point}><PawPrint aria-hidden="true" /><span>{point}</span></li>)}</ul>
-            <div className="consultation-card-action"><p><span>Precio por sesión</span><strong>99 €</strong></p><Button size="lg" onClick={() => setSelected(item.title)}>Solicitar sesión <ArrowRight aria-hidden="true" /></Button></div>
+            <div className="consultation-card-action"><p><span>Precio por sesión</span><strong>{item.price}</strong></p><Button size="lg" onClick={() => setSelected(item.title)}>Solicitar sesión <ArrowRight aria-hidden="true" /></Button></div>
           </div>
         </article>)}
       </div>
@@ -143,7 +143,7 @@ function Page() {
 
     <Dialog open={selected !== null} onOpenChange={(open) => { if (!open) setSelected(null); }}>
       <DialogContent className="consultation-dialog">
-        {selected && <><DialogHeader><DialogTitle>Solicitar sesión</DialogTitle><DialogDescription>{selected} · 99 €</DialogDescription></DialogHeader><ConsultationForm key={selected} consultation={selected} onComplete={() => setSelected(null)} /></>}
+        {selected && <><DialogHeader><DialogTitle>Solicitar sesión</DialogTitle><DialogDescription>{selected} · {consultations.find((item) => item.title === selected)!.price}</DialogDescription></DialogHeader><ConsultationForm key={selected} consultation={selected} price={consultations.find((item) => item.title === selected)!.price} onComplete={() => setSelected(null)} /></>}
       </DialogContent>
     </Dialog>
   </ContentPage>;

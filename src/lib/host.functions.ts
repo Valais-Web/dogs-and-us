@@ -9,6 +9,6 @@ export const getIndexability = createServerFn({ method: "GET" }).handler(async (
   // Behind proxies (Lovable/Netlify) the rewritten host arrives in x-forwarded-host;
   // trust it only when the direct URL is not already a real domain.
   const forwarded = url.hostname === "localhost" ? request.headers.get("x-forwarded-host") : null;
-  const host = (forwarded ?? url.hostname).toLowerCase().split(":")[0];
+  const host = (forwarded ?? url.hostname).toLowerCase().split(":")[0] ?? "";
   return { host, indexable: PROD_HOSTS.has(host) };
 });

@@ -13,7 +13,7 @@ import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
 import silviaHolaAsset from "@/assets/silvia-hola.jpg.asset.json";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
-const URL_COMPRA = "#comprar";
+const URL_COMPRA = "https://dogsandus-es.systeme.io/pagomultiespecie?productQuantity=1";
 const PRICE = "59 €";
 const methodLetters: Array<[string, string]> = [["C","Comunicación"],["R","Refuerzo"],["E","Emociones"],["C","Control del entorno"],["E","Estructura"],["N","Necesidades"]];
 

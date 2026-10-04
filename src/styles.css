@@ -228,11 +228,11 @@
 
 .home-hero { position: relative; min-height: min(780px,calc(100vh - 96px)); overflow: hidden; padding: clamp(90px,14vh,150px) 24px 120px; }
 .home-hero-gallery, .home-hero-photo-shade { position: absolute; inset: 0; width: 100%; height: 100%; }
-.home-hero-gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; opacity: 0; animation: hero-photo-cycle 18s ease-in-out infinite; }
+.home-hero-gallery img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; filter: brightness(1.12) saturate(1.12) contrast(1.04); opacity: 0; animation: hero-photo-cycle 18s ease-in-out infinite; }
 .home-hero-gallery img:nth-child(1) { opacity: 1; animation-delay: 0s; }
 .home-hero-gallery img:nth-child(2) { animation-delay: 6s; }
 .home-hero-gallery img:nth-child(3) { animation-delay: 12s; }
-.home-hero-photo-shade { background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
+.home-hero-photo-shade { background: linear-gradient(180deg, rgba(36,16,23,.48), rgba(36,16,23,.18) 45%, rgba(36,16,23,.55)); }
 .home-hero-heading { position: relative; z-index: 2; margin: 0 auto; max-width: 1100px; padding-top: clamp(55px,8vh,95px); text-align: center; }
 .home-hero h1 { color: var(--primary-foreground); font-size: clamp(3rem,6.4vw,5.6rem); line-height: .96; }
 .home-hero-heading > p { margin-top: 24px; font-size: clamp(1.25rem,2.5vw,1.9rem); }
@@ -272,7 +272,7 @@
 .scroll-story-media, .scroll-story-overlay { position: fixed; inset: 0; }
 .scroll-story-media { z-index: 0; }
 .scroll-story-media img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
-.scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.72), rgba(36,16,23,.4) 45%, rgba(36,16,23,.85)); }
+.scroll-story-overlay { z-index: 1; background: linear-gradient(180deg, rgba(36,16,23,.48), rgba(36,16,23,.18) 45%, rgba(36,16,23,.55)); }
 .scroll-story-copy { position: relative; z-index: 2; display: grid; min-height: clamp(680px,100vh,900px); place-items: center; padding: clamp(150px,22vh,260px) 24px; text-align: center; }
 .scroll-story-copy h2 { max-width: 27ch; color: var(--primary-foreground); font-size: clamp(2rem,4.5vw,4.5rem); line-height: 1.08; }
 .ribbon-wave { position: absolute; z-index: 3; right: 0; bottom: 0; left: 0; height: 72px; overflow: hidden; pointer-events: none; }

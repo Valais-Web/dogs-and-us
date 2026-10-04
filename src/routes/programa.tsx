@@ -89,9 +89,9 @@ function ProgramPage() {
         <div className="crecen-hero-veil" />
         <div className="crecen-hero-inner">
           <p className="crecen-kicker">100% online y a tu ritmo</p>
-          <h1>Un espacio para que tu perro y tu hijo crezcan juntos en armonía</h1>
+          <h1>Un espacio para que perros y  niños crezcan juntos en armonía</h1>
           <p className="crecen-hero-hand">Con el método CRECEN para familias multiespecie</p>
-          <p className="crecen-hero-copy">Todo lo que necesitas para que la llegada de tu bebé y la convivencia con tu perro sean experiencias seguras, tranquilas y felices.</p>
+          <p className="crecen-hero-copy">Todo lo que necesitas para que la convivencia de tu bebé y tu perro esté llena de experiencias seguras, tranquilas y felices.</p>
           <BuyButton hero>Quiero unirme ahora →</BuyButton>
         </div>
       </section>

@@ -10,7 +10,7 @@ import presentacionAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
 import bebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import toddlersNieveAsset from "@/assets/perros-toddlers-nieve.jpg.asset.json";
 import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
-import silviaHolaAsset from "@/assets/silvia-hola.jpg.asset.json";
+const silviaHolaUrl = "/media/silvia-hola.jpg";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
 const URL_COMPRA = "https://dogsandus-es.systeme.io/pagometodocrecen";
@@ -112,7 +112,7 @@ function ProgramPage() {
           <p>Soy psicóloga educativa y clínica, educadora canina profesional, mamá perruna de Moka y mamá humana de Olivia y Thiago.</p>
           <p>Decidí crear este programa porque las únicas opciones existentes demandaban muchísimo tiempo y energía, algo que como embarazada o mamá reciente no tenemos.</p>
           <p>Mi prioridad es que tengas la información esencial, basada en evidencia y respetuosa para que puedas sentirte cómoda, segura y feliz con la llegada de tu bebé y con la convivencia perro-bebé.</p>
-        </div><img src={silviaHolaAsset.url} alt="Silvia Gómez sonriendo frente a su ordenador con una taza de café" />
+        </div><img src={silviaHolaUrl} alt="Silvia Gómez sonriendo frente a su ordenador con una taza de café" />
       </div></section>
 
       <section className="crecen-section crecen-method"><div className="crecen-container">

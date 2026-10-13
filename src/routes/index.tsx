@@ -13,7 +13,6 @@ import newsletterSticker from "@/assets/newsletter-sticker.png";
 import shimmiYukiAsset from "@/assets/shimmi-y-yuki.jpg.asset.json";
 import kobuAsset from "@/assets/kobu.jpg.asset.json";
 import cobainAsset from "@/assets/cobain.jpg.asset.json";
-import lenguajeCaninoBebeAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
 import perroBebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import metodoCrecenCompletoAsset from "@/assets/metodo-crecen-completo.jpg.asset.json";
 import presentacionPerroBebeAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
@@ -136,12 +135,12 @@ function HomePage() {
     <section className="courses-section">
       <h2 className="courses-title">Empieza tu camino como mamá multiespecie</h2>
       <div className="courses-grid">
-        <CourseCard src={metodoCrecenCompletoAsset.url} title="Método CRECEN completo" text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
-        <CourseCard src={embarazoAsset.url} title="Pre-Bebé" text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />
-        <CourseCard src={presentacionPerroBebeAsset.url} title="Presentación" text="Para preparar el primer encuentro entre perro y bebé." label="Preparar el encuentro" to="/programa" />
-        <CourseCard src={perroBebeMovilAsset.url} title="Perros y bebé móvil" text="Para acompañar sus primeros movimientos juntos." label="Ver curso" to="/programa" />
-        <CourseCard src={picnicAsset.url} title="Bebé y toddler" text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
-        <CourseCard src={lenguajeCaninoBebeAsset.url} title="Lenguaje canino" text="Para comprender mejor lo que tu perro comunica." label="Aprender a leerle" to="/recursos" />
+        <CourseCard src={metodoCrecenCompletoAsset.url} title={"Método CRECEN\nTodas las etapas"} text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
+        <CourseCard src={embarazoAsset.url} title={"Etapa 1\nEmbarazo (pre-bebé)"} text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />
+        <CourseCard src={presentacionPerroBebeAsset.url} title={"Etapa 2\nPresentación perro-bebé"} text="Para preparar el primer encuentro entre perro y bebé." label="Preparar el encuentro" to="/programa" />
+        <CourseCard src="/media/primeras-semanas.jpg" title={"Etapa 3 \n Primeras semanas"} text="Para acompañar los primeros días en casa juntos." label="Ver curso" to="/programa" />
+        <CourseCard src={perroBebeMovilAsset.url} title={"Etapa 4\nPerros y bebé móvil"} text="Para acompañar sus primeros movimientos juntos." label="Ver curso" to="/programa" />
+        <CourseCard src={picnicAsset.url} title={"Etapa 5\nPerros y toddlers"} text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
       </div>
     </section>
 

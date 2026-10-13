@@ -136,11 +136,11 @@ function HomePage() {
       <h2 className="courses-title">Empieza tu camino como mamá multiespecie</h2>
       <div className="courses-grid">
         <CourseCard src={metodoCrecenCompletoAsset.url} title={"Método CRECEN\nTodas las etapas"} text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
-        <CourseCard src={embarazoAsset.url} title={"Etapa 1\nEmbarazo (pre-bebé)"} text="Para familias que esperan la llegada de su bebé." label="Preparar la llegada" to="/programa" />
-        <CourseCard src={presentacionPerroBebeAsset.url} title={"Etapa 2\nPresentación perro-bebé"} text="Para preparar el primer encuentro entre perro y bebé." label="Preparar el encuentro" to="/programa" />
-        <CourseCard src="/media/primeras-semanas.jpg" title={"Etapa 3 \n Primeras semanas"} text="Para acompañar los primeros días en casa juntos." label="Ver curso" to="/programa" />
-        <CourseCard src={perroBebeMovilAsset.url} title={"Etapa 4\nPerros y bebé móvil"} text="Para acompañar sus primeros movimientos juntos." label="Ver curso" to="/programa" />
-        <CourseCard src={picnicAsset.url} title={"Etapa 5\nPerros y toddlers"} text="Para acompañar cada nueva etapa en casa." label="Ver cursos" to="/programa" />
+        <CourseCard src={embarazoAsset.url} title="Etapa 1 - Embarazo " text="Prepara a tu perro para la llegada de tu  bebé." label="LO QUIERO" to="/programa" />
+        <CourseCard src={presentacionPerroBebeAsset.url} title="Etapa 2 - Presentación" text="Para un primer encuentro entre perro y bebé de forma segura y sin estrés." label="LO QUIERO" to="/programa" />
+        <CourseCard src="/media/primeras-semanas.jpg" title="Etapa 3 - Primeras semanas" text="Para acompañar a tu perro en estos días tan agotadores sin sentir que es una carga más." label="LO QUIERO" to="/programa" />
+        <CourseCard src={perroBebeMovilAsset.url} title="Etapa 4 - Perros y bebé móvil" text="Para una buena convivencia y una prevención exitosa en la etapa móvil." label="LO QUIERO" to="/programa" />
+        <CourseCard src={picnicAsset.url} title="Etapa 5 - Perros y toddlers" text="Cómo facilitar una buena relación entre perro y bebé. " label="LO QUIERO" to="/programa" />
       </div>
     </section>
 

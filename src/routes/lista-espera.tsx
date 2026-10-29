@@ -22,7 +22,7 @@ function WaitlistPage() {
     <div className="waitlist-page">
       <section className="newsletter-home">
         <figure className="newsletter-photo">
-          <img src="/media/portada-familia.jpg" alt="Familia con su perro compartiendo tiempo juntos" />
+          <img src="/media/embarazo-perro.jpg" alt="Familia con su perro compartiendo tiempo juntos" />
           <img className="newsletter-sticker" src={newsletterSticker} alt="" />
         </figure>
         <div className="newsletter-copy">

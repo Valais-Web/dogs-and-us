@@ -649,3 +649,6 @@
 .crecen-footer-credit { margin-top: 26px !important; font-size: 11px; color: rgba(254,249,246,0.4) !important; }
 .crecen-footer-credit a { margin-top: 0; font-size: 11px; color: rgba(254,249,246,0.4); text-decoration: underline; text-underline-offset: 2px; }
 .crecen-footer-credit a:hover { color: rgba(254,249,246,0.75); }
+.about-badge { display:block; margin-top: 28px; width: 180px; height: auto; }
+.about-training { margin-top: 18px; max-width: 580px; font-size: .95rem; line-height: 1.6; opacity: .85; }
+.waitlist-page { min-height: 70vh; display:flex; align-items:center; }

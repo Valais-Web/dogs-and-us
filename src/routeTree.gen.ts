@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AsesoriasRouteImport } from './routes/asesorias'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactoRouteImport } from './routes/contacto'
+import { Route as ListaEsperaRouteImport } from './routes/lista-espera'
 import { Route as ProgramaRouteImport } from './routes/programa'
 import { Route as RecursosRouteImport } from './routes/recursos'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
@@ -36,6 +37,11 @@ const BlogRoute = BlogRouteImport.update({
 const ContactoRoute = ContactoRouteImport.update({
   id: '/contacto',
   path: '/contacto',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ListaEsperaRoute = ListaEsperaRouteImport.update({
+  id: '/lista-espera',
+  path: '/lista-espera',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProgramaRoute = ProgramaRouteImport.update({
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/asesorias': typeof AsesoriasRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
+  '/lista-espera': typeof ListaEsperaRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/asesorias': typeof AsesoriasRoute
   '/contacto': typeof ContactoRoute
+  '/lista-espera': typeof ListaEsperaRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/asesorias': typeof AsesoriasRoute
   '/blog': typeof BlogRouteWithChildren
   '/contacto': typeof ContactoRoute
+  '/lista-espera': typeof ListaEsperaRoute
   '/programa': typeof ProgramaRoute
   '/recursos': typeof RecursosRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/asesorias'
     | '/blog'
     | '/contacto'
+    | '/lista-espera'
     | '/programa'
     | '/recursos'
     | '/blog/$slug'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
     | '/'
     | '/asesorias'
     | '/contacto'
+    | '/lista-espera'
     | '/programa'
     | '/recursos'
     | '/blog/$slug'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '/asesorias'
     | '/blog'
     | '/contacto'
+    | '/lista-espera'
     | '/programa'
     | '/recursos'
     | '/blog/$slug'
@@ -126,6 +138,7 @@ export interface RootRouteChildren {
   AsesoriasRoute: typeof AsesoriasRoute
   BlogRoute: typeof BlogRouteWithChildren
   ContactoRoute: typeof ContactoRoute
+  ListaEsperaRoute: typeof ListaEsperaRoute
   ProgramaRoute: typeof ProgramaRoute
   RecursosRoute: typeof RecursosRoute
 }
@@ -158,6 +171,13 @@ declare module '@tanstack/react-router' {
       path: '/contacto'
       fullPath: '/contacto'
       preLoaderRoute: typeof ContactoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/lista-espera': {
+      id: '/lista-espera'
+      path: '/lista-espera'
+      fullPath: '/lista-espera'
+      preLoaderRoute: typeof ListaEsperaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/programa': {
@@ -208,6 +228,7 @@ const rootRouteChildren: RootRouteChildren = {
   AsesoriasRoute: AsesoriasRoute,
   BlogRoute: BlogRouteWithChildren,
   ContactoRoute: ContactoRoute,
+  ListaEsperaRoute: ListaEsperaRoute,
   ProgramaRoute: ProgramaRoute,
   RecursosRoute: RecursosRoute,
 }

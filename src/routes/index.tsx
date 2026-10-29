@@ -35,7 +35,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" }) {
+function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" | "/lista-espera" }) {
   return <article className="course-card tilt-card">
     <div className="tilt-card-face">
       <img src={src} alt="Familia compartiendo tiempo con su perro" loading="lazy" />
@@ -136,11 +136,11 @@ function HomePage() {
       <h2 className="courses-title">Empieza tu camino como mamá multiespecie</h2>
       <div className="courses-grid">
         <CourseCard src={metodoCrecenCompletoAsset.url} title={"Método CRECEN\nTodas las etapas"} text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
-        <CourseCard src={embarazoAsset.url} title="Etapa 1 - Embarazo " text="Prepara a tu perro para la llegada de tu  bebé." label="LO QUIERO" to="/programa" />
-        <CourseCard src={presentacionPerroBebeAsset.url} title="Etapa 2 - Presentación" text="Para un primer encuentro entre perro y bebé de forma segura y sin estrés." label="LO QUIERO" to="/programa" />
-        <CourseCard src="/media/primeras-semanas.jpg" title="Etapa 3 - Primeras semanas" text="Para acompañar a tu perro en estos días tan agotadores sin sentir que es una carga más." label="LO QUIERO" to="/programa" />
-        <CourseCard src={perroBebeMovilAsset.url} title="Etapa 4 - Perros y bebé móvil" text="Para una buena convivencia y una prevención exitosa en la etapa móvil." label="LO QUIERO" to="/programa" />
-        <CourseCard src={picnicAsset.url} title="Etapa 5 - Perros y toddlers" text="Cómo facilitar una buena relación entre perro y bebé. " label="LO QUIERO" to="/programa" />
+        <CourseCard src={embarazoAsset.url} title="Etapa 1 - Embarazo " text="Prepara a tu perro para la llegada de tu  bebé." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={presentacionPerroBebeAsset.url} title="Etapa 2 - Presentación" text="Para un primer encuentro entre perro y bebé de forma segura y sin estrés." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src="/media/primeras-semanas.jpg" title="Etapa 3 - Primeras semanas" text="Para acompañar a tu perro en estos días tan agotadores sin sentir que es una carga más." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={perroBebeMovilAsset.url} title="Etapa 4 - Perros y bebé móvil" text="Para una buena convivencia y una prevención exitosa en la etapa móvil." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={picnicAsset.url} title="Etapa 5 - Perros y toddlers" text="Cómo facilitar una buena relación entre perro y bebé. " label="LO QUIERO" to="/lista-espera" />
       </div>
     </section>
 
@@ -151,7 +151,7 @@ function HomePage() {
           <img src={familiaAsset.url} alt="Silvia con su familia y su perro" className="about-photo about-photo-two" />
           <span className="hand about-who">¿quién</span><span className="hand about-am">soy?</span>
         </div>
-        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p></div>
+        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><img className="about-badge" src="/media/iaabc-member.png" alt="Miembro de IAABC, International Association of Animal Behavior Consultants" loading="lazy" /><p className="about-training"><strong>Mi formación:</strong> Single Track - adiestramiento canino profesional, Ian Dunbar - dog training, psicología de la educación - Universidad de Barcelona, Sarah Dixon / IAABC - Resolving Resource Guarding</p></div>
       </div>
     </section>
 

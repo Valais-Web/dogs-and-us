@@ -163,15 +163,15 @@ function HomePage() {
     </div>
 
     <section className="resources-home">
-      <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
+      <header><h2>Recursos gratuitos</h2><p className="hand">para familias multiespecie</p></header>
       <div className="resources-grid">
         {([
-          [recursoEnriquecimientoAsset.url, "Guía de enriquecimiento por raza"],
-          [recursoLenguajeAsset.url, "Lenguaje canino básico"],
-          [recursoViajeAsset.url, "Checklist viaje con perros y niños"],
-          [embarazoAsset.url, "Checklist de preparación pre-bebé"],
-        ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
-          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
+          [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/z110z6f1jw"],
+          [recursoLenguajeAsset.url, "Lenguaje canino e hitos", "https://thankful-hall-75598.myflodesk.com/fzu0d76dv2"],
+          [recursoViajeAsset.url, "Desarrollo infantil + conducta canina", "https://thankful-hall-75598.myflodesk.com/ppzyoyw2s0"],
+          [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/ze46lq27lb"],
+        ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
+          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>
         </article>)}
       </div>
     </section>

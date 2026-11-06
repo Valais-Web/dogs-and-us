@@ -164,7 +164,7 @@ function HomePage() {
       <header><h2>Recursos gratuitos</h2><p className="hand">para familias multiespecie</p></header>
       <div className="resources-grid">
         {([
-          [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/z110z6f1jw"],
+          [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/enriquecimientocanino"],
           [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/ze46lq27lb"],
         ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>

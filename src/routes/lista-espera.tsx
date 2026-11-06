@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LeadForm } from "@/components/lead-form";
-import newsletterSticker from "@/assets/newsletter-sticker.png";
 
 export const Route = createFileRoute("/lista-espera")({
   head: () => ({
@@ -22,8 +21,7 @@ function WaitlistPage() {
     <div className="waitlist-page">
       <section className="newsletter-home">
         <figure className="newsletter-photo">
-          <img src="/media/embarazo-perro.jpg" alt="Familia con su perro compartiendo tiempo juntos" />
-          <img className="newsletter-sticker" src={newsletterSticker} alt="" />
+          <img src="/media/lista-espera-familia.jpg" alt="Silvia con sus hijos y su perro en el jardín" />
         </figure>
         <div className="newsletter-copy">
           <h2>Segunda edición, muy pronto</h2>

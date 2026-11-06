@@ -167,8 +167,8 @@ function HomePage() {
       <div className="resources-grid">
         {([
           [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/z110z6f1jw"],
-          [recursoLenguajeAsset.url, "Lenguaje canino e hitos", "https://thankful-hall-75598.myflodesk.com/fzu0d76dv2"],
-          [recursoViajeAsset.url, "Desarrollo infantil + conducta canina", "https://thankful-hall-75598.myflodesk.com/ppzyoyw2s0"],
+          [recursoLenguajeAsset.url, "Actividades perros y niños", "https://thankful-hall-75598.myflodesk.com/ppzyoyw2s0"],
+          [recursoViajeAsset.url, "Desarrollo infantil + conducta canina", "https://thankful-hall-75598.myflodesk.com/fzu0d76dv2"],
           [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/ze46lq27lb"],
         ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>

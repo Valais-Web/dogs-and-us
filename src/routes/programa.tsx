@@ -13,8 +13,8 @@ import ensenarAsset from "@/assets/lenguaje-canino-bebe.jpg.asset.json";
 const silviaHolaUrl = "/media/silvia-hola.jpg";
 import evidenceSticker from "@/assets/sticker-evidencia.png";
 
-const URL_COMPRA = "https://dogsandus-es.systeme.io/pagometodocrecen";
-const PRICE = "59 €";
+const URL_COMPRA = "/lista-espera";
+const PRICE = "79 €";
 const methodLetters: Array<[string, string]> = [["C","Comunicación"],["R","Refuerzo"],["E","Emociones"],["C","Control del entorno"],["E","Estructura"],["N","Necesidades"]];
 
 const situations = [

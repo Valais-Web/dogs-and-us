@@ -15,7 +15,7 @@ export function BlogHeader() {
           <Link to="/">Inicio</Link>
           <Link to="/programa">Método CRECEN</Link>
           <Link to="/blog" className="blog-nav-current">Blog</Link>
-          <Link to="/programa" className="blog-button blog-button-small">Inscribirme</Link>
+          <Link to="/lista-espera" className="blog-button blog-button-small">Inscribirme</Link>
         </nav>
       </div>
     </header>

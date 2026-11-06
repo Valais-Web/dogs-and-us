@@ -17,8 +17,6 @@ import perroBebeMovilAsset from "@/assets/perro-bebe-movil.jpg.asset.json";
 import metodoCrecenCompletoAsset from "@/assets/metodo-crecen-completo.jpg.asset.json";
 import presentacionPerroBebeAsset from "@/assets/presentacion-perro-bebe.jpg.asset.json";
 import recursoEnriquecimientoAsset from "@/assets/recurso-enriquecimiento-raza.jpg.asset.json";
-import recursoLenguajeAsset from "@/assets/recurso-lenguaje-canino-basico.jpg.asset.json";
-import recursoViajeAsset from "@/assets/recurso-viaje-perros-ninos.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,7 +33,7 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" }) {
+function CourseCard({ src, title, text, label, to }: { src: string; title: string; text: string; label: string; to: "/programa" | "/recursos" | "/lista-espera" }) {
   return <article className="course-card tilt-card">
     <div className="tilt-card-face">
       <img src={src} alt="Familia compartiendo tiempo con su perro" loading="lazy" />
@@ -136,11 +134,11 @@ function HomePage() {
       <h2 className="courses-title">Empieza tu camino como mamá multiespecie</h2>
       <div className="courses-grid">
         <CourseCard src={metodoCrecenCompletoAsset.url} title={"Método CRECEN\nTodas las etapas"} text="El acompañamiento para recorrer todas las etapas." label="Conocer el método" to="/programa" />
-        <CourseCard src={embarazoAsset.url} title="Etapa 1 - Embarazo " text="Prepara a tu perro para la llegada de tu  bebé." label="LO QUIERO" to="/programa" />
-        <CourseCard src={presentacionPerroBebeAsset.url} title="Etapa 2 - Presentación" text="Para un primer encuentro entre perro y bebé de forma segura y sin estrés." label="LO QUIERO" to="/programa" />
-        <CourseCard src="/media/primeras-semanas.jpg" title="Etapa 3 - Primeras semanas" text="Para acompañar a tu perro en estos días tan agotadores sin sentir que es una carga más." label="LO QUIERO" to="/programa" />
-        <CourseCard src={perroBebeMovilAsset.url} title="Etapa 4 - Perros y bebé móvil" text="Para una buena convivencia y una prevención exitosa en la etapa móvil." label="LO QUIERO" to="/programa" />
-        <CourseCard src={picnicAsset.url} title="Etapa 5 - Perros y toddlers" text="Cómo facilitar una buena relación entre perro y bebé. " label="LO QUIERO" to="/programa" />
+        <CourseCard src={embarazoAsset.url} title="Etapa 1 - Embarazo " text="Prepara a tu perro para la llegada de tu  bebé." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={presentacionPerroBebeAsset.url} title="Etapa 2 - Presentación" text="Para un primer encuentro entre perro y bebé de forma segura y sin estrés." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src="/media/primeras-semanas.jpg" title="Etapa 3 - Primeras semanas" text="Para acompañar a tu perro en estos días tan agotadores sin sentir que es una carga más." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={perroBebeMovilAsset.url} title="Etapa 4 - Perros y bebé móvil" text="Para una buena convivencia y una prevención exitosa en la etapa móvil." label="LO QUIERO" to="/lista-espera" />
+        <CourseCard src={picnicAsset.url} title="Etapa 5 - Perros y toddlers" text="Cómo facilitar una buena relación entre perro y bebé. " label="LO QUIERO" to="/lista-espera" />
       </div>
     </section>
 
@@ -151,7 +149,7 @@ function HomePage() {
           <img src={familiaAsset.url} alt="Silvia con su familia y su perro" className="about-photo about-photo-two" />
           <span className="hand about-who">¿quién</span><span className="hand about-am">soy?</span>
         </div>
-        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez, Educadora canina, mamá y psicóloga educativa.</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p></div>
+        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez: educadora canina, psicóloga educativa y mamá</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><p className="about-training"><strong>Mi formación:</strong> Single Track - adiestramiento canino profesional, Ian Dunbar - dog training, psicología de la educación - Universidad de Barcelona, Sarah Dixon / IAABC - Resolving Resource Guarding</p><img className="about-badge" src="/media/iaabc-member.png" alt="Miembro de IAABC, International Association of Animal Behavior Consultants" loading="lazy" /></div>
       </div>
     </section>
 
@@ -163,15 +161,13 @@ function HomePage() {
     </div>
 
     <section className="resources-home">
-      <header><h2>Recursos gratuitos</h2><p className="hand">para empezar hoy mismo en casa</p></header>
+      <header><h2>Recursos gratuitos</h2><p className="hand">para familias multiespecie</p></header>
       <div className="resources-grid">
         {([
-          [recursoEnriquecimientoAsset.url, "Guía de enriquecimiento por raza"],
-          [recursoLenguajeAsset.url, "Lenguaje canino básico"],
-          [recursoViajeAsset.url, "Checklist viaje con perros y niños"],
-          [embarazoAsset.url, "Checklist de preparación pre-bebé"],
-        ] satisfies Array<[string, string]>).map(([src, title]) => <article className="resource-card tilt-card" key={title}>
-          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><Link to="/recursos" className="resource-download">Descargar <ArrowRight /></Link></div>
+          [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/enriquecimientocanino"],
+          [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/checklistprebebe"],
+        ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
+          <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>
         </article>)}
       </div>
     </section>

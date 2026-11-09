@@ -10,7 +10,7 @@ export function LeadForm({ source, resource, compact = false, label }: { source:
     const error = !(await trackFormSubmit("lead", { email, source, resource: resource ?? "", consent: "true" }));
     setState(error ? "error" : "done"); if (!error) setEmail("");
   }
-  if (state === "done") return <p className="font-semibold">¡Listo! Revisa tu correo.</p>;
+  if (state === "done") return <p className="font-semibold">¡Listo! Pronto tendrás noticias de la edición mejorada.</p>;
   return <form name="lead" data-netlify="true" onSubmit={submit} className={compact ? "lead-form-inline" : "grid gap-3"}>
     <input type="hidden" name="form-name" value="lead" />
     <label className="sr-only" htmlFor={`email-${source}-${resource ?? "general"}`}>Tu correo electrónico</label>

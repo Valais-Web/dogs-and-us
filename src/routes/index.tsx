@@ -149,7 +149,7 @@ function HomePage() {
           <img src={familiaAsset.url} alt="Silvia con su familia y su perro" className="about-photo about-photo-two" />
           <span className="hand about-who">¿quién</span><span className="hand about-am">soy?</span>
         </div>
-        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez: educadora canina, psicóloga educativa y mamá</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><p className="about-training"><strong>Mi formación:</strong> Single Track - adiestramiento canino profesional, Ian Dunbar - dog training, psicología de la educación - Universidad de Barcelona, Sarah Dixon / IAABC - Resolving Resource Guarding</p><img className="about-badge" src="/media/iaabc-member.png" alt="Miembro de IAABC, International Association of Animal Behavior Consultants" loading="lazy" /></div>
+        <div className="about-copy"><p className="section-label">Detrás Dogs & Us</p><h2>Soy Silvia Gómez: educadora canina, psicóloga educativa y mamá</h2><p>Acompaño a familias multiespecie para que perro y bebé crezcan juntos con bienestar y seguridad.</p><p className="about-training"><strong>Mi formación:</strong> Single Track - adiestramiento canino profesional, Ian Dunbar - dog training, psicología de la educación - Universidad de Barcelona, Sarah Dixon / IAABC - Resolving Resource Guarding, IAABC - Fundamentals of Animal Behavior and Learning</p><img className="about-badge" src="/media/iaabc-member.png" alt="Miembro de IAABC, International Association of Animal Behavior Consultants" loading="lazy" /></div>
       </div>
     </section>
 
@@ -166,6 +166,7 @@ function HomePage() {
         {([
           [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/enriquecimientocanino"],
           [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/checklistprebebe"],
+          [picnicAsset.url, "Logra una buena supervisión", "https://thankful-hall-75598.myflodesk.com/dtidsb3qjk"],
         ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>
         </article>)}

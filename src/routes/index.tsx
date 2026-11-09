@@ -166,7 +166,7 @@ function HomePage() {
         {([
           [recursoEnriquecimientoAsset.url, "Enriquecimiento según la raza", "https://thankful-hall-75598.myflodesk.com/enriquecimientocanino"],
           [embarazoAsset.url, "Checklist hospital", "https://thankful-hall-75598.myflodesk.com/checklistprebebe"],
-          [picnicAsset.url, "Logra una buena supervisión", "https://thankful-hall-75598.myflodesk.com/dtidsb3qjk"],
+          ["/media/recurso-supervision.jpg", "Logra una buena supervisión", "https://thankful-hall-75598.myflodesk.com/dtidsb3qjk"],
         ] satisfies Array<[string, string, string]>).map(([src, title, href]) => <article className="resource-card tilt-card" key={title}>
           <div className="tilt-card-face"><img src={src} alt="Familia y perro en un entorno cotidiano" loading="lazy" /><h3>{title}</h3><a className="resource-download" href={href} target="_blank" rel="noopener noreferrer">Descargar <ArrowRight /></a></div>
         </article>)}
